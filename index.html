@@ -1,0 +1,2707 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Portfolio</title>
+<meta name="description" content="Portfolio of Lorena Garcia, a developer exploring artificial intelligence and blockchain: web applications, AI projects and Web3 work.">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cg stroke='%236C1932' stroke-width='3'%3E%3Ccircle cx='16' cy='8' r='6.2' fill='%23F2A7C3'/%3E%3Ccircle cx='23.6' cy='13.5' r='6.2' fill='%23F2A7C3'/%3E%3Ccircle cx='20.7' cy='22.5' r='6.2' fill='%23F2A7C3'/%3E%3Ccircle cx='11.3' cy='22.5' r='6.2' fill='%23F2A7C3'/%3E%3Ccircle cx='8.4' cy='13.5' r='6.2' fill='%23F2A7C3'/%3E%3C/g%3E%3Cg fill='%23F2A7C3'%3E%3Ccircle cx='16' cy='8' r='4.7'/%3E%3Ccircle cx='23.6' cy='13.5' r='4.7'/%3E%3Ccircle cx='20.7' cy='22.5' r='4.7'/%3E%3Ccircle cx='11.3' cy='22.5' r='4.7'/%3E%3Ccircle cx='8.4' cy='13.5' r='4.7'/%3E%3C/g%3E%3Ccircle cx='16' cy='16' r='4.6' fill='%23DDFC45' stroke='%236C1932' stroke-width='2.4'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;700&family=DM+Mono:wght@400;500&family=DM+Sans:ital,opsz,wght@0,9..40,400..700;1,9..40,400..700&family=Fraunces:ital,opsz,wght@0,9..144,400..900;1,9..144,400..900&display=swap" rel="stylesheet">
+<style>
+/* =========================================================
+   1. TOKENS
+   ========================================================= */
+:root{
+  --cream:#FFFBEF;
+  --paper:#FFFDF6;
+  --pink:#EFC9D8;
+  --pink-deep:#E0A6BE;
+  --wine:#6C1932;
+  --wine-deep:#4E0F22;
+  --blue:#BFDDF6;
+  --blue-deep:#93C3EA;
+  --ink:#191A1B;
+  --ink-soft:#4A4446;
+  --lime:#DDFC45;
+  --lilac:#DCD0F5;
+  --lilac-deep:#BBA8E8;
+  --sand:#F6F0E1;
+
+  --f-display:"Fraunces", "Playfair Display", Georgia, "Times New Roman", serif;
+  --f-body:"DM Sans", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --f-mono:"DM Mono", ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace;
+  --f-hand:"Caveat", "Comic Sans MS", cursive;
+
+  --gutter:clamp(16px, 4vw, 56px);
+  --nav-h:66px;
+  --radius:14px;
+  --line:2px solid var(--ink);
+  --shadow-hard:6px 6px 0 var(--ink);
+  --ease:cubic-bezier(.2,.8,.2,1);
+  --noise:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .55 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+/* =========================================================
+   2. BASE
+   ========================================================= */
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:calc(var(--nav-h) + 8px);-webkit-text-size-adjust:100%}
+html:has(dialog[open]){overflow:hidden}
+body{
+  margin:0;background:var(--cream);color:var(--ink);
+  font-family:var(--f-body);font-size:1.0625rem;line-height:1.6;
+  -webkit-font-smoothing:antialiased;overflow-x:hidden;
+}
+img,svg{display:block;max-width:100%}
+a{color:inherit}
+button{font:inherit;color:inherit}
+h1,h2,h3,h4{margin:0;font-family:var(--f-display);font-weight:700;line-height:1}
+p{margin:0}
+[hidden]{display:none!important}
+:focus-visible{outline:3px solid var(--ink);outline-offset:3px;box-shadow:0 0 0 7px var(--lime);border-radius:6px}
+.sr-only{position:absolute!important;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+.skip{position:absolute;left:12px;top:-60px;z-index:100;background:var(--lime);color:var(--ink);padding:10px 16px;border:var(--line);border-radius:999px;font-weight:700;text-decoration:none}
+.skip:focus{top:12px}
+main > section{scroll-margin-top:calc(var(--nav-h) + 8px);overflow-x:clip} /* slide-in offsets and stickers never widen the page */
+.mono{font-family:var(--f-mono);font-size:.78rem;letter-spacing:.06em;text-transform:uppercase}
+
+.textured{position:relative;isolation:isolate}
+.textured::after{content:"";position:absolute;inset:0;background-image:var(--noise);opacity:.22;mix-blend-mode:multiply;pointer-events:none;z-index:-1}
+
+/* buttons */
+.btn{
+  display:inline-flex;align-items:center;gap:.55em;min-height:48px;padding:.7em 1.25em;
+  border:var(--line);border-radius:999px;background:var(--cream);color:var(--ink);
+  font-weight:700;font-size:1rem;text-decoration:none;cursor:pointer;line-height:1.2;
+  box-shadow:3px 3px 0 var(--ink);transition:transform .15s var(--ease),box-shadow .15s var(--ease),background .15s;
+}
+.btn:hover{transform:translate(-1px,-1px);box-shadow:5px 5px 0 var(--ink)}
+.btn:active{transform:translate(2px,2px);box-shadow:1px 1px 0 var(--ink)}
+.btn--wine{background:var(--wine);color:var(--cream)}
+.btn--lime{background:var(--lime)}
+.btn--pink{background:var(--pink)}
+.btn--blue{background:var(--blue)}
+.btn svg{width:1.15em;height:1.15em;flex:none}
+.btn .handle{font-family:var(--f-mono);font-weight:400;font-size:.8rem;opacity:.9}
+
+/* retro window frame */
+.window{background:var(--cream);border:var(--line);border-radius:var(--radius);box-shadow:var(--shadow-hard);overflow:hidden}
+.titlebar{
+  display:flex;align-items:center;gap:10px;min-height:38px;padding:6px 8px 6px 14px;
+  background:linear-gradient(90deg,var(--pink) 0%,var(--lilac) 100%);border-bottom:var(--line);
+  font-family:var(--f-mono);font-size:.78rem;letter-spacing:.04em;
+}
+.titlebar .tb-title{flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.tb-dots{display:flex;gap:6px}
+.tb-dots i{width:16px;height:16px;border:var(--line);border-radius:5px;background:var(--cream);display:block}
+.tb-dots i:last-child{background:var(--lime)}
+.chip{
+  display:inline-flex;align-items:center;gap:6px;border:var(--line);border-radius:999px;
+  padding:3px 12px;font-family:var(--f-mono);font-size:.74rem;letter-spacing:.05em;text-transform:uppercase;background:var(--cream);color:var(--ink);line-height:1.4;
+}
+.chip--pink{background:var(--pink)} .chip--blue{background:var(--blue)} .chip--lime{background:var(--lime)} .chip--lilac{background:var(--lilac)}
+.chip--wine{background:var(--wine);color:var(--cream)}
+
+/* =========================================================
+   3. NAVBAR — tabs with a sliding indicator
+   ========================================================= */
+.nav{
+  position:sticky;top:0;z-index:50;display:flex;align-items:center;gap:16px;min-height:var(--nav-h);
+  padding:10px var(--gutter);background:rgba(255,251,239,.94);border-bottom:var(--line);
+  backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);
+}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none;margin-right:auto;border-radius:999px}
+.monogram{display:grid;place-items:center;width:44px;height:44px;flex:none}
+.brand-name{font-family:var(--f-display);font-weight:700;font-size:1.2rem;color:var(--wine)}
+.nav-links{position:relative;display:flex;align-items:center;gap:6px;list-style:none;margin:0;padding:0}
+.nav-links li{position:relative;z-index:1}
+.nav-links::before{
+  content:"";position:absolute;top:0;left:0;height:100%;width:var(--iw,0px);translate:var(--ix,0px) 0;z-index:0;
+  border:2px solid var(--ink);border-radius:12px 12px 6px 6px;background:var(--ink);box-shadow:2px 2px 0 var(--lime);
+  opacity:var(--io,0);pointer-events:none;transition:translate .28s var(--ease),width .28s var(--ease),opacity .2s;
+}
+.nav-links a{
+  display:inline-flex;align-items:center;min-height:44px;padding:0 14px;
+  border:2px solid var(--ink);border-radius:12px 12px 6px 6px;background:var(--cream);
+  text-decoration:none;font-weight:600;font-size:.98rem;transition:background .15s,color .15s;
+}
+.nav-links a:hover{background:var(--pink)}
+.nav-links a[aria-current="true"]{background:var(--ink);color:var(--cream)}
+.nav-links.has-indicator a[aria-current="true"]{background:transparent}
+.nav-links a:focus-visible{border-radius:12px 12px 6px 6px}
+@media (max-width:760px){ .brand-name{display:none} }
+@media (max-width:560px){
+  .nav{gap:6px;padding-inline:10px}
+  .nav-links{gap:4px}
+  .nav-links a{padding:0 8px;font-size:.84rem}
+  .monogram{width:40px;height:40px;font-size:1rem}
+}
+@media (max-width:380px){ .nav-links{gap:3px} .nav-links a{padding:0 6px;font-size:.78rem} .monogram{width:36px;height:36px;font-size:.9rem} }
+
+/* =========================================================
+   4. INTRODUCTION
+   ========================================================= */
+.hero{
+  position:relative;overflow:hidden;
+  background:
+    radial-gradient(ellipse 22% 9% at 14% 18%, rgba(255,255,255,.95), transparent 70%),
+    radial-gradient(ellipse 16% 7% at 20% 22%, rgba(255,255,255,.85), transparent 70%),
+    radial-gradient(ellipse 26% 10% at 84% 82%, rgba(255,255,255,.9), transparent 70%),
+    radial-gradient(ellipse 18% 8% at 76% 12%, rgba(255,255,255,.7), transparent 70%),
+    linear-gradient(180deg,#A9D1F3 0%,var(--blue) 55%,#D6E9F9 100%);
+  border-bottom:var(--line);
+}
+.hero-inner{
+  position:relative;z-index:2;max-width:1360px;margin:0 auto;
+  min-height:min(calc(100svh - var(--nav-h)), 900px);
+  padding:clamp(28px,4vw,56px) var(--gutter) clamp(40px,6vw,80px);
+  display:grid;grid-template-columns:repeat(12,minmax(0,1fr));grid-template-rows:auto 1fr;
+  column-gap:20px;align-content:center;pointer-events:none;
+}
+.hero-inner > *,.hero-extra > *{pointer-events:auto}
+.hero-name{
+  grid-column:1 / 11;grid-row:1;align-self:start;margin-top:40px;
+  font-family:var(--f-display);font-weight:800;color:var(--wine);
+  font-size:clamp(3.4rem,13.5vw,13rem);line-height:.84;letter-spacing:-.045em;
+  text-shadow:4px 4px 0 var(--cream),7px 7px 0 var(--ink);
+}
+.hero-name .n1{display:block;font-style:italic;font-variation-settings:"opsz" 144}
+.hero-name .n2{display:block;padding-left:.9em;font-variation-settings:"opsz" 144}
+.hero-name .n2::after{content:"✶";font-size:.32em;vertical-align:super;margin-left:.08em;color:var(--lime);text-shadow:2px 2px 0 var(--ink),-1px -1px 0 var(--ink)}
+
+/* photo stack (polaroids) */
+.hero-portrait{grid-column:10 / 13;grid-row:1 / 3;align-self:start;justify-self:end;width:min(100%,270px);margin:96px 0 0}
+.photo-stack{position:relative;transform:rotate(5deg)}
+.polaroid{position:relative;background:var(--cream);border:var(--line);padding:12px 12px 44px;box-shadow:var(--shadow-hard)}
+.polaroid::before,.photo-stack::before{
+  content:"";position:absolute;top:-16px;left:50%;width:96px;height:30px;transform:translateX(-50%) rotate(-4deg);z-index:30;
+  background:repeating-linear-gradient(45deg,rgba(221,252,69,.85) 0 8px,rgba(239,201,216,.85) 8px 16px);
+  border:1.5px solid rgba(25,26,27,.4);
+}
+.photo-stack:has(.polaroid)::before{display:none}
+.polaroid-art{
+  aspect-ratio:1;border:var(--line);position:relative;overflow:hidden;display:grid;place-items:center;
+  background:
+    radial-gradient(circle,rgba(239,201,216,.55) 1.6px,transparent 2px) 0 0/14px 14px,
+    radial-gradient(circle at 30% 25%,#8a2443,var(--wine) 60%,var(--wine-deep));
+}
+.polaroid-art::before{content:"";position:absolute;width:78%;aspect-ratio:1;border-radius:50%;border:2px dashed rgba(255,251,239,.55)}
+.polaroid-art::after{content:"";position:absolute;width:56%;aspect-ratio:1;border-radius:50%;border:2px solid var(--lime);opacity:.8}
+.polaroid-art span{
+  position:relative;z-index:1;font-family:var(--f-display);font-style:italic;font-weight:900;
+  font-size:clamp(3.6rem,7vw,6rem);letter-spacing:-.07em;color:var(--cream);line-height:1;text-shadow:4px 4px 0 var(--ink);
+}
+.polaroid figcaption,.photo-card figcaption{position:absolute;left:0;right:0;bottom:6px;text-align:center;font-family:var(--f-hand);font-size:1.4rem;color:var(--wine);line-height:1.2;padding:0 8px}
+.photo-btn{display:block;position:relative;width:100%;aspect-ratio:270 / 318;padding:0;border:0;background:none;cursor:pointer;border-radius:4px;touch-action:pan-y}
+.photo-card{position:absolute;inset:0;margin:0;background:var(--cream);border:var(--line);padding:12px 12px 44px;box-shadow:5px 5px 0 var(--ink);transform-origin:50% 60%}
+.photo-card img{width:100%;aspect-ratio:1;object-fit:var(--fit,cover);object-position:var(--pos,50% 50%);border:var(--line);background:#EFE8DA}
+.photo-card .num{position:absolute;left:0;right:0;bottom:12px;text-align:center;font-family:var(--f-mono);font-size:.7rem;letter-spacing:.12em;color:var(--ink-soft)}
+.photo-caption{margin-top:20px;text-align:center;font-family:var(--f-hand);font-size:1.5rem;line-height:1.12;color:var(--wine);overflow-wrap:break-word;min-height:2.24em}
+.photo-hint{margin-top:6px;text-align:center;font-family:var(--f-mono);font-size:.72rem;letter-spacing:.06em;text-transform:uppercase;color:var(--ink-soft)}
+.photo-hint::before{content:"✶ ";color:var(--wine)}
+
+.hero-window{grid-column:1 / 9;grid-row:2;align-self:start;margin-top:clamp(18px,2.5vw,30px);transform:rotate(-.8deg);max-width:720px}
+.hero-window .body{
+  padding:22px 26px 26px 54px;display:grid;gap:16px;position:relative;
+  background:
+    linear-gradient(90deg,transparent 34px,rgba(108,25,50,.4) 34px 36px,transparent 36px),
+    repeating-linear-gradient(to bottom,transparent 0 29px,rgba(147,195,234,.55) 29px 30px),
+    var(--paper);
+}
+.role{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+.bio{font-size:clamp(1.12rem,1.6vw,1.3rem);line-height:30px;max-width:52ch}
+.bio strong{background:linear-gradient(transparent 58%,var(--lime) 58% 92%,transparent 92%);font-weight:700}
+.actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:4px}
+
+.hero-note{
+  grid-column:8 / 11;grid-row:2;align-self:end;justify-self:end;position:relative;margin-bottom:18px;
+  display:grid;gap:8px;justify-items:start;transform:rotate(-5deg);
+  background:var(--cream);padding:12px 16px 12px;border:1.5px solid var(--ink);box-shadow:3px 3px 0 var(--pink-deep);max-width:230px;
+}
+.hero-note::before{content:"";position:absolute;top:-10px;left:18px;width:20px;height:20px;border-radius:50%;background:var(--pink);border:var(--line)}
+.hero-note p{font-family:var(--f-hand);font-size:1.6rem;line-height:1.05;color:var(--wine)}
+.hero-note p::after{content:" ↘";white-space:nowrap}
+.note-reset{min-height:36px;padding:2px 12px;border:1.5px solid var(--ink);border-radius:999px;background:var(--lime);font-family:var(--f-mono);font-size:.72rem;letter-spacing:.05em;text-transform:uppercase;cursor:pointer}
+.note-reset:hover{background:var(--pink)}
+
+/* decorative stickers (all draggable) */
+.hero-deco{position:absolute;inset:0;z-index:3;pointer-events:none}
+.sticker{
+  position:absolute;--r:0deg;rotate:var(--r);pointer-events:auto;
+  filter:drop-shadow(2.5px 0 0 #fff) drop-shadow(-2.5px 0 0 #fff) drop-shadow(0 2.5px 0 #fff) drop-shadow(0 -2.5px 0 #fff) drop-shadow(4px 6px 0 rgba(25,26,27,.18));
+}
+.sticker svg{width:100%;height:auto;pointer-events:none}
+.s-cd{width:140px;right:5%;bottom:7%;--r:-12deg}
+.s-chip{width:90px;left:47%;bottom:4%;--r:10deg}
+.s-star{width:80px;left:52%;top:6%;--r:8deg}
+.s-net{width:108px;right:25%;bottom:4%;--r:-6deg}
+.s-heart{width:56px;right:3%;top:5%;--r:14deg}
+.sparkle{position:absolute;width:22px;color:var(--cream);animation:twinkle 2.8s ease-in-out infinite;pointer-events:none}
+.sparkle svg{width:100%;height:auto}
+.sp1{left:40%;top:30%} .sp2{left:8%;top:6%;animation-delay:.6s;width:16px} .sp3{right:24%;top:44%;animation-delay:1.2s;width:28px;color:var(--lime)} .sp4{left:64%;bottom:30%;animation-delay:1.8s;width:16px}
+@keyframes twinkle{0%,100%{transform:scale(1) rotate(0);opacity:1}50%{transform:scale(.6) rotate(20deg);opacity:.55}}
+
+@media (max-width:900px){
+  .hero-inner{display:flex;flex-direction:column;align-items:stretch;gap:16px;min-height:0;padding-top:22px}
+  .hero-name{margin:0;font-size:clamp(3.1rem,15vw,7rem);text-shadow:3px 3px 0 var(--cream),5px 5px 0 var(--ink)}
+  .hero-window{margin:4px 0 0;max-width:none;transform:none}
+  .hero-window .body{padding:18px 18px 22px 44px;background:
+    linear-gradient(90deg,transparent 28px,rgba(108,25,50,.4) 28px 30px,transparent 30px),
+    repeating-linear-gradient(to bottom,transparent 0 29px,rgba(147,195,234,.55) 29px 30px),var(--paper)}
+  .hero-extra{display:flex;align-items:center;justify-content:center;gap:18px 26px;flex-wrap:wrap;pointer-events:none}
+  .hero-portrait{width:min(52vw,200px)}
+  .hero-note{margin:8px 0 0;max-width:180px;transform:rotate(-3deg)}
+  .hero-note p{font-size:1.4rem}
+  .hero-note p::after{content:" ↓"}
+  .photo-hint{letter-spacing:.03em;font-size:.68rem}
+  .hero-deco{position:relative;inset:auto;display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:18px 26px;padding:4px var(--gutter) 34px}
+  .sticker{position:relative;left:auto!important;right:auto!important;top:auto!important;bottom:auto!important}
+  .s-cd{width:96px} .s-chip{width:66px} .s-star{width:54px} .s-net{width:80px} .s-heart{width:44px}
+  .sparkle{display:none}
+}
+@media (min-width:901px){ .hero-extra{display:contents} }
+
+/* =========================================================
+   5. MOVABLE STICKERS (shared by the hero and Stacks)
+   ========================================================= */
+[data-sticker]{cursor:grab;user-select:none;-webkit-user-select:none;-webkit-touch-callout:none;touch-action:manipulation}
+[data-sticker].is-dragging{cursor:grabbing}
+[data-sticker].is-lifted{transform:scale(1.06)}
+.grip{
+  position:absolute;top:-9px;right:-9px;z-index:2;width:22px;height:22px;display:grid;place-items:center;
+  border:1.5px solid var(--ink);border-radius:50%;background:var(--lime);opacity:0;transition:opacity .15s;touch-action:none;cursor:grab;
+}
+.grip::before{content:"";width:11px;height:11px;background:radial-gradient(circle,var(--ink) 1.3px,transparent 1.7px) 0 0/5.5px 5.5px}
+.grip::after{content:"";position:absolute;inset:-9px;border-radius:50%}
+[data-sticker]:hover .grip,[data-sticker]:focus-visible .grip,[data-sticker].is-dragging .grip{opacity:1}
+@media (hover:none){ .grip{opacity:.9} }
+
+/* =========================================================
+   6. SECTION HEADINGS
+   ========================================================= */
+.section-head{position:relative;display:grid;gap:10px;margin-bottom:clamp(28px,4vw,44px);justify-items:start}
+.kicker{display:flex;align-items:center;gap:10px}
+.kicker .mono::before{content:"✶ ";color:var(--wine)}
+.section-title{position:relative;font-size:clamp(2.5rem,7vw,5.6rem);color:var(--wine);letter-spacing:-.035em;line-height:.95}
+.section-title em{font-style:italic;font-weight:800}
+
+/* =========================================================
+   7. STACKS — seven paper groups sized to their content
+   ========================================================= */
+.stacks{
+  padding:clamp(64px,9vw,120px) var(--gutter);
+  background:
+    linear-gradient(rgba(224,166,190,.22) 1px,transparent 1px) 0 0/28px 28px,
+    linear-gradient(90deg,rgba(224,166,190,.22) 1px,transparent 1px) 0 0/28px 28px,
+    var(--cream);
+  border-bottom:var(--line);
+}
+.stacks-wrap{max-width:1280px;margin:0 auto}
+.stack-board{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:30px 22px;list-style:none;margin:0;padding:0;align-items:start}
+.stack-group{
+  --page:var(--paper);
+  position:relative;grid-column:span 4;background:var(--page);border:var(--line);border-radius:14px;
+  padding:20px 18px 20px;box-shadow:6px 6px 0 var(--pink);
+}
+.stack-group::before{content:"";position:absolute;top:-13px;left:24px;width:74px;height:24px;transform:rotate(-4deg);background:rgba(191,221,246,.9);border:1.5px solid rgba(25,26,27,.35)}
+.stack-group:nth-child(even)::before{left:auto;right:26px;transform:rotate(5deg);background:rgba(221,252,69,.8)}
+.stack-group[data-group="linguagens"]{grid-column:span 7}
+.stack-group[data-group="frameworks"]{grid-column:span 5}
+.stack-group[data-group="iot"]{grid-column:span 4}
+.stack-group[data-group="ia"]{grid-column:span 8}
+.stack-group[data-group="web3"]{
+  --page:var(--wine);color:var(--cream);box-shadow:6px 6px 0 var(--lime);
+  background:radial-gradient(circle,rgba(239,201,216,.28) 1.4px,transparent 1.8px) 0 0/16px 16px,var(--wine);
+}
+.stack-group h3{font-family:var(--f-mono);font-weight:500;font-size:.8rem;letter-spacing:.07em;text-transform:uppercase}
+.stack-group[data-group="web3"] h3{font-family:var(--f-display);font-style:italic;font-weight:700;font-size:1.6rem;letter-spacing:-.01em;text-transform:none}
+.subgroups{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,210px),1fr));gap:16px 26px;margin-top:6px}
+.subgroup h4{font-family:var(--f-hand);font-weight:700;font-size:1.3rem;color:var(--wine);margin-top:8px}
+.subgroup .tech-list{margin-top:8px}
+.tech-list{display:flex;flex-wrap:wrap;gap:14px 12px;list-style:none;margin:16px 0 0;padding:0}
+.tech{
+  --r:0deg;--bg:var(--cream);position:relative;display:inline-flex;align-items:center;gap:9px;
+  padding:7px 14px 7px 7px;border:var(--line);border-radius:12px;background:var(--bg);color:var(--ink);
+  rotate:var(--r);box-shadow:2px 3px 0 var(--ink);
+  transition:transform .2s var(--ease),box-shadow .2s var(--ease);
+}
+.tech::after{
+  content:"";position:absolute;right:-2px;bottom:-2px;width:0;height:0;border-radius:0 0 10px 0;
+  background:linear-gradient(to top left,var(--page) 50%,#fff 50%,#E9E1CF 100%);
+  box-shadow:-1px -1px 2px rgba(25,26,27,.25);transition:width .2s var(--ease),height .2s var(--ease);
+}
+.tech:hover,.tech:focus-visible{transform:translateY(-3px) rotate(-2deg);box-shadow:4px 7px 0 var(--ink)}
+.tech.is-dragging{transform:translateY(-3px) rotate(-2deg) scale(1.04);box-shadow:6px 10px 0 var(--ink)}
+.tech:hover::after,.tech:focus-visible::after,.tech.is-dragging::after{width:16px;height:16px}
+.tech-ic{width:32px;height:32px;flex:none;display:grid;place-items:center;border:1.5px solid var(--ink);border-radius:8px;background:#fff}
+.tech-ic svg{width:19px;height:19px;fill:var(--ink)}
+.tech-txt{display:grid;line-height:1.15}
+.tech-name{font-weight:700;font-size:.98rem}
+.tech-kind{font-family:var(--f-mono);font-size:.64rem;letter-spacing:.05em;text-transform:uppercase;color:var(--ink-soft)}
+.stack-group[data-group="web3"] .tech{--bg:var(--lime)}
+@media (max-width:1100px){
+  .stack-group,.stack-group[data-group]{grid-column:span 6}
+  .stack-group[data-group="linguagens"],.stack-group[data-group="ia"]{grid-column:1 / -1}
+}
+@media (max-width:640px){ .stack-board{grid-template-columns:1fr} .stack-group[data-group]{grid-column:auto} }
+
+/* =========================================================
+   8. PROJECTS — category folders
+   ========================================================= */
+.projects{
+  padding:clamp(64px,9vw,120px) var(--gutter);
+  background:
+    radial-gradient(circle,rgba(255,255,255,.75) 1.2px,transparent 1.6px) 0 0/22px 22px,
+    linear-gradient(180deg,var(--blue),#D3E7F8);
+  border-bottom:var(--line);
+}
+.projects-wrap{max-width:1280px;margin:0 auto}
+.archive-grid{list-style:none;margin:0;padding:24px 0 0;display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:56px 28px}
+.archive-grid > li:nth-child(1){grid-column:span 7}
+.archive-grid > li:nth-child(2){grid-column:span 5}
+.archive-grid > li:nth-child(3){grid-column:span 5}
+.archive-grid > li:nth-child(4){grid-column:span 7}
+@media (max-width:860px){ .archive-grid{grid-template-columns:1fr;gap:48px} .archive-grid > li:nth-child(n){grid-column:auto} }
+
+.cat-folder{
+  --c:var(--pink);--c-back:var(--pink-deep);--c-ink:var(--ink);
+  position:relative;display:block;width:100%;height:340px;padding:0;border:0;background:none;
+  cursor:pointer;text-align:left;color:var(--c-ink);border-radius:18px;-webkit-tap-highlight-color:transparent;
+}
+.cat-folder[data-cat="blockchain-web3"]{--c:var(--wine);--c-back:var(--wine-deep);--c-ink:var(--cream)}
+.cat-folder[data-cat="jogos"]{--c:var(--lilac);--c-back:var(--lilac-deep)}
+.cat-folder[data-cat="robotica-iot"]{--c:var(--blue);--c-back:var(--blue-deep)}
+.f-back{position:absolute;inset:28px 0 0 0;background:var(--c-back);border:var(--line);border-radius:4px 18px 18px 18px}
+.f-back::before{content:"";position:absolute;left:-2px;top:-28px;width:40%;height:30px;background:var(--c-back);border:var(--line);border-bottom:0;border-radius:12px 24px 0 0}
+.f-papers{position:absolute;left:6%;right:6%;top:46px;height:60%}
+.f-paper{
+  position:absolute;top:0;width:44%;aspect-ratio:200/140;background:#fff;border:1.5px solid var(--ink);border-radius:6px;padding:5px;
+  transition:transform .24s var(--ease);box-shadow:0 2px 0 rgba(25,26,27,.15);overflow:hidden;
+}
+.f-paper svg,.f-paper img{width:100%;height:100%;border-radius:3px;object-fit:cover}
+.f-paper.p1{left:2%;transform:translateY(26px) rotate(-6deg)}
+.f-paper.p2{left:28%;transform:translateY(16px) rotate(2deg);z-index:1}
+.f-paper.p3{left:54%;transform:translateY(28px) rotate(7deg)}
+.cat-folder:hover .f-paper.p1,.cat-folder:focus-visible .f-paper.p1{transform:translate(-8px,-26px) rotate(-10deg)}
+.cat-folder:hover .f-paper.p2,.cat-folder:focus-visible .f-paper.p2{transform:translateY(-38px) rotate(1deg)}
+.cat-folder:hover .f-paper.p3,.cat-folder:focus-visible .f-paper.p3{transform:translate(8px,-24px) rotate(11deg)}
+.f-front{
+  position:absolute;left:0;right:0;bottom:0;height:58%;
+  display:flex;flex-direction:column;gap:8px;padding:18px 22px 16px;z-index:2;
+  background:var(--c);color:var(--c-ink);border:var(--line);border-radius:16px;
+  transform-origin:50% 100%;transition:transform .24s var(--ease);
+  background-image:linear-gradient(180deg,rgba(255,255,255,.28),transparent 30%);
+}
+.cat-folder:hover .f-front,.cat-folder:focus-visible .f-front{transform:perspective(900px) rotateX(-14deg)}
+.cat-folder:active .f-front{transform:perspective(900px) rotateX(-6deg) scale(.985)}
+.cat-folder:focus-visible{outline-offset:8px}
+.f-meta{display:flex;justify-content:space-between;align-items:center;gap:8px}
+.f-count{font-family:var(--f-mono);font-size:.74rem;letter-spacing:.06em;text-transform:uppercase;background:var(--cream);color:var(--ink);border:1.5px solid var(--ink);border-radius:999px;padding:1px 10px}
+.f-title{font-family:var(--f-display);font-weight:800;font-size:clamp(2rem,3.4vw,2.7rem);letter-spacing:-.03em;line-height:1}
+.f-desc{font-size:.95rem;line-height:1.4;max-width:46ch;opacity:.95}
+.f-open{margin-top:auto;font-family:var(--f-mono);font-size:.74rem;letter-spacing:.06em;text-transform:uppercase;display:flex;align-items:center;gap:6px}
+.f-open::before{content:"";width:9px;height:9px;border-radius:50%;background:var(--lime);border:1.5px solid var(--ink)}
+@media (hover:none){ .f-paper.p1{transform:translateY(4px) rotate(-6deg)} .f-paper.p2{transform:translateY(-8px) rotate(2deg)} .f-paper.p3{transform:translateY(6px) rotate(7deg)} }
+@media (max-width:520px){ .cat-folder{height:310px} .f-front{height:62%;padding:16px 16px 14px} }
+
+.archive-extra{margin-top:56px;display:grid;grid-template-columns:auto 1fr;gap:16px 28px;align-items:center}
+.extra-note{font-family:var(--f-hand);font-size:1.5rem;color:var(--wine);transform:rotate(-3deg);max-width:200px;line-height:1.05}
+.extra-folder{
+  position:relative;display:flex;align-items:center;gap:18px;width:100%;max-width:660px;min-height:118px;margin-top:22px;
+  padding:16px 18px;border:var(--line);border-radius:4px 14px 14px 14px;background:var(--sand);color:var(--ink);cursor:pointer;text-align:left;
+  box-shadow:5px 5px 0 var(--ink);transition:transform .2s var(--ease),box-shadow .2s var(--ease);
+}
+.extra-folder::before{content:"";position:absolute;left:-2px;top:-22px;width:34%;height:22px;background:var(--sand);border:var(--line);border-bottom:0;border-radius:10px 18px 0 0}
+.extra-folder:hover{transform:translate(-2px,-2px);box-shadow:7px 7px 0 var(--ink)}
+.extra-minis{display:flex;flex:none}
+.extra-minis span{width:62px;aspect-ratio:200/140;border:1.5px solid var(--ink);border-radius:4px;overflow:hidden;background:#fff;margin-right:-18px;transform:rotate(-5deg);transition:transform .2s var(--ease)}
+.extra-minis span:nth-child(2){transform:rotate(3deg)} .extra-minis span:nth-child(3){transform:rotate(8deg);margin-right:0}
+.extra-folder:hover .extra-minis span{transform:rotate(-9deg) translateY(-4px)}
+.extra-folder:hover .extra-minis span:nth-child(2){transform:rotate(1deg) translateY(-8px)}
+.extra-folder:hover .extra-minis span:nth-child(3){transform:rotate(12deg) translateY(-4px)}
+.extra-minis svg{width:100%;height:100%}
+.extra-txt{display:grid;gap:2px;min-width:0}
+.extra-txt strong{font-family:var(--f-display);font-size:1.5rem;line-height:1.05}
+.extra-txt span{font-size:.9rem;color:var(--ink-soft)}
+@media (max-width:640px){ .archive-extra{grid-template-columns:1fr} .extra-minis{display:none} }
+
+/* =========================================================
+   9. ARCHIVE EXPLORER (collection ↔ detail in one window)
+   ========================================================= */
+.ex{padding:0;border:0;background:transparent;width:min(1120px,calc(100vw - 32px));max-width:none;height:calc(100dvh - 40px);max-height:none;overflow:visible;color:var(--ink)}
+.ex::backdrop{background:rgba(78,15,34,.42);backdrop-filter:blur(3px);-webkit-backdrop-filter:blur(3px)}
+.ex-window{display:flex;flex-direction:column;height:100%}
+.ex-window[data-cat="ia-dados"] .titlebar{background:linear-gradient(90deg,var(--pink-deep),var(--pink))}
+.ex-window[data-cat="blockchain-web3"] .titlebar{background:linear-gradient(90deg,var(--wine),#8a2a48);color:var(--cream)}
+.ex-window[data-cat="jogos"] .titlebar{background:linear-gradient(90deg,var(--lilac-deep),var(--lilac))}
+.ex-window[data-cat="robotica-iot"] .titlebar{background:linear-gradient(90deg,var(--blue-deep),var(--blue))}
+.ex-window[data-cat="software-sistemas"] .titlebar{background:linear-gradient(90deg,#E8DDC2,var(--sand))}
+.tb-icon{width:22px;height:18px;flex:none;position:relative}
+.tb-icon::before{content:"";position:absolute;inset:4px 0 0;background:var(--lime);border:1.5px solid var(--ink);border-radius:2px 4px 4px 4px}
+.tb-icon::after{content:"";position:absolute;left:0;top:0;width:10px;height:6px;background:var(--lime);border:1.5px solid var(--ink);border-bottom:0;border-radius:3px 3px 0 0}
+.tb-close{display:grid;place-items:center;width:44px;height:36px;border:var(--line);border-radius:7px;background:var(--wine);color:var(--cream);font-size:1.25rem;line-height:1;cursor:pointer}
+.ex-window[data-cat="blockchain-web3"] .tb-close{background:var(--lime);color:var(--ink)}
+.tb-close:hover{background:var(--ink);color:var(--lime)}
+.ex-toolbar{display:flex;flex-wrap:wrap;align-items:center;gap:10px 14px;padding:10px 16px;background:var(--sand);border-bottom:var(--line)}
+.crumbs ol{display:flex;flex-wrap:wrap;align-items:center;gap:4px;list-style:none;margin:0;padding:0;font-family:var(--f-mono);font-size:.8rem}
+.crumbs li{display:flex;align-items:center;gap:4px}
+.crumbs li + li::before{content:"›";opacity:.6}
+.crumbs button{min-height:36px;padding:0 8px;border:0;background:none;border-radius:6px;cursor:pointer;text-decoration:underline;text-underline-offset:3px;font:inherit}
+.crumbs button:hover{background:var(--pink)}
+.crumbs [aria-current]{font-weight:500;padding:0 8px}
+.back-btn{min-height:40px;font-size:.88rem;padding:.4em 1em}
+.ex-tabs{display:flex;flex-wrap:wrap;gap:6px;padding:12px 16px 0;border-bottom:var(--line);background:#F9F4E7}
+.ex-tab{
+  min-height:42px;padding:8px 14px 10px;margin-bottom:-2px;border:var(--line);border-bottom:0;border-radius:12px 12px 0 0;background:var(--cream);
+  font-weight:600;font-size:.9rem;cursor:pointer;display:inline-flex;align-items:center;gap:8px;transition:background .15s,transform .15s var(--ease);
+}
+.ex-tab:hover{background:var(--pink);transform:translateY(-2px)}
+.ex-tab[aria-pressed="true"]{background:var(--wine);color:var(--cream);transform:translateY(-4px)}
+.ex-tab .n{font-family:var(--f-mono);font-size:.72rem;opacity:.85}
+.ex-body{flex:1;min-height:0;overflow:auto;overscroll-behavior:contain;padding:clamp(18px,3vw,32px);background:radial-gradient(circle,rgba(108,25,50,.12) 1px,transparent 1.4px) 0 0/18px 18px,var(--cream)}
+.ex-heading{font-size:clamp(1.9rem,4vw,2.8rem);color:var(--wine);letter-spacing:-.03em;margin-bottom:6px}
+.ex-heading:focus,.pd-title:focus{outline:none;box-shadow:none}
+.ex-intro{color:var(--ink-soft);margin-bottom:24px;max-width:60ch}
+.ex-status{display:flex;justify-content:space-between;gap:10px;padding:8px 14px;border-top:var(--line);background:var(--sand);font-family:var(--f-mono);font-size:.74rem;letter-spacing:.03em}
+@media (max-width:720px){
+  .ex{width:calc(100vw - 16px);height:calc(100dvh - 16px)}
+  .ex-tabs{flex-wrap:nowrap;overflow-x:auto}
+  .ex-tab{flex:none}
+  .ex-status .hint{display:none}
+}
+
+/* project cards: cover + title + short description + links */
+.tier{margin-bottom:26px}
+.cards{list-style:none;margin:0;padding:0;display:grid;gap:22px;align-items:start}
+.tier[data-tier="live"] .cards{grid-template-columns:1fr}
+.tier[data-tier="principal"] .cards{grid-template-columns:repeat(auto-fill,minmax(min(100%,310px),1fr))}
+.tier[data-tier="complementar"] .cards{grid-template-columns:repeat(auto-fill,minmax(min(100%,250px),1fr))}
+.tier[data-tier="experimento"] .cards{grid-template-columns:repeat(auto-fill,minmax(min(100%,330px),1fr));gap:12px}
+.card{position:relative;display:flex;flex-direction:column;background:#fff;border:var(--line);border-radius:12px;box-shadow:4px 4px 0 var(--ink);transition:transform .2s var(--ease),box-shadow .2s var(--ease)}
+.card:hover,.card:focus-within{transform:translateY(-3px);box-shadow:6px 7px 0 var(--ink)}
+.card-open{display:flex;flex-direction:column;width:100%;padding:0;border:0;background:none;text-align:left;cursor:pointer;color:inherit;border-radius:10px 10px 0 0}
+.card-open:focus-visible{outline-offset:-4px;box-shadow:inset 0 0 0 7px var(--lime)}
+.card-cover{display:block;aspect-ratio:200/140;border-bottom:var(--line);border-radius:10px 10px 0 0;overflow:hidden;background:var(--sand)}
+.card-cover svg,.card-cover img{width:100%;height:100%;object-fit:cover;display:block}
+.card:hover .card-cover svg,.card:hover .card-cover img{transform:scale(1.03);transition:transform .3s var(--ease)}
+.card-body{display:grid;gap:7px;padding:14px 16px 8px}
+.card-title{font-family:var(--f-display);font-weight:700;font-size:1.45rem;line-height:1.05;letter-spacing:-.02em}
+.card-desc{font-size:.92rem;line-height:1.45;color:var(--ink-soft)}
+.card-links{display:flex;flex-wrap:wrap;gap:8px;padding:8px 16px 16px}
+/* available projects: horizontal and larger */
+.tier[data-tier="live"] .card{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,1fr);grid-template-rows:auto 1fr}
+.tier[data-tier="live"] .card-open{display:grid;grid-column:1 / -1;grid-row:1 / 3;grid-template-columns:subgrid;grid-template-rows:subgrid;border-radius:10px}
+.tier[data-tier="live"] .card-cover{grid-column:1;grid-row:1 / 3;border-bottom:0;border-right:var(--line);border-radius:10px 0 0 10px;height:100%;aspect-ratio:auto;min-height:260px}
+.tier[data-tier="live"] .card-body{grid-column:2;grid-row:1;align-content:end;padding:22px 22px 8px}
+.tier[data-tier="live"] .card-links{grid-column:2;grid-row:2;position:relative;z-index:1}
+.tier[data-tier="live"] .card-title{font-size:clamp(1.9rem,3vw,2.6rem)}
+.tier[data-tier="live"] .card-desc{font-size:1rem}
+.tier[data-tier="live"] .card-links{padding:8px 22px 22px;align-content:start}
+@media (max-width:720px){
+  .tier[data-tier="live"] .card{display:flex}
+  .tier[data-tier="live"] .card-open{display:flex}
+  .tier[data-tier="live"] .card-cover{border-right:0;border-bottom:var(--line);border-radius:10px 10px 0 0;height:auto;aspect-ratio:200/140;min-height:0}
+}
+/* experiments: compact file row */
+.tier[data-tier="experimento"] .card{flex-direction:row;flex-wrap:wrap;box-shadow:3px 3px 0 var(--ink)}
+.tier[data-tier="experimento"] .card-open{flex-direction:row;align-items:stretch;border-radius:10px 0 0 10px;flex:1 1 230px}
+.tier[data-tier="experimento"] .card-cover{width:104px;flex:none;aspect-ratio:auto;border-bottom:0;border-right:var(--line);border-radius:10px 0 0 10px}
+.tier[data-tier="experimento"] .card-body{padding:10px 12px;align-content:center;gap:4px}
+.tier[data-tier="experimento"] .card-title{font-size:1.12rem}
+.tier[data-tier="experimento"] .card-desc{font-size:.85rem}
+.tier[data-tier="experimento"] .card-links{padding:10px 12px;align-items:center;flex:0 1 auto}
+.tier[data-tier="experimento"] .lbtn{min-height:36px;font-size:.78rem;padding:4px 10px}
+.lbtn{display:inline-flex;align-items:center;gap:6px;min-height:40px;padding:6px 14px;border:var(--line);border-radius:999px;background:var(--cream);color:var(--ink);font-weight:700;font-size:.86rem;text-decoration:none;box-shadow:2px 2px 0 var(--ink);transition:transform .15s var(--ease),box-shadow .15s}
+.lbtn:hover{transform:translate(-1px,-1px);box-shadow:4px 4px 0 var(--ink)}
+.lbtn svg{width:16px;height:16px;fill:currentColor;flex:none}
+.lbtn--play,.lbtn--app{background:var(--lime)}
+.tier[data-tier="live"] .lbtn--play,.tier[data-tier="live"] .lbtn--app{font-size:1rem;min-height:46px;padding:8px 20px}
+.lbtn--code{background:var(--ink);color:var(--cream)}
+.lbtn--video{background:var(--pink)}
+.lbtn--docs{background:var(--blue)}
+.lbtn--post{background:var(--lilac)}
+.lbtn .ext{font-size:.85em}
+
+/* detail view */
+.ficha-head{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.1fr);gap:clamp(18px,3vw,36px);align-items:start;margin-bottom:28px}
+.pd-cover{position:relative;border:var(--line);border-radius:10px;overflow:hidden;background:#fff;box-shadow:5px 5px 0 var(--ink);transform-origin:top left}
+.pd-cover svg,.pd-cover img{width:100%;height:auto;aspect-ratio:200/140;object-fit:cover}
+.pd-cover .note{position:absolute;left:10px;bottom:10px;background:var(--cream);border:1.5px solid var(--ink);border-radius:999px;padding:2px 10px;font-family:var(--f-mono);font-size:.66rem;letter-spacing:.05em;text-transform:uppercase}
+.pd-kicker{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin-bottom:12px}
+.pd-title{font-size:clamp(2.1rem,5vw,3.5rem);color:var(--wine);letter-spacing:-.03em;margin-bottom:14px}
+.pd-summary{font-size:1.1rem;line-height:1.55;max-width:56ch}
+.pd-links{display:flex;flex-wrap:wrap;gap:10px;margin-top:20px}
+.ficha-text{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}
+.fsec{position:relative;background:var(--paper);border:var(--line);border-radius:10px;padding:18px 18px 20px}
+.fsec.wide{grid-column:1 / -1}
+.fsec h3{font-family:var(--f-mono);font-weight:500;font-size:.76rem;letter-spacing:.08em;text-transform:uppercase;margin-bottom:8px;display:flex;gap:8px;align-items:center}
+.fsec p,.fsec li{font-size:1rem;line-height:1.6}
+.fsec ul{margin:0;padding-left:1.1em}
+.fsec[data-field="contribution"]{background:#FBFFE6;box-shadow:4px 4px 0 var(--lime)}
+.fsec[data-field="contribution"] h3::after{content:"my part";font-family:var(--f-hand);text-transform:none;letter-spacing:0;font-size:1.15rem;color:var(--wine);margin-left:auto}
+.fsec[data-field="team"]{background:#F3F8FD}
+.gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,260px),1fr));gap:16px;list-style:none;margin:0;padding:0}
+.gallery figure{margin:0;border:var(--line);border-radius:10px;overflow:hidden;background:#fff}
+.gallery img,.gallery video{display:block;width:100%;max-height:420px;object-fit:contain;background:#222}
+.gallery figcaption{display:grid;gap:4px;padding:8px 12px;border-top:var(--line);font-size:.9rem;background:var(--cream)}
+.gallery .chip{justify-self:start;font-size:.64rem;padding:0 8px;border-width:1.5px}
+@media (max-width:720px){ .ficha-head{grid-template-columns:1fr} .ficha-text{grid-template-columns:1fr} .pd-cover{max-width:440px} }
+
+/* =========================================================
+   10. CONTACT (envelope)
+   ========================================================= */
+.contact{
+  padding:clamp(64px,9vw,120px) var(--gutter) clamp(80px,10vw,140px);
+  background:conic-gradient(rgba(220,208,245,.75) 25%,transparent 0 50%,rgba(220,208,245,.75) 0 75%,transparent 0) 0 0/64px 64px,var(--pink);
+  border-bottom:var(--line);
+}
+.contact-wrap{max-width:880px;margin:0 auto;position:relative}
+.envelope{position:relative;padding-top:clamp(70px,10vw,120px)}
+.env-flap{position:absolute;left:0;right:0;top:0;height:clamp(110px,16vw,180px);background:var(--wine);clip-path:polygon(0 100%,50% 0,100% 100%);z-index:0}
+.env-back{position:absolute;left:0;right:0;bottom:0;top:clamp(108px,15.5vw,178px);background:var(--wine-deep);border:var(--line);border-radius:0 0 16px 16px;z-index:0}
+.letter{
+  position:relative;z-index:1;margin:0 clamp(12px,4vw,44px);
+  background:repeating-linear-gradient(to bottom,transparent 0 31px,rgba(147,195,234,.6) 31px 32px),var(--cream);
+  border:var(--line);border-radius:6px;padding:clamp(24px,4vw,44px) clamp(18px,4vw,48px) 150px;transform:rotate(-.6deg);
+}
+.letter .section-head{margin-bottom:6px}
+.letter .section-title{font-size:clamp(2.3rem,6vw,4.4rem)}
+.letter .lead{font-size:1.12rem;margin-top:6px;overflow-wrap:break-word}
+.contact-list{list-style:none;margin:26px 0 0;padding:0;display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,240px),1fr));gap:14px}
+.contact-list .btn{width:100%;min-height:56px;justify-content:flex-start}
+.contact-list .btn .lbl{display:grid;line-height:1.15;min-width:0}
+.contact-list .btn .handle{overflow-wrap:anywhere}
+.ico{display:grid;place-items:center;width:34px;height:34px;flex:none;border-radius:50%;background:#fff;border:1.5px solid var(--ink)}
+.ico svg{width:18px;height:18px;fill:var(--ink)}
+.env-pocket{
+  position:absolute;left:0;right:0;bottom:0;height:150px;z-index:2;pointer-events:none;
+  background:var(--wine);border:var(--line);border-top:0;border-radius:0 0 16px 16px;clip-path:polygon(0 0,50% 52%,100% 0,100% 100%,0 100%);
+}
+.env-pocket::before{content:"";position:absolute;inset:0;background-image:var(--noise);opacity:.25;mix-blend-mode:multiply}
+.env-stamp{
+  position:absolute;right:22px;bottom:20px;z-index:3;width:86px;height:100px;background:var(--lime);
+  border:2px dashed var(--ink);outline:5px solid var(--lime);display:grid;place-items:center;transform:rotate(5deg);pointer-events:none;
+  font-family:var(--f-display);font-style:italic;font-weight:900;font-size:2rem;color:var(--wine);text-align:center;line-height:.9;
+}
+.env-stamp small{display:block;font-family:var(--f-mono);font-style:normal;font-weight:500;font-size:.62rem;color:var(--ink);letter-spacing:.08em;margin-top:6px}
+.postmark{position:absolute;right:92px;bottom:56px;z-index:3;width:84px;height:84px;border:2px solid rgba(255,251,239,.7);border-radius:50%;display:grid;place-items:center;color:rgba(255,251,239,.8);font-family:var(--f-mono);font-size:.6rem;letter-spacing:.08em;text-align:center;transform:rotate(-12deg);pointer-events:none}
+.contact-star{position:absolute;width:70px;top:30px;right:-10px;z-index:3;color:var(--lime);filter:drop-shadow(2px 2px 0 var(--ink));transform:rotate(14deg);pointer-events:none}
+@media (max-width:560px){
+  .postmark{display:none}
+  .env-stamp{width:70px;height:82px;font-size:1.6rem;right:14px}
+  .contact-star{width:50px;right:0}
+  .letter{transform:none;margin:0 6px;padding-inline:16px}
+  .contact-list .btn .handle{font-size:.72rem}
+}
+
+/* footer: compact */
+.footer{background:var(--wine);color:var(--cream);padding:12px var(--gutter);display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px 14px;align-items:center}
+.footer a{color:var(--cream);text-underline-offset:4px;min-height:44px;display:inline-flex;align-items:center;font-size:.92rem}
+.footer .sig{display:inline-flex;align-items:center;gap:8px;font-family:var(--f-display);font-style:italic;font-weight:800;font-size:1.15rem}
+.footer .sig svg{width:20px;height:20px}
+.monogram svg{width:100%;height:100%}
+
+.toast{
+  position:fixed;left:50%;bottom:24px;z-index:200;transform:translate(-50%,20px);opacity:0;pointer-events:none;max-width:calc(100vw - 32px);
+  background:var(--ink);color:var(--cream);border:2px solid var(--lime);border-radius:999px;padding:10px 20px;text-align:center;
+  font-weight:600;box-shadow:4px 4px 0 var(--lime);transition:opacity .2s,transform .2s var(--ease);
+}
+.toast.show{opacity:1;transform:translate(-50%,0)}
+.toast.is-error{border-color:var(--pink);box-shadow:4px 4px 0 var(--pink)}
+.contact-list button.btn{font:inherit;font-weight:700;text-align:left}
+.noscript{margin-top:20px;padding:16px;border:var(--line);border-radius:10px;background:var(--cream)}
+
+/* =========================================================
+   11. REDUCED MOTION
+   ========================================================= */
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *,*::before,*::after{animation-duration:.001ms!important;animation-iteration-count:1!important;transition-duration:.001ms!important;animation-delay:0s!important}
+  .sparkle{animation:none}
+}
+</style>
+</head>
+<body>
+<a class="skip" href="#conteudo">Skip to content</a>
+<p id="drag-help" class="sr-only">Movable sticker. Use the arrow keys to move it, hold Shift for bigger steps, and press R to put it back.</p>
+<p id="sr-status" class="sr-only" role="status" aria-live="polite"></p>
+<p id="copy-help" class="sr-only">Copies the email address to your clipboard.</p>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<!-- ============ NAVBAR ============ -->
+<header class="nav">
+  <a class="brand" href="#apresentacao" aria-label="Lorena Garcia, back to the top">
+    <span class="monogram" aria-hidden="true"><svg viewBox="0 0 32 32" aria-hidden="true"><g stroke="#6C1932" stroke-width="2.6"><circle cx="16" cy="8" r="6.2" fill="#F2A7C3"/><circle cx="23.6" cy="13.5" r="6.2" fill="#F2A7C3"/><circle cx="20.7" cy="22.5" r="6.2" fill="#F2A7C3"/><circle cx="11.3" cy="22.5" r="6.2" fill="#F2A7C3"/><circle cx="8.4" cy="13.5" r="6.2" fill="#F2A7C3"/></g><g fill="#F2A7C3"><circle cx="16" cy="8" r="4.9"/><circle cx="23.6" cy="13.5" r="4.9"/><circle cx="20.7" cy="22.5" r="4.9"/><circle cx="11.3" cy="22.5" r="4.9"/><circle cx="8.4" cy="13.5" r="4.9"/></g><circle cx="16" cy="16" r="4.6" fill="#DDFC45" stroke="#6C1932" stroke-width="2.2"/></svg></span>
+    <span class="brand-name">Lorena Garcia</span>
+  </a>
+  <nav aria-label="Main">
+    <ul class="nav-links" id="nav-links">
+      <li><a href="#apresentacao">Introduction</a></li>
+      <li><a href="#stacks">Stacks</a></li>
+      <li><a href="#projetos">Projects</a></li>
+      <li><a href="#contato">Contact</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main id="conteudo">
+<!-- ============ INTRODUCTION ============ -->
+<section class="hero textured" id="apresentacao" aria-labelledby="hero-title">
+  <div class="hero-inner">
+    <h1 class="hero-name" id="hero-title" data-reveal><span class="n1">Lorena</span> <span class="n2">Garcia</span></h1>
+
+    <div class="window hero-window" data-reveal>
+      <div class="titlebar" aria-hidden="true"><span class="tb-title">about_me.txt</span><span class="tb-dots"><i></i><i></i><i></i></span></div>
+      <div class="body">
+        <p class="role"><span class="chip chip--wine">Developer</span><span class="chip chip--pink">Web</span><span class="chip chip--blue">AI</span><span class="chip chip--lime">Web3/Blockchain</span></p>
+        <p class="bio" id="bio">Hi, I'm <strong>Lorena</strong>! I'm a developer who enjoys exploring emerging technologies such as artificial intelligence and blockchain and turning what I learn into projects.</p>
+        <div class="actions">
+          <a class="btn btn--wine" href="#projetos">Explore projects
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14M5 12l7 7 7-7"/></svg>
+          </a>
+          <a class="btn" href="#stacks">See stacks</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="hero-extra">
+      <figure class="hero-portrait" data-reveal>
+        <div class="photo-stack" id="photo-stack">
+          <div class="polaroid">
+            <div class="polaroid-art" role="img" aria-label="LG monogram"><span aria-hidden="true">LG</span></div>
+            <figcaption aria-hidden="true">✶ dev ✶</figcaption>
+          </div>
+        </div>
+        <p class="photo-caption" id="photo-caption" hidden></p>
+        <p class="photo-hint" id="photo-hint" hidden>Tap to explore my moments</p>
+      </figure>
+      <div class="hero-note">
+        <p>Try dragging the stickers around!</p>
+        <button type="button" class="note-reset" id="reset-stickers">Reset stickers</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="hero-deco">
+    <span class="sparkle sp1" aria-hidden="true"><svg viewBox="0 0 24 24"><path fill="currentColor" d="M12 0c.8 6.4 5.6 11.2 12 12-6.4.8-11.2 5.6-12 12-.8-6.4-5.6-11.2-12-12C6.4 11.2 11.2 6.4 12 0z"/></svg></span>
+    <span class="sparkle sp2" aria-hidden="true"><svg viewBox="0 0 24 24"><path fill="currentColor" d="M12 0c.8 6.4 5.6 11.2 12 12-6.4.8-11.2 5.6-12 12-.8-6.4-5.6-11.2-12-12C6.4 11.2 11.2 6.4 12 0z"/></svg></span>
+    <span class="sparkle sp3" aria-hidden="true"><svg viewBox="0 0 24 24"><path fill="currentColor" stroke="#191A1B" stroke-width="1" d="M12 0c.8 6.4 5.6 11.2 12 12-6.4.8-11.2 5.6-12 12-.8-6.4-5.6-11.2-12-12C6.4 11.2 11.2 6.4 12 0z"/></svg></span>
+    <span class="sparkle sp4" aria-hidden="true"><svg viewBox="0 0 24 24"><path fill="currentColor" d="M12 0c.8 6.4 5.6 11.2 12 12-6.4.8-11.2 5.6-12 12-.8-6.4-5.6-11.2-12-12C6.4 11.2 11.2 6.4 12 0z"/></svg></span>
+    <span class="sticker s-cd" data-sticker tabindex="0" role="button" aria-roledescription="movable sticker" aria-label="CD sticker" aria-describedby="drag-help">
+      <svg viewBox="0 0 120 120" aria-hidden="true" focusable="false">
+        <defs><radialGradient id="cdShine" cx="50%" cy="50%" r="50%"><stop offset="0" stop-color="#fff"/><stop offset="1" stop-color="#e9e4f7"/></radialGradient></defs>
+        <circle cx="60" cy="60" r="56" fill="url(#cdShine)" stroke="#191A1B" stroke-width="2.5"/>
+        <path d="M60 4a56 56 0 0 1 48 27L60 60z" fill="#EFC9D8" opacity=".85"/>
+        <path d="M108 31a56 56 0 0 1 4 40L60 60z" fill="#DDFC45" opacity=".8"/>
+        <path d="M14 92a56 56 0 0 1-8-36L60 60z" fill="#BFDDF6" opacity=".9"/>
+        <path d="M36 110a56 56 0 0 1-22-18L60 60z" fill="#DCD0F5" opacity=".9"/>
+        <circle cx="60" cy="60" r="20" fill="#FFFBEF" stroke="#191A1B" stroke-width="2"/>
+        <circle cx="60" cy="60" r="7" fill="#BFDDF6" stroke="#191A1B" stroke-width="2"/>
+        <path id="cdTxt" d="M60 60m-38 0a38 38 0 1 1 76 0" fill="none"/>
+        <text font-family="DM Mono, monospace" font-size="8.5" letter-spacing="2" fill="#6C1932"><textPath href="#cdTxt">WEB · AI · WEB3 · LG</textPath></text>
+      </svg>
+      <span class="grip" aria-hidden="true"></span>
+    </span>
+    <span class="sticker s-chip" data-sticker tabindex="0" role="button" aria-roledescription="movable sticker" aria-label="Chip sticker" aria-describedby="drag-help">
+      <svg viewBox="0 0 100 100" aria-hidden="true" focusable="false">
+        <g stroke="#191A1B" stroke-width="3" stroke-linecap="round"><path d="M30 8v14M45 8v14M60 8v14M75 8v14M30 78v14M45 78v14M60 78v14M75 78v14M8 30h14M8 45h14M8 60h14M8 75h14M78 30h14M78 45h14M78 60h14M78 75h14"/></g>
+        <rect x="20" y="20" width="60" height="60" rx="8" fill="#191A1B"/><rect x="33" y="33" width="34" height="34" rx="4" fill="#DDFC45"/>
+        <text x="50" y="55" text-anchor="middle" font-family="DM Mono, monospace" font-weight="500" font-size="11" fill="#191A1B">CPU</text>
+      </svg>
+      <span class="grip" aria-hidden="true"></span>
+    </span>
+    <span class="sticker s-star" data-sticker tabindex="0" role="button" aria-roledescription="movable sticker" aria-label="Star sticker" aria-describedby="drag-help">
+      <svg viewBox="0 0 100 100" aria-hidden="true" focusable="false"><path d="M50 2c4 26 22 44 48 48-26 4-44 22-48 48-4-26-22-44-48-48C28 46 46 28 50 2z" fill="#DDFC45" stroke="#191A1B" stroke-width="3" stroke-linejoin="round"/><circle cx="50" cy="50" r="7" fill="#EFC9D8" stroke="#191A1B" stroke-width="2"/></svg>
+      <span class="grip" aria-hidden="true"></span>
+    </span>
+    <span class="sticker s-net" data-sticker tabindex="0" role="button" aria-roledescription="movable sticker" aria-label="Neural network sticker" aria-describedby="drag-help">
+      <svg viewBox="0 0 120 90" aria-hidden="true" focusable="false">
+        <rect x="2" y="2" width="116" height="86" rx="14" fill="#EFC9D8" stroke="#191A1B" stroke-width="2.5"/>
+        <g stroke="#6C1932" stroke-width="1.6" opacity=".75"><path d="M26 25L60 18M26 25L60 45M26 25L60 72M26 45L60 18M26 45L60 45M26 45L60 72M26 65L60 18M26 65L60 45M26 65L60 72M60 18L94 32M60 45L94 32M60 72L94 32M60 18L94 58M60 45L94 58M60 72L94 58"/></g>
+        <g fill="#FFFBEF" stroke="#191A1B" stroke-width="2"><circle cx="26" cy="25" r="6"/><circle cx="26" cy="45" r="6"/><circle cx="26" cy="65" r="6"/><circle cx="60" cy="18" r="6"/><circle cx="60" cy="45" r="6"/><circle cx="60" cy="72" r="6"/><circle cx="94" cy="58" r="6"/></g>
+        <circle cx="94" cy="32" r="7" fill="#DDFC45" stroke="#191A1B" stroke-width="2"/>
+      </svg>
+      <span class="grip" aria-hidden="true"></span>
+    </span>
+    <span class="sticker s-heart" data-sticker tabindex="0" role="button" aria-roledescription="movable sticker" aria-label="Heart sticker" aria-describedby="drag-help">
+      <svg viewBox="0 0 60 56" aria-hidden="true" focusable="false"><path d="M30 52S4 36 4 18C4 9 11 3 18 3c6 0 10 4 12 8 2-4 6-8 12-8 7 0 14 6 14 15 0 18-26 34-26 34z" fill="#EFC9D8" stroke="#191A1B" stroke-width="3" stroke-linejoin="round"/><path d="M14 14c2-3 5-4 8-3" stroke="#fff" stroke-width="3" fill="none" stroke-linecap="round"/></svg>
+      <span class="grip" aria-hidden="true"></span>
+    </span>
+  </div>
+</section>
+
+<!-- ============ STACKS ============ -->
+<section class="stacks" id="stacks" aria-labelledby="stacks-title">
+  <div class="stacks-wrap">
+    <div class="section-head" data-reveal>
+      <p class="kicker"><span class="mono">Stacks</span></p>
+      <h2 class="section-title" id="stacks-title">Tools on the <em>desk</em></h2>
+    </div>
+    <ul class="stack-board" id="stack-board"></ul>
+  </div>
+</section>
+
+<!-- ============ PROJECTS ============ -->
+<section class="projects" id="projetos" aria-labelledby="projetos-title">
+  <div class="projects-wrap">
+    <div class="section-head" data-reveal>
+      <p class="kicker"><span class="mono">Projects</span></p>
+      <h2 class="section-title" id="projetos-title">Project <em>archive</em></h2>
+    </div>
+    <ul class="archive-grid" id="archive-grid" aria-label="Category folders"></ul>
+    <div class="archive-extra" id="archive-extra"></div>
+    <noscript><p class="noscript">The interactive archive needs JavaScript. The repositories are at <a href="https://github.com/loreggarcia">github.com/loreggarcia</a>.</p></noscript>
+  </div>
+</section>
+
+<!-- ============ CONTACT ============ -->
+<section class="contact" id="contato" aria-labelledby="contato-title">
+  <div class="contact-wrap">
+    <svg class="contact-star" viewBox="0 0 100 100" aria-hidden="true"><path d="M50 2c4 26 22 44 48 48-26 4-44 22-48 48-4-26-22-44-48-48C28 46 46 28 50 2z" fill="currentColor" stroke="#191A1B" stroke-width="3"/></svg>
+    <div class="envelope" data-reveal>
+      <div class="env-flap" aria-hidden="true"></div>
+      <div class="env-back" aria-hidden="true"></div>
+      <div class="letter">
+        <div class="section-head">
+          <p class="kicker"><span class="mono">Contact</span></p>
+          <h2 class="section-title" id="contato-title">Let's <em>talk</em></h2>
+          <p class="lead">Find me here to talk about projects and ideas.</p>
+        </div>
+        <ul class="contact-list">
+          <li><a class="btn btn--wine" href="https://github.com/loreggarcia" target="_blank" rel="noopener noreferrer">
+            <span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" data-icon="github"></svg></span>
+            <span class="lbl">GitHub <span class="handle">github.com/loreggarcia</span></span><span class="sr-only"> (opens in a new tab)</span></a></li>
+          <li><a class="btn btn--blue" href="https://www.linkedin.com/in/llorengarcia/" target="_blank" rel="noopener noreferrer">
+            <span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" data-icon="linkedin"></svg></span>
+            <span class="lbl">LinkedIn <span class="handle">in/llorengarcia</span></span><span class="sr-only"> (opens in a new tab)</span></a></li>
+          <li><button type="button" class="btn btn--pink" data-copy-email="lorenagabriela03683@gmail.com" aria-describedby="copy-help">
+            <span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" data-icon="mail"></svg></span>
+            <span class="lbl">Write an email</span></button></li>
+        </ul>
+      </div>
+      <div class="env-pocket" aria-hidden="true"></div>
+      <div class="postmark" aria-hidden="true">MAIL<br>·<br>LG</div>
+      <div class="env-stamp" aria-hidden="true"><span>LG<small>MAIL</small></span></div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer class="footer">
+  <span class="sig"><svg viewBox="0 0 32 32" aria-hidden="true"><g stroke="#FFFBEF" stroke-width="2.6"><circle cx="16" cy="8" r="6.2" fill="#F2A7C3"/><circle cx="23.6" cy="13.5" r="6.2" fill="#F2A7C3"/><circle cx="20.7" cy="22.5" r="6.2" fill="#F2A7C3"/><circle cx="11.3" cy="22.5" r="6.2" fill="#F2A7C3"/><circle cx="8.4" cy="13.5" r="6.2" fill="#F2A7C3"/></g><g fill="#F2A7C3"><circle cx="16" cy="8" r="4.9"/><circle cx="23.6" cy="13.5" r="4.9"/><circle cx="20.7" cy="22.5" r="4.9"/><circle cx="11.3" cy="22.5" r="4.9"/><circle cx="8.4" cy="13.5" r="4.9"/></g><circle cx="16" cy="16" r="4.6" fill="#DDFC45" stroke="#6C1932" stroke-width="2.2"/></svg>Lorena Garcia</span>
+  <a href="#apresentacao">Back to top ↑</a>
+</footer>
+
+<!-- ============ ARCHIVE EXPLORER: collection ↔ detail ============ -->
+<dialog class="ex" id="explorer" aria-labelledby="ex-heading">
+  <div class="window ex-window" id="ex-window">
+    <div class="titlebar">
+      <span class="tb-icon" aria-hidden="true"></span>
+      <span class="tb-title" id="ex-path" aria-hidden="true"></span>
+      <button type="button" class="tb-close" id="ex-close" aria-label="Close the archive">×</button>
+    </div>
+    <div class="ex-toolbar">
+      <button type="button" class="btn back-btn" id="ex-back" hidden>← Back to collection</button>
+      <nav class="crumbs" aria-label="Breadcrumb"><ol id="ex-crumbs"></ol></nav>
+    </div>
+    <div class="ex-tabs" id="ex-tabs" role="group" aria-label="Filter the collection by category"></div>
+    <div class="ex-body" id="ex-body">
+      <div id="col-view">
+        <h2 class="ex-heading" id="ex-heading" tabindex="-1"></h2>
+        <p class="ex-intro" id="ex-intro"></p>
+        <div id="tiers"></div>
+      </div>
+      <article id="ficha-view" hidden aria-labelledby="pd-title"></article>
+    </div>
+    <div class="ex-status"><span id="ex-status" role="status" aria-live="polite"></span><span class="hint" aria-hidden="true">Esc closes</span></div>
+  </div>
+</dialog>
+
+<script>
+/* =========================================================
+   PUBLIC DATA — generated from the portfolio's data file.
+   ========================================================= */
+/* DADOS-PUBLICOS:INICIO */
+const DATA = {
+ "categories": [
+  {
+   "id": "ia-dados",
+   "label": "AI & Data",
+   "main": true,
+   "description": "Computer vision, data modeling and AI applications."
+  },
+  {
+   "id": "blockchain-web3",
+   "label": "Blockchain/Web3",
+   "main": true,
+   "description": "Payments, donations, credit and identity on decentralized networks."
+  },
+  {
+   "id": "jogos",
+   "label": "Games",
+   "main": true,
+   "description": "Games published to play in the browser."
+  },
+  {
+   "id": "robotica-iot",
+   "label": "Robotics/IoT",
+   "main": true,
+   "description": "Robotics, sensors and automated control."
+  },
+  {
+   "id": "software-sistemas",
+   "label": "Software & Systems",
+   "main": false,
+   "description": "Complementary archive: digital simulation, event-driven architecture and a web application."
+  }
+ ],
+ "stacks": [
+  {
+   "id": "linguagens",
+   "label": "Languages & Web",
+   "highlight": false,
+   "items": [
+    {
+     "id": "python",
+     "name": "Python",
+     "kind": "language",
+     "icon": "python"
+    },
+    {
+     "id": "javascript",
+     "name": "JavaScript",
+     "kind": "language",
+     "icon": "javascript"
+    },
+    {
+     "id": "typescript",
+     "name": "TypeScript",
+     "kind": "language",
+     "icon": "typescript"
+    },
+    {
+     "id": "sql",
+     "name": "SQL",
+     "kind": "query language",
+     "icon": "sql"
+    },
+    {
+     "id": "c",
+     "name": "C",
+     "kind": "language",
+     "icon": "c"
+    },
+    {
+     "id": "cpp",
+     "name": "C++",
+     "kind": "language",
+     "icon": "cplusplus"
+    },
+    {
+     "id": "java",
+     "name": "Java",
+     "kind": "language",
+     "icon": "openjdk"
+    },
+    {
+     "id": "html",
+     "name": "HTML",
+     "kind": "markup language",
+     "icon": "html5"
+    },
+    {
+     "id": "css",
+     "name": "CSS",
+     "kind": "style sheets",
+     "icon": "css3"
+    },
+    {
+     "id": "solidity",
+     "name": "Solidity",
+     "kind": "smart-contract language",
+     "icon": "solidity"
+    }
+   ]
+  },
+  {
+   "id": "frameworks",
+   "label": "Frameworks",
+   "highlight": false,
+   "items": [
+    {
+     "id": "react",
+     "name": "React",
+     "kind": "library",
+     "icon": "react"
+    },
+    {
+     "id": "nextjs",
+     "name": "Next.js",
+     "kind": "framework",
+     "icon": "nextdotjs"
+    },
+    {
+     "id": "fastapi",
+     "name": "FastAPI",
+     "kind": "web framework",
+     "icon": "fastapi"
+    },
+    {
+     "id": "flask",
+     "name": "Flask",
+     "kind": "web framework",
+     "icon": "flask"
+    },
+    {
+     "id": "streamlit",
+     "name": "Streamlit",
+     "kind": "data app framework",
+     "icon": "streamlit"
+    },
+    {
+     "id": "angular",
+     "name": "Angular",
+     "kind": "framework",
+     "icon": "angular"
+    }
+   ]
+  },
+  {
+   "id": "dados",
+   "label": "Data & Persistence",
+   "highlight": false,
+   "items": [
+    {
+     "id": "postgresql",
+     "name": "PostgreSQL",
+     "kind": "database",
+     "icon": "postgresql"
+    },
+    {
+     "id": "sqlite",
+     "name": "SQLite",
+     "kind": "database",
+     "icon": "sqlite"
+    },
+    {
+     "id": "supabase",
+     "name": "Supabase",
+     "kind": "platform",
+     "icon": "supabase"
+    },
+    {
+     "id": "prisma",
+     "name": "Prisma",
+     "kind": "ORM",
+     "icon": "prisma"
+    },
+    {
+     "id": "mongodb",
+     "name": "MongoDB",
+     "kind": "database",
+     "icon": "mongodb"
+    },
+    {
+     "id": "duckdb",
+     "name": "DuckDB",
+     "kind": "analytical database",
+     "icon": "duckdb"
+    }
+   ]
+  },
+  {
+   "id": "ambiente",
+   "label": "Development & Environment",
+   "highlight": false,
+   "items": [
+    {
+     "id": "docker",
+     "name": "Docker",
+     "kind": "containers",
+     "icon": "docker"
+    },
+    {
+     "id": "git",
+     "name": "Git",
+     "kind": "version control",
+     "icon": "git"
+    },
+    {
+     "id": "aws",
+     "name": "AWS",
+     "kind": "cloud platform",
+     "icon": "aws"
+    },
+    {
+     "id": "gcp",
+     "name": "Google Cloud (GCP)",
+     "kind": "cloud platform",
+     "icon": "googlecloud"
+    },
+    {
+     "id": "linux",
+     "name": "Linux",
+     "kind": "operating system",
+     "icon": "linux"
+    },
+    {
+     "id": "cicd",
+     "name": "CI/CD",
+     "kind": "delivery practice",
+     "icon": "cicd"
+    }
+   ]
+  },
+  {
+   "id": "iot",
+   "label": "IoT",
+   "highlight": false,
+   "items": [
+    {
+     "id": "verilog",
+     "name": "Verilog",
+     "kind": "hardware description language",
+     "icon": "verilog"
+    },
+    {
+     "id": "ros2",
+     "name": "ROS 2",
+     "kind": "robotics middleware",
+     "icon": "ros"
+    },
+    {
+     "id": "arduino",
+     "name": "Arduino",
+     "kind": "microcontroller platform",
+     "icon": "arduino"
+    }
+   ]
+  },
+  {
+   "id": "web3",
+   "label": "Web3",
+   "highlight": true,
+   "items": [
+    {
+     "id": "bitcoin",
+     "name": "Bitcoin",
+     "kind": "blockchain",
+     "icon": "bitcoin"
+    },
+    {
+     "id": "ethereum",
+     "name": "Ethereum",
+     "kind": "blockchain",
+     "icon": "ethereum"
+    },
+    {
+     "id": "solana",
+     "name": "Solana",
+     "kind": "blockchain",
+     "icon": "solana"
+    },
+    {
+     "id": "polkadot",
+     "name": "Polkadot",
+     "kind": "blockchain network",
+     "icon": "polkadot"
+    },
+    {
+     "id": "stellar",
+     "name": "Stellar",
+     "kind": "blockchain network",
+     "icon": "stellar"
+    },
+    {
+     "id": "monad",
+     "name": "Monad",
+     "kind": "blockchain",
+     "icon": "monad"
+    }
+   ]
+  },
+  {
+   "id": "ia",
+   "label": "AI & Generative AI",
+   "highlight": false,
+   "items": [
+    {
+     "id": "langchain",
+     "name": "LangChain",
+     "kind": "framework",
+     "icon": "langchain",
+     "subgroup": "Frameworks & Libraries"
+    },
+    {
+     "id": "langgraph",
+     "name": "LangGraph",
+     "kind": "framework",
+     "icon": "langgraph",
+     "subgroup": "Frameworks & Libraries"
+    },
+    {
+     "id": "llamaindex",
+     "name": "LlamaIndex",
+     "kind": "framework",
+     "icon": "llamaindex",
+     "subgroup": "Frameworks & Libraries"
+    },
+    {
+     "id": "hf-transformers",
+     "name": "Hugging Face Transformers",
+     "kind": "library",
+     "icon": "huggingface",
+     "subgroup": "Frameworks & Libraries"
+    },
+    {
+     "id": "pgvector",
+     "name": "pgvector",
+     "kind": "PostgreSQL extension",
+     "icon": "pgvector",
+     "subgroup": "Vector Search"
+    },
+    {
+     "id": "openai-api",
+     "name": "OpenAI API",
+     "kind": "LLM API",
+     "icon": "openaiapi",
+     "subgroup": "LLM APIs"
+    },
+    {
+     "id": "anthropic-api",
+     "name": "Anthropic API",
+     "kind": "LLM API",
+     "icon": "anthropic",
+     "subgroup": "LLM APIs"
+    },
+    {
+     "id": "gemini-api",
+     "name": "Gemini API",
+     "kind": "LLM API",
+     "icon": "googlegemini",
+     "subgroup": "LLM APIs"
+    },
+    {
+     "id": "codex",
+     "name": "Codex",
+     "kind": "AI coding tool",
+     "icon": "codex",
+     "subgroup": "AI Development Tools"
+    },
+    {
+     "id": "claude-code",
+     "name": "Claude Code",
+     "kind": "AI coding tool",
+     "icon": "claude",
+     "subgroup": "AI Development Tools"
+    }
+   ]
+  }
+ ],
+ "projects": [
+  {
+   "id": "lar-justo",
+   "title": "Lar Justo",
+   "category": "ia-dados",
+   "tags": [
+    "Blockchain"
+   ],
+   "tier": "case_principal",
+   "live": true,
+   "summary": "Lar Justo is a digital assistant for housing rights: it uses AI to explain people's rights in plain language, keeps each case organized and generates letters from the documents they send. The project also explores blockchain.",
+   "team": "The award-winning edition was built by a two-person team; a later version of the README lists a different team.",
+   "contribution": null,
+   "problem": null,
+   "solution": null,
+   "decisions": null,
+   "results": null,
+   "learning": null,
+   "cover": "house",
+   "coverImage": null,
+   "media": [],
+   "links": [
+    {
+     "type": "application",
+     "label": "Open app",
+     "url": "https://lar-justo.vercel.app/"
+    },
+    {
+     "type": "code",
+     "label": "Code",
+     "url": "https://github.com/DavidDeodato/LarJusto"
+    }
+   ]
+  },
+  {
+   "id": "04cash",
+   "title": "04Cash",
+   "category": "blockchain-web3",
+   "tags": [],
+   "tier": "case_principal",
+   "live": false,
+   "summary": "04Cash is a programmable liquidity operating system built for Monad Testnet. The project simulates how fiat inflows such as Pix can be converted into onchain liquidity that funds API usage, AI agents, auto-recharge flows, and yield strategies in a single product experience.",
+   "team": null,
+   "contribution": null,
+   "problem": null,
+   "solution": null,
+   "decisions": null,
+   "results": null,
+   "learning": null,
+   "cover": "coins",
+   "coverImage": null,
+   "media": [],
+   "links": [
+    {
+     "type": "code",
+     "label": "Code",
+     "url": "https://github.com/loreggarcia/04cash"
+    }
+   ]
+  },
+  {
+   "id": "4bridge",
+   "title": "4Bridge",
+   "category": "blockchain-web3",
+   "tags": [],
+   "tier": "case_principal",
+   "live": false,
+   "summary": "4Bridge is a proposal for donations that generate yield, built on the Stellar network with Soroban smart contracts. It does not offer any guarantee of financial return.",
+   "team": null,
+   "contribution": null,
+   "problem": null,
+   "solution": null,
+   "decisions": null,
+   "results": null,
+   "learning": null,
+   "cover": "bridge",
+   "coverImage": null,
+   "media": [],
+   "links": [
+    {
+     "type": "code",
+     "label": "Code",
+     "url": "https://github.com/m4rcusml/hackmeridian-2025"
+    }
+   ]
+  },
+  {
+   "id": "stark",
+   "title": "Stark",
+   "category": "blockchain-web3",
+   "tags": [
+    "IA"
+   ],
+   "tier": "case_principal",
+   "live": false,
+   "summary": "Stark is a platform that connects short training courses, digital work, portable identity and fast payments for women in economic vulnerability. Participants learn a skill, apply it in a funded task, receive human review and, once approved, are paid over the Lightning Network.",
+   "team": "Three-person team.",
+   "contribution": "Blockchain developer and AI engineer: integrations with Nostr, Bitcoin and Lightning, design of the financial flows, and assessment of responsible AI use on the platform.",
+   "problem": "In Brazil, economic vulnerability can combine low income, informal work, financial dependence, a heavy care burden and limited digital access, leaving less continuous time for training and paid work.",
+   "solution": null,
+   "decisions": [
+    "Nostr for authentication and verifiable reputation, respecting what each participant chooses to keep private.",
+    "Approved tasks are paid over the Lightning Network.",
+    "React frontend, Flask API and a PostgreSQL financial core."
+   ],
+   "results": null,
+   "learning": null,
+   "cover": "stark",
+   "coverImage": null,
+   "media": [],
+   "links": [
+    {
+     "type": "documentation",
+     "label": "Documentation",
+     "url": "https://anacelia1827.github.io/Hack4freedom/"
+    },
+    {
+     "type": "code",
+     "label": "Code",
+     "url": "https://github.com/AnaCelia1827/Hack4freedom"
+    }
+   ]
+  },
+  {
+   "id": "reevo",
+   "title": "Reevo",
+   "category": "blockchain-web3",
+   "tags": [
+    "AI"
+   ],
+   "tier": "case_complementar",
+   "live": false,
+   "summary": "Reevo is a peer-to-peer credit platform designed to connect small and medium-sized Brazilian farmers with individual investors, built by a three-person team for a hackathon's IDEAS track.",
+   "team": "Three-person team; the README credits Lorena as a team member.",
+   "contribution": null,
+   "problem": "Small and medium-sized rural producers face restricted, bureaucratic access to traditional credit, while investors look for transparent, impact-oriented alternatives.",
+   "solution": [
+    "In the repository: a TypeScript frontend (Vite, Tailwind) and backend services for credit analysis, the AgroScore credit score, a digital wallet, accounts, contracts, a marketplace and a Telegram integration, set up with Docker Compose and PostgreSQL.",
+    "Described in the documentation as proposed features: a secondary market for investment shares and support for Pix and USDC. This portfolio does not verify a running deployment."
+   ],
+   "decisions": null,
+   "results": null,
+   "learning": null,
+   "cover": "mono",
+   "coverImage": null,
+   "media": [],
+   "links": [
+    {
+     "type": "video",
+     "label": "Architecture presentation",
+     "url": "https://drive.google.com/file/d/1hJQIJXGkipL9sOwm_O3_qHIpd2iZJpLP/view"
+    },
+    {
+     "type": "documentation",
+     "label": "Documentation",
+     "url": "https://jvwandermurem.github.io/Hackathon-Peerseed/"
+    },
+    {
+     "type": "post",
+     "label": "Event post",
+     "url": "https://x.com/nerdconf_ar/status/1980797839505547648"
+    },
+    {
+     "type": "code",
+     "label": "Code",
+     "url": "https://github.com/JvWandermurem/Hackathon-Peerseed"
+    }
+   ]
+  },
+  {
+   "id": "motiva-psd",
+   "title": "Motiva / PSD — Abra-te-Sésamo",
+   "category": "ia-dados",
+   "tags": [],
+   "tier": "case_principal",
+   "live": false,
+   "summary": "Motiva / PSD — Abra-te-Sésamo is a predictive maintenance project for platform screen doors (PSDs), built in partnership with Motiva: a failure-prediction model based on survival analysis, within an AI and cloud architecture.",
+   "team": null,
+   "contribution": null,
+   "problem": null,
+   "solution": null,
+   "decisions": null,
+   "results": null,
+   "learning": null,
+   "cover": "train",
+   "coverImage": null,
+   "media": [],
+   "links": [
+    {
+     "type": "documentation",
+     "label": "Documentation",
+     "url": "https://g03-b98d5d.pages.git.inteli.edu.br/docs/intro"
+    }
+   ]
+  },
+  {
+   "id": "pier-lpr",
+   "title": "Pier / LPR",
+   "category": "ia-dados",
+   "tags": [],
+   "tier": "case_principal",
+   "live": false,
+   "summary": "Pier / LPR is a license plate recognition (LPR) project that reads vehicle plates in images captured by drones.",
+   "team": "Team project (Group 03).",
+   "contribution": null,
+   "problem": null,
+   "solution": "An MVP for drone operations in the field, with computer vision and a web interface. A local edge layer handles everything that needs low latency: the drone connection, flight control, image capture and processing, OCR/ALPR and syncing the data collected in the field.",
+   "decisions": null,
+   "results": null,
+   "learning": null,
+   "cover": "camera",
+   "coverImage": null,
+   "media": [],
+   "links": [
+    {
+     "type": "documentation",
+     "label": "Documentation",
+     "url": "https://g03-76b664.pages.git.inteli.edu.br/solucao/"
+    }
+   ]
+  },
+  {
+   "id": "rede-neural",
+   "title": "Neural Network",
+   "category": "ia-dados",
+   "tags": [],
+   "tier": "experimento",
+   "live": false,
+   "summary": "Neural Network is an implementation of a neural network, with experiments recorded in the repository.",
+   "team": null,
+   "contribution": null,
+   "problem": null,
+   "solution": null,
+   "decisions": null,
+   "results": null,
+   "learning": null,
+   "cover": "neural",
+   "coverImage": null,
+   "media": [],
+   "links": [
+    {
+     "type": "code",
+     "label": "Code",
+     "url": "https://github.com/loreggarcia/Neural-Network"
+    }
+   ]
+  },
+  {
+   "id": "docker-ml",
+   "title": "Docker + ML",
+   "category": "ia-dados",
+   "tags": [
+    "Sistemas",
+    "MLOps"
+   ],
+   "tier": "experimento",
+   "live": false,
+   "summary": "Docker + ML is an academic project that separates the training and inference stages of a machine learning model into Docker containers. It is a study model, not a validated financial forecasting product.",
+   "team": null,
+   "contribution": null,
+   "problem": null,
+   "solution": null,
+   "decisions": [
+    "Training and inference run as separate stages, each in its own Docker container."
+   ],
+   "results": null,
+   "learning": null,
+   "cover": "docker",
+   "coverImage": null,
+   "media": [],
+   "links": [
+    {
+     "type": "code",
+     "label": "Code",
+     "url": "https://github.com/loreggarcia/Docker-ponderada"
+    }
+   ]
+  },
+  {
+   "id": "ctrl-chilli",
+   "title": "Ctrl+Chilli",
+   "category": "ia-dados",
+   "tags": [],
+   "tier": "case_complementar",
+   "live": false,
+   "summary": "Ctrl+Chilli is a data project that models flow and conversion.",
+   "team": null,
+   "contribution": "Modeling with logistic regression.",
+   "problem": null,
+   "solution": null,
+   "decisions": null,
+   "results": null,
+   "learning": null,
+   "cover": "mono",
+   "coverImage": null,
+   "media": [],
+   "links": [
+    {
+     "type": "code",
+     "label": "Code",
+     "url": "https://github.com/InteliProjects/Inteli-College-2025-2A-T17-IN03-G01"
+    }
+   ]
+  },
+  {
+   "id": "alimapa",
+   "title": "Alimapa",
+   "category": "ia-dados",
+   "tags": [],
+   "tier": "case_complementar",
+   "live": false,
+   "summary": "Alimapa is a territorial intelligence project.",
+   "team": null,
+   "contribution": "Project documentation and persona definition.",
+   "problem": null,
+   "solution": null,
+   "decisions": null,
+   "results": null,
+   "learning": null,
+   "cover": "map",
+   "coverImage": null,
+   "media": [],
+   "links": [
+    {
+     "type": "code",
+     "label": "Code",
+     "url": "https://github.com/DavidDeodato/alimapa"
+    }
+   ]
+  },
+  {
+   "id": "mars-valley",
+   "title": "Mars Valley",
+   "category": "jogos",
+   "tags": [],
+   "tier": "case_principal",
+   "live": true,
+   "summary": "Mars Valley is a pixel-art game built by a team and published to play in the browser.",
+   "team": "Team project.",
+   "contribution": "The in-game shop and an NPC.",
+   "problem": null,
+   "solution": null,
+   "decisions": null,
+   "results": null,
+   "learning": null,
+   "cover": "mono",
+   "coverImage": "assets/mars-valley-tela-inicial.jpg",
+   "media": [
+    {
+     "type": "image",
+     "src": "assets/mars-valley-tela-inicial.jpg",
+     "alt": "Mars Valley title screen, with the pixel-art logo and the Play and How to play buttons.",
+     "caption": "Title screen of the published version, captured on October 14, 2026."
+    }
+   ],
+   "links": [
+    {
+     "type": "game",
+     "label": "Play",
+     "url": "https://inteli-college.github.io/2025-1A-T17-IN01-G03/"
+    }
+   ]
+  },
+  {
+   "id": "itubombas",
+   "title": "Itubombas",
+   "category": "robotica-iot",
+   "tags": [],
+   "tier": "case_complementar",
+   "live": false,
+   "summary": "Itubombas is an automated system for moving a barge equipped with a submersible motor pump.",
+   "team": null,
+   "contribution": null,
+   "problem": null,
+   "solution": "The documentation describes a command-line tool for controlling the barge, with an authentication menu and movement options, plus project documentation built with Docusaurus.",
+   "decisions": null,
+   "results": null,
+   "learning": null,
+   "cover": "boat",
+   "coverImage": null,
+   "media": [],
+   "links": [
+    {
+     "type": "documentation",
+     "label": "Documentation",
+     "url": "https://graduacao.pages.git.inteli.edu.br/2026-1a/t16/g05/"
+    }
+   ]
+  },
+  {
+   "id": "volkswagen",
+   "title": "Type One — Volkswagen",
+   "category": "robotica-iot",
+   "tags": [],
+   "tier": "case_complementar",
+   "live": false,
+   "summary": "Type One is a solution developed with Volkswagen as the partner company.",
+   "team": "Team project; the firmware and the dashboard were team deliverables.",
+   "contribution": "Documentation of the architecture, risk analysis and economic analysis.",
+   "problem": null,
+   "solution": null,
+   "decisions": null,
+   "results": null,
+   "learning": null,
+   "cover": "mono",
+   "coverImage": null,
+   "media": [],
+   "links": [
+    {
+     "type": "video",
+     "label": "Video",
+     "url": "https://youtu.be/gAbTC20_qCs"
+    },
+    {
+     "type": "code",
+     "label": "Code",
+     "url": "https://github.com/InteliProjects/2025-2B-T19-IN04-G05"
+    }
+   ]
+  },
+  {
+   "id": "ros-visao",
+   "title": "Computer Vision with ROS",
+   "category": "robotica-iot",
+   "tags": [],
+   "tier": "experimento",
+   "live": false,
+   "summary": "Computer Vision with ROS is a computer vision project built with ROS.",
+   "team": null,
+   "contribution": null,
+   "problem": null,
+   "solution": null,
+   "decisions": null,
+   "results": null,
+   "learning": null,
+   "cover": "ros",
+   "coverImage": null,
+   "media": [],
+   "links": [
+    {
+     "type": "code",
+     "label": "Code",
+     "url": "https://github.com/loreggarcia/ROS-Vis-o-Computacional"
+    }
+   ]
+  },
+  {
+   "id": "estacao-meteorologica",
+   "title": "Weather Station",
+   "category": "robotica-iot",
+   "tags": [],
+   "tier": "experimento",
+   "live": false,
+   "summary": "Weather Station reads sensor data over a serial port, stores it in SQLite and serves it through a Flask web app.",
+   "team": null,
+   "contribution": null,
+   "problem": null,
+   "solution": null,
+   "decisions": [
+    "Sensor data read over the serial port.",
+    "Persistence in SQLite.",
+    "Web app built with Flask."
+   ],
+   "results": null,
+   "learning": null,
+   "cover": "weather",
+   "coverImage": null,
+   "media": [],
+   "links": [
+    {
+     "type": "code",
+     "label": "Code",
+     "url": "https://github.com/loreggarcia/estacao-meteorologica"
+    }
+   ]
+  },
+  {
+   "id": "cpu-alu",
+   "title": "CPU + ALU",
+   "category": "software-sistemas",
+   "tags": [
+    "Sistemas digitais"
+   ],
+   "tier": "experimento",
+   "live": false,
+   "summary": "CPU + ALU is an 8-bit CPU and ALU simulated in Digital, split across two related repositories.",
+   "team": null,
+   "contribution": null,
+   "problem": null,
+   "solution": null,
+   "decisions": [
+    "A digital simulation project: the circuits are simulated in Digital; no hardware was fabricated."
+   ],
+   "results": null,
+   "learning": null,
+   "cover": "chip",
+   "coverImage": null,
+   "media": [],
+   "links": [
+    {
+     "type": "video",
+     "label": "Video · ALU",
+     "url": "https://youtu.be/YDGzAldBYKk"
+    },
+    {
+     "type": "code",
+     "label": "Code · CPU",
+     "url": "https://github.com/loreggarcia/CPU"
+    },
+    {
+     "type": "code",
+     "label": "Code · ALU",
+     "url": "https://github.com/loreggarcia/ALU"
+    }
+   ]
+  },
+  {
+   "id": "mandacaru",
+   "title": "Mandacaru — Instituto Cactos",
+   "category": "software-sistemas",
+   "tags": [],
+   "tier": "case_complementar",
+   "live": false,
+   "summary": "Mandacaru is a web application with a map and filters, built for Instituto Cactos.",
+   "team": null,
+   "contribution": null,
+   "problem": null,
+   "solution": null,
+   "decisions": null,
+   "results": null,
+   "learning": null,
+   "cover": "cactus",
+   "coverImage": null,
+   "media": [],
+   "links": [
+    {
+     "type": "code",
+     "label": "Code",
+     "url": "https://github.com/InteliProjects/2025-1B-T17-IN02-G01"
+    }
+   ]
+  },
+  {
+   "id": "plataforma-ingressos",
+   "title": "Ticket Platform",
+   "category": "software-sistemas",
+   "tags": [],
+   "tier": "experimento",
+   "live": false,
+   "summary": "Ticket Platform is a simulation of a ticketing platform built on an event-driven architecture.",
+   "team": null,
+   "contribution": null,
+   "problem": null,
+   "solution": null,
+   "decisions": null,
+   "results": null,
+   "learning": null,
+   "cover": "ticket",
+   "coverImage": null,
+   "media": [],
+   "links": [
+    {
+     "type": "code",
+     "label": "Code",
+     "url": "https://github.com/loreggarcia/ticket-platform-eda/tree/main"
+    }
+   ]
+  }
+ ],
+ "photos": [
+  {
+   "src": "assets/fotos/01-hi-im-lorena.webp",
+   "alt": "Selfie of Lorena smiling, wearing round black glasses and a white sweater in a study space.",
+   "caption": "Hi, I'm Lorena!",
+   "fit": "cover",
+   "position": "56% 38%"
+  },
+  {
+   "src": "assets/fotos/02-national-congress.webp",
+   "alt": "Lorena standing between two teammates, all wearing 'Devs de Impacto' T-shirts, in a meeting room at Brazil's National Congress next to the Brazilian flag.",
+   "caption": "Presenting my project at Brazil's National Congress",
+   "fit": "contain",
+   "position": "50% 50%"
+  },
+  {
+   "src": "assets/fotos/03-stellar-hackathon-finals.webp",
+   "alt": "A screen showing Lorena and three teammates standing on stage at the Stellar global hackathon finals.",
+   "caption": "Stellar global hackathon finals",
+   "fit": "contain",
+   "position": "50% 50%"
+  },
+  {
+   "src": "assets/fotos/04-visiting-google.webp",
+   "alt": "Lorena smiling in front of a large Google sign on a wall of wooden and copper-colored tubes.",
+   "caption": "Visiting Google",
+   "fit": "contain",
+   "position": "50% 50%"
+  },
+  {
+   "src": "assets/fotos/05-motiva-presentation.webp",
+   "alt": "Lorena speaking into a microphone while presenting from a sticker-covered laptop, with two people standing beside her.",
+   "caption": "Presenting a predictive solution for Motiva",
+   "fit": "contain",
+   "position": "50% 50%"
+  },
+  {
+   "src": "assets/fotos/06-morgan-stanley-summer.webp",
+   "alt": "Lorena with a large group of women posing together in an office with floor-to-ceiling windows overlooking city buildings.",
+   "caption": "My summer at Morgan Stanley",
+   "fit": "contain",
+   "position": "50% 50%"
+  }
+ ]
+};
+/* DADOS-PUBLICOS:FIM */
+
+/* icons: Simple Icons (CC0) + hand-drawn glyphs */
+/* ICONES:INICIO */
+const ICONS = {
+"arduino": "M18.087 6.146c-.3 0-.607.017-.907.069-2.532.367-4.23 2.239-5.18 3.674-.95-1.435-2.648-3.307-5.18-3.674a6.49 6.49 0 0 0-.907-.069C2.648 6.146 0 8.77 0 12s2.656 5.854 5.913 5.854c.3 0 .607-.017.916-.069 2.531-.376 4.23-2.247 5.18-3.683.949 1.436 2.647 3.307 5.18 3.683.299.043.607.069.915.069C21.344 17.854 24 15.23 24 12s-2.656-5.854-5.913-5.854zM6.53 15.734a3.837 3.837 0 0 1-.625.043c-2.148 0-3.889-1.7-3.889-3.777 0-2.085 1.749-3.777 3.898-3.777.208 0 .416.017.624.043 2.39.35 3.847 2.768 4.347 3.734-.508.974-1.974 3.384-4.355 3.734zm11.558.043c-.208 0-.416-.017-.624-.043-2.39-.35-3.856-2.768-4.347-3.734.491-.966 1.957-3.384 4.347-3.734.208-.026.416-.043.624-.043 2.149 0 3.89 1.7 3.89 3.777 0 2.085-1.75 3.777-3.89 3.777zm1.65-4.404v1.134h-1.205v1.182h-1.156v-1.182H16.17v-1.134h1.206V10.19h1.156v1.183h1.206zM4.246 12.498H7.82v-1.125H4.245v1.125z",
+"c": "M16.5921 9.1962s-.354-3.298-3.627-3.39c-3.2741-.09-4.9552 2.474-4.9552 6.14 0 3.6651 1.858 6.5972 5.0451 6.5972 3.184 0 3.5381-3.665 3.5381-3.665l6.1041.365s.36 3.31-2.196 5.836c-2.552 2.5241-5.6901 2.9371-7.8762 2.9201-2.19-.017-5.2261.034-8.1602-2.97-2.938-3.0101-3.436-5.9302-3.436-8.8002 0-2.8701.556-6.6702 4.047-9.5502C7.444.72 9.849 0 12.254 0c10.0422 0 10.7172 9.2602 10.7172 9.2602z",
+"cplusplus": "M22.394 6c-.167-.29-.398-.543-.652-.69L12.926.22c-.509-.294-1.34-.294-1.848 0L2.26 5.31c-.508.293-.923 1.013-.923 1.6v10.18c0 .294.104.62.271.91.167.29.398.543.652.69l8.816 5.09c.508.293 1.34.293 1.848 0l8.816-5.09c.254-.147.485-.4.652-.69.167-.29.27-.616.27-.91V6.91c.003-.294-.1-.62-.268-.91zM12 19.11c-3.92 0-7.109-3.19-7.109-7.11 0-3.92 3.19-7.11 7.11-7.11a7.133 7.133 0 016.156 3.553l-3.076 1.78a3.567 3.567 0 00-3.08-1.78A3.56 3.56 0 008.444 12 3.56 3.56 0 0012 15.555a3.57 3.57 0 003.08-1.778l3.078 1.78A7.135 7.135 0 0112 19.11zm7.11-6.715h-.79v.79h-.79v-.79h-.79v-.79h.79v-.79h.79v.79h.79zm2.962 0h-.79v.79h-.79v-.79h-.79v-.79h.79v-.79h.79v.79h.79z",
+"css3": "M1.5 0h21l-1.91 21.563L11.977 24l-8.565-2.438L1.5 0zm17.09 4.413L5.41 4.41l.213 2.622 10.125.002-.255 2.716h-6.64l.24 2.573h6.182l-.366 3.523-2.91.804-2.956-.81-.188-2.11h-2.61l.29 3.855L12 19.288l5.373-1.53L18.59 4.414z",
+"docker": "M13.983 11.078h2.119a.186.186 0 00.186-.185V9.006a.186.186 0 00-.186-.186h-2.119a.185.185 0 00-.185.185v1.888c0 .102.083.185.185.185m-2.954-5.43h2.118a.186.186 0 00.186-.186V3.574a.186.186 0 00-.186-.185h-2.118a.185.185 0 00-.185.185v1.888c0 .102.082.185.185.185m0 2.716h2.118a.187.187 0 00.186-.186V6.29a.186.186 0 00-.186-.185h-2.118a.185.185 0 00-.185.185v1.887c0 .102.082.185.185.186m-2.93 0h2.12a.186.186 0 00.184-.186V6.29a.185.185 0 00-.185-.185H8.1a.185.185 0 00-.185.185v1.887c0 .102.083.185.185.186m-2.964 0h2.119a.186.186 0 00.185-.186V6.29a.185.185 0 00-.185-.185H5.136a.186.186 0 00-.186.185v1.887c0 .102.084.185.186.186m5.893 2.715h2.118a.186.186 0 00.186-.185V9.006a.186.186 0 00-.186-.186h-2.118a.185.185 0 00-.185.185v1.888c0 .102.082.185.185.185m-2.93 0h2.12a.185.185 0 00.184-.185V9.006a.185.185 0 00-.184-.186h-2.12a.185.185 0 00-.184.185v1.888c0 .102.083.185.185.185m-2.964 0h2.119a.185.185 0 00.185-.185V9.006a.185.185 0 00-.184-.186h-2.12a.186.186 0 00-.186.186v1.887c0 .102.084.185.186.185m-2.92 0h2.12a.185.185 0 00.184-.185V9.006a.185.185 0 00-.184-.186h-2.12a.185.185 0 00-.184.185v1.888c0 .102.082.185.185.185M23.763 9.89c-.065-.051-.672-.51-1.954-.51-.338.001-.676.03-1.01.087-.248-1.7-1.653-2.53-1.716-2.566l-.344-.199-.226.327c-.284.438-.49.922-.612 1.43-.23.97-.09 1.882.403 2.661-.595.332-1.55.413-1.744.42H.751a.751.751 0 00-.75.748 11.376 11.376 0 00.692 4.062c.545 1.428 1.355 2.48 2.41 3.124 1.18.723 3.1 1.137 5.275 1.137.983.003 1.963-.086 2.93-.266a12.248 12.248 0 003.823-1.389c.98-.567 1.86-1.288 2.61-2.136 1.252-1.418 1.998-2.997 2.553-4.4h.221c1.372 0 2.215-.549 2.68-1.009.309-.293.55-.65.707-1.046l.098-.288Z",
+"duckdb": "M12 0C5.363 0 0 5.363 0 12s5.363 12 12 12 12-5.363 12-12S18.637 0 12 0zM9.502 7.03a4.974 4.974 0 0 1 4.97 4.97 4.974 4.974 0 0 1-4.97 4.97A4.974 4.974 0 0 1 4.532 12a4.974 4.974 0 0 1 4.97-4.97zm6.563 3.183h2.351c.98 0 1.787.782 1.787 1.762s-.807 1.789-1.787 1.789h-2.351v-3.551z",
+"ethereum": "M11.944 17.97L4.58 13.62 11.943 24l7.37-10.38-7.372 4.35h.003zM12.056 0L4.69 12.223l7.365 4.354 7.365-4.35L12.056 0z",
+"git": "M23.546 10.93L13.067.452c-.604-.603-1.582-.603-2.188 0L8.708 2.627l2.76 2.76c.645-.215 1.379-.07 1.889.441.516.515.658 1.258.438 1.9l2.658 2.66c.645-.223 1.387-.078 1.9.435.721.72.721 1.884 0 2.604-.719.719-1.881.719-2.6 0-.539-.541-.674-1.337-.404-1.996L12.86 8.955v6.525c.176.086.342.203.488.348.713.721.713 1.883 0 2.6-.719.721-1.889.721-2.609 0-.719-.719-.719-1.879 0-2.598.182-.18.387-.316.605-.406V8.835c-.217-.091-.424-.222-.6-.401-.545-.545-.676-1.342-.396-2.009L7.636 3.7.45 10.881c-.6.605-.6 1.584 0 2.189l10.48 10.477c.604.604 1.582.604 2.186 0l10.43-10.43c.605-.603.605-1.582 0-2.187",
+"github": "M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12",
+"html5": "M1.5 0h21l-1.91 21.563L11.977 24l-8.564-2.438L1.5 0zm7.031 9.75l-.232-2.718 10.059.003.23-2.622L5.412 4.41l.698 8.01h9.126l-.326 3.426-2.91.804-2.955-.81-.188-2.11H6.248l.33 4.171L12 19.351l5.379-1.443.744-8.157H8.531z",
+"javascript": "M0 0h24v24H0V0zm22.034 18.276c-.175-1.095-.888-2.015-3.003-2.873-.736-.345-1.554-.585-1.797-1.14-.091-.33-.105-.51-.046-.705.15-.646.915-.84 1.515-.66.39.12.75.42.976.9 1.034-.676 1.034-.676 1.755-1.125-.27-.42-.404-.601-.586-.78-.63-.705-1.469-1.065-2.834-1.034l-.705.089c-.676.165-1.32.525-1.71 1.005-1.14 1.291-.811 3.541.569 4.471 1.365 1.02 3.361 1.244 3.616 2.205.24 1.17-.87 1.545-1.966 1.41-.811-.18-1.26-.586-1.755-1.336l-1.83 1.051c.21.48.45.689.81 1.109 1.74 1.756 6.09 1.666 6.871-1.004.029-.09.24-.705.074-1.65l.046.067zm-8.983-7.245h-2.248c0 1.938-.009 3.864-.009 5.805 0 1.232.063 2.363-.138 2.711-.33.689-1.18.601-1.566.48-.396-.196-.597-.466-.83-.855-.063-.105-.11-.196-.127-.196l-1.825 1.125c.305.63.75 1.172 1.324 1.517.855.51 2.004.675 3.207.405.783-.226 1.458-.691 1.811-1.411.51-.93.402-2.07.397-3.346.012-2.054 0-4.109 0-6.179l.004-.056z",
+"linkedin": "M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z",
+"mongodb": "M17.193 9.555c-1.264-5.58-4.252-7.414-4.573-8.115-.28-.394-.53-.954-.735-1.44-.036.495-.055.685-.523 1.184-.723.566-4.438 3.682-4.74 10.02-.282 5.912 4.27 9.435 4.888 9.884l.07.05A73.49 73.49 0 0111.91 24h.481c.114-1.032.284-2.056.51-3.07.417-.296.604-.463.85-.693a11.342 11.342 0 003.639-8.464c.01-.814-.103-1.662-.197-2.218zm-5.336 8.195s0-8.291.275-8.29c.213 0 .49 10.695.49 10.695-.381-.045-.765-1.76-.765-2.405z",
+"nextdotjs": "M18.665 21.978C16.758 23.255 14.465 24 12 24 5.377 24 0 18.623 0 12S5.377 0 12 0s12 5.377 12 12c0 3.583-1.574 6.801-4.067 9.001L9.219 7.2H7.2v9.596h1.615V9.251l9.85 12.727Zm-3.332-8.533 1.6 2.061V7.2h-1.6v6.245Z",
+"openjdk": "M11.915 0 11.7.215C9.515 2.4 7.47 6.39 6.046 10.483c-1.064 1.024-3.633 2.81-3.711 3.551-.093.87 1.746 2.611 1.55 3.235-.198.625-1.304 1.408-1.014 1.939.1.188.823.011 1.277-.491a13.389 13.389 0 0 0-.017 2.14c.076.906.27 1.668.643 2.232.372.563.956.911 1.667.911.397 0 .727-.114 1.024-.264.298-.149.571-.33.91-.5.68-.34 1.634-.666 3.53-.604 1.903.062 2.872.39 3.559.704.687.314 1.15.664 1.925.664.767 0 1.395-.336 1.807-.9.412-.563.631-1.33.72-2.24.06-.623.055-1.32 0-2.066.454.45 1.117.604 1.213.424.29-.53-.816-1.314-1.013-1.937-.198-.624 1.642-2.366 1.549-3.236-.08-.748-2.707-2.568-3.748-3.586C16.428 6.374 14.308 2.394 12.13.215zm.175 6.038a2.95 2.95 0 0 1 2.943 2.942 2.95 2.95 0 0 1-2.943 2.943A2.95 2.95 0 0 1 9.148 8.98a2.95 2.95 0 0 1 2.942-2.942zM8.685 7.983a3.515 3.515 0 0 0-.145.997c0 1.951 1.6 3.55 3.55 3.55 1.95 0 3.55-1.598 3.55-3.55 0-.329-.046-.648-.132-.951.334.095.64.208.915.336a42.699 42.699 0 0 1 2.042 5.829c.678 2.545 1.01 4.92.846 6.607-.082.844-.29 1.51-.606 1.94-.315.431-.713.651-1.315.651-.593 0-.932-.27-1.673-.61-.741-.338-1.825-.694-3.792-.758-1.974-.064-3.073.293-3.821.669-.375.188-.659.373-.911.5s-.466.2-.752.2c-.53 0-.876-.209-1.16-.64-.285-.43-.474-1.101-.545-1.948-.141-1.693.176-4.069.823-6.614a43.155 43.155 0 0 1 1.934-5.783c.348-.167.749-.31 1.192-.425zm-3.382 4.362a.216.216 0 0 1 .13.031c-.166.56-.323 1.116-.463 1.665a33.849 33.849 0 0 0-.547 2.555 3.9 3.9 0 0 0-.2-.39c-.58-1.012-.914-1.642-1.16-2.08.315-.24 1.679-1.755 2.24-1.781zm13.394.01c.562.027 1.926 1.543 2.24 1.783-.246.438-.58 1.068-1.16 2.08a4.428 4.428 0 0 0-.163.309 32.354 32.354 0 0 0-.562-2.49 40.579 40.579 0 0 0-.482-1.652.216.216 0 0 1 .127-.03z",
+"postgresql": "M23.5594 14.7228a.5269.5269 0 0 0-.0563-.1191c-.139-.2632-.4768-.3418-1.0074-.2321-1.6533.3411-2.2935.1312-2.5256-.0191 1.342-2.0482 2.445-4.522 3.0411-6.8297.2714-1.0507.7982-3.5237.1222-4.7316a1.5641 1.5641 0 0 0-.1509-.235C21.6931.9086 19.8007.0248 17.5099.0005c-1.4947-.0158-2.7705.3461-3.1161.4794a9.449 9.449 0 0 0-.5159-.0816 8.044 8.044 0 0 0-1.3114-.1278c-1.1822-.0184-2.2038.2642-3.0498.8406-.8573-.3211-4.7888-1.645-7.2219.0788C.9359 2.1526.3086 3.8733.4302 6.3043c.0409.818.5069 3.334 1.2423 5.7436.4598 1.5065.9387 2.7019 1.4334 3.582.553.9942 1.1259 1.5933 1.7143 1.7895.4474.1491 1.1327.1441 1.8581-.7279.8012-.9635 1.5903-1.8258 1.9446-2.2069.4351.2355.9064.3625 1.39.3772a.0569.0569 0 0 0 .0004.0041 11.0312 11.0312 0 0 0-.2472.3054c-.3389.4302-.4094.5197-1.5002.7443-.3102.064-1.1344.2339-1.1464.8115-.0025.1224.0329.2309.0919.3268.2269.4231.9216.6097 1.015.6331 1.3345.3335 2.5044.092 3.3714-.6787-.017 2.231.0775 4.4174.3454 5.0874.2212.5529.7618 1.9045 2.4692 1.9043.2505 0 .5263-.0291.8296-.0941 1.7819-.3821 2.5557-1.1696 2.855-2.9059.1503-.8707.4016-2.8753.5388-4.1012.0169-.0703.0357-.1207.057-.1362.0007-.0005.0697-.0471.4272.0307a.3673.3673 0 0 0 .0443.0068l.2539.0223.0149.001c.8468.0384 1.9114-.1426 2.5312-.4308.6438-.2988 1.8057-1.0323 1.5951-1.6698zM2.371 11.8765c-.7435-2.4358-1.1779-4.8851-1.2123-5.5719-.1086-2.1714.4171-3.6829 1.5623-4.4927 1.8367-1.2986 4.8398-.5408 6.108-.13-.0032.0032-.0066.0061-.0098.0094-2.0238 2.044-1.9758 5.536-1.9708 5.7495-.0002.0823.0066.1989.0162.3593.0348.5873.0996 1.6804-.0735 2.9184-.1609 1.1504.1937 2.2764.9728 3.0892.0806.0841.1648.1631.2518.2374-.3468.3714-1.1004 1.1926-1.9025 2.1576-.5677.6825-.9597.5517-1.0886.5087-.3919-.1307-.813-.5871-1.2381-1.3223-.4796-.839-.9635-2.0317-1.4155-3.5126zm6.0072 5.0871c-.1711-.0428-.3271-.1132-.4322-.1772.0889-.0394.2374-.0902.4833-.1409 1.2833-.2641 1.4815-.4506 1.9143-1.0002.0992-.126.2116-.2687.3673-.4426a.3549.3549 0 0 0 .0737-.1298c.1708-.1513.2724-.1099.4369-.0417.156.0646.3078.26.3695.4752.0291.1016.0619.2945-.0452.4444-.9043 1.2658-2.2216 1.2494-3.1676 1.0128zm2.094-3.988-.0525.141c-.133.3566-.2567.6881-.3334 1.003-.6674-.0021-1.3168-.2872-1.8105-.8024-.6279-.6551-.9131-1.5664-.7825-2.5004.1828-1.3079.1153-2.4468.079-3.0586-.005-.0857-.0095-.1607-.0122-.2199.2957-.2621 1.6659-.9962 2.6429-.7724.4459.1022.7176.4057.8305.928.5846 2.7038.0774 3.8307-.3302 4.7363-.084.1866-.1633.3629-.2311.5454zm7.3637 4.5725c-.0169.1768-.0358.376-.0618.5959l-.146.4383a.3547.3547 0 0 0-.0182.1077c-.0059.4747-.054.6489-.115.8693-.0634.2292-.1353.4891-.1794 1.0575-.11 1.4143-.8782 2.2267-2.4172 2.5565-1.5155.3251-1.7843-.4968-2.0212-1.2217a6.5824 6.5824 0 0 0-.0769-.2266c-.2154-.5858-.1911-1.4119-.1574-2.5551.0165-.5612-.0249-1.9013-.3302-2.6462.0044-.2932.0106-.5909.019-.8918a.3529.3529 0 0 0-.0153-.1126 1.4927 1.4927 0 0 0-.0439-.208c-.1226-.4283-.4213-.7866-.7797-.9351-.1424-.059-.4038-.1672-.7178-.0869.067-.276.1831-.5875.309-.9249l.0529-.142c.0595-.16.134-.3257.213-.5012.4265-.9476 1.0106-2.2453.3766-5.1772-.2374-1.0981-1.0304-1.6343-2.2324-1.5098-.7207.0746-1.3799.3654-1.7088.5321a5.6716 5.6716 0 0 0-.1958.1041c.0918-1.1064.4386-3.1741 1.7357-4.4823a4.0306 4.0306 0 0 1 .3033-.276.3532.3532 0 0 0 .1447-.0644c.7524-.5706 1.6945-.8506 2.802-.8325.4091.0067.8017.0339 1.1742.081 1.939.3544 3.2439 1.4468 4.0359 2.3827.8143.9623 1.2552 1.9315 1.4312 2.4543-1.3232-.1346-2.2234.1268-2.6797.779-.9926 1.4189.543 4.1729 1.2811 5.4964.1353.2426.2522.4522.2889.5413.2403.5825.5515.9713.7787 1.2552.0696.087.1372.1714.1885.245-.4008.1155-1.1208.3825-1.0552 1.717-.0123.1563-.0423.4469-.0834.8148-.0461.2077-.0702.4603-.0994.7662zm.8905-1.6211c-.0405-.8316.2691-.9185.5967-1.0105a2.8566 2.8566 0 0 0 .135-.0406 1.202 1.202 0 0 0 .1342.103c.5703.3765 1.5823.4213 3.0068.1344-.2016.1769-.5189.3994-.9533.6011-.4098.1903-1.0957.333-1.7473.3636-.7197.0336-1.0859-.0807-1.1721-.151zm.5695-9.2712c-.0059.3508-.0542.6692-.1054 1.0017-.055.3576-.112.7274-.1264 1.1762-.0142.4368.0404.8909.0932 1.3301.1066.887.216 1.8003-.2075 2.7014a3.5272 3.5272 0 0 1-.1876-.3856c-.0527-.1276-.1669-.3326-.3251-.6162-.6156-1.1041-2.0574-3.6896-1.3193-4.7446.3795-.5427 1.3408-.5661 2.1781-.463zm.2284 7.0137a12.3762 12.3762 0 0 0-.0853-.1074l-.0355-.0444c.7262-1.1995.5842-2.3862.4578-3.4385-.0519-.4318-.1009-.8396-.0885-1.2226.0129-.4061.0666-.7543.1185-1.0911.0639-.415.1288-.8443.1109-1.3505.0134-.0531.0188-.1158.0118-.1902-.0457-.4855-.5999-1.938-1.7294-3.253-.6076-.7073-1.4896-1.4972-2.6889-2.0395.5251-.1066 1.2328-.2035 2.0244-.1859 2.0515.0456 3.6746.8135 4.8242 2.2824a.908.908 0 0 1 .0667.1002c.7231 1.3556-.2762 6.2751-2.9867 10.5405zm-8.8166-6.1162c-.025.1794-.3089.4225-.6211.4225a.5821.5821 0 0 1-.0809-.0056c-.1873-.026-.3765-.144-.5059-.3156-.0458-.0605-.1203-.178-.1055-.2844.0055-.0401.0261-.0985.0925-.1488.1182-.0894.3518-.1226.6096-.0867.3163.0441.6426.1938.6113.4186zm7.9305-.4114c.0111.0792-.049.201-.1531.3102-.0683.0717-.212.1961-.4079.2232a.5456.5456 0 0 1-.075.0052c-.2935 0-.5414-.2344-.5607-.3717-.024-.1765.2641-.3106.5611-.352.297-.0414.6111.0088.6356.1851z",
+"prisma": "M21.8068 18.2848L13.5528.7565c-.207-.4382-.639-.7273-1.1286-.7541-.5023-.0293-.9523.213-1.2062.6253L2.266 15.1271c-.2773.4518-.2718 1.0091.0158 1.4555l4.3759 6.7786c.2608.4046.7127.6388 1.1823.6388.1332 0 .267-.0188.3987-.0577l12.7019-3.7568c.3891-.1151.7072-.3904.8737-.7553s.1633-.7828-.0075-1.1454zm-1.8481.7519L9.1814 22.2242c-.3292.0975-.6448-.1873-.5756-.5194l3.8501-18.4386c.072-.3448.5486-.3996.699-.0803l7.1288 15.138c.1344.2856-.019.6224-.325.7128z",
+"python": "M14.25.18l.9.2.73.26.59.3.45.32.34.34.25.34.16.33.1.3.04.26.02.2-.01.13V8.5l-.05.63-.13.55-.21.46-.26.38-.3.31-.33.25-.35.19-.35.14-.33.1-.3.07-.26.04-.21.02H8.77l-.69.05-.59.14-.5.22-.41.27-.33.32-.27.35-.2.36-.15.37-.1.35-.07.32-.04.27-.02.21v3.06H3.17l-.21-.03-.28-.07-.32-.12-.35-.18-.36-.26-.36-.36-.35-.46-.32-.59-.28-.73-.21-.88-.14-1.05-.05-1.23.06-1.22.16-1.04.24-.87.32-.71.36-.57.4-.44.42-.33.42-.24.4-.16.36-.1.32-.05.24-.01h.16l.06.01h8.16v-.83H6.18l-.01-2.75-.02-.37.05-.34.11-.31.17-.28.25-.26.31-.23.38-.2.44-.18.51-.15.58-.12.64-.1.71-.06.77-.04.84-.02 1.27.05zm-6.3 1.98l-.23.33-.08.41.08.41.23.34.33.22.41.09.41-.09.33-.22.23-.34.08-.41-.08-.41-.23-.33-.33-.22-.41-.09-.41.09zm13.09 3.95l.28.06.32.12.35.18.36.27.36.35.35.47.32.59.28.73.21.88.14 1.04.05 1.23-.06 1.23-.16 1.04-.24.86-.32.71-.36.57-.4.45-.42.33-.42.24-.4.16-.36.09-.32.05-.24.02-.16-.01h-8.22v.82h5.84l.01 2.76.02.36-.05.34-.11.31-.17.29-.25.25-.31.24-.38.2-.44.17-.51.15-.58.13-.64.09-.71.07-.77.04-.84.01-1.27-.04-1.07-.14-.9-.2-.73-.25-.59-.3-.45-.33-.34-.34-.25-.34-.16-.33-.1-.3-.04-.25-.02-.2.01-.13v-5.34l.05-.64.13-.54.21-.46.26-.38.3-.32.33-.24.35-.2.35-.14.33-.1.3-.06.26-.04.21-.02.13-.01h5.84l.69-.05.59-.14.5-.21.41-.28.33-.32.27-.35.2-.36.15-.36.1-.35.07-.32.04-.28.02-.21V6.07h2.09l.14.01zm-6.47 14.25l-.23.33-.08.41.08.41.23.33.33.23.41.08.41-.08.33-.23.23-.33.08-.41-.08-.41-.23-.33-.33-.23-.41-.08-.41.08z",
+"react": "M14.23 12.004a2.236 2.236 0 0 1-2.235 2.236 2.236 2.236 0 0 1-2.236-2.236 2.236 2.236 0 0 1 2.235-2.236 2.236 2.236 0 0 1 2.236 2.236zm2.648-10.69c-1.346 0-3.107.96-4.888 2.622-1.78-1.653-3.542-2.602-4.887-2.602-.41 0-.783.093-1.106.278-1.375.793-1.683 3.264-.973 6.365C1.98 8.917 0 10.42 0 12.004c0 1.59 1.99 3.097 5.043 4.03-.704 3.113-.39 5.588.988 6.38.32.187.69.275 1.102.275 1.345 0 3.107-.96 4.888-2.624 1.78 1.654 3.542 2.603 4.887 2.603.41 0 .783-.09 1.106-.275 1.374-.792 1.683-3.263.973-6.365C22.02 15.096 24 13.59 24 12.004c0-1.59-1.99-3.097-5.043-4.032.704-3.11.39-5.587-.988-6.38-.318-.184-.688-.277-1.092-.278zm-.005 1.09v.006c.225 0 .406.044.558.127.666.382.955 1.835.73 3.704-.054.46-.142.945-.25 1.44-.96-.236-2.006-.417-3.107-.534-.66-.905-1.345-1.727-2.035-2.447 1.592-1.48 3.087-2.292 4.105-2.295zm-9.77.02c1.012 0 2.514.808 4.11 2.28-.686.72-1.37 1.537-2.02 2.442-1.107.117-2.154.298-3.113.538-.112-.49-.195-.964-.254-1.42-.23-1.868.054-3.32.714-3.707.19-.09.4-.127.563-.132zm4.882 3.05c.455.468.91.992 1.36 1.564-.44-.02-.89-.034-1.345-.034-.46 0-.915.01-1.36.034.44-.572.895-1.096 1.345-1.565zM12 8.1c.74 0 1.477.034 2.202.093.406.582.802 1.203 1.183 1.86.372.64.71 1.29 1.018 1.946-.308.655-.646 1.31-1.013 1.95-.38.66-.773 1.288-1.18 1.87-.728.063-1.466.098-2.21.098-.74 0-1.477-.035-2.202-.093-.406-.582-.802-1.204-1.183-1.86-.372-.64-.71-1.29-1.018-1.946.303-.657.646-1.313 1.013-1.954.38-.66.773-1.286 1.18-1.868.728-.064 1.466-.098 2.21-.098zm-3.635.254c-.24.377-.48.763-.704 1.16-.225.39-.435.782-.635 1.174-.265-.656-.49-1.31-.676-1.947.64-.15 1.315-.283 2.015-.386zm7.26 0c.695.103 1.365.23 2.006.387-.18.632-.405 1.282-.66 1.933-.2-.39-.41-.783-.64-1.174-.225-.392-.465-.774-.705-1.146zm3.063.675c.484.15.944.317 1.375.498 1.732.74 2.852 1.708 2.852 2.476-.005.768-1.125 1.74-2.857 2.475-.42.18-.88.342-1.355.493-.28-.958-.646-1.956-1.1-2.98.45-1.017.81-2.01 1.085-2.964zm-13.395.004c.278.96.645 1.957 1.1 2.98-.45 1.017-.812 2.01-1.086 2.964-.484-.15-.944-.318-1.37-.5-1.732-.737-2.852-1.706-2.852-2.474 0-.768 1.12-1.742 2.852-2.476.42-.18.88-.342 1.356-.494zm11.678 4.28c.265.657.49 1.312.676 1.948-.64.157-1.316.29-2.016.39.24-.375.48-.762.705-1.158.225-.39.435-.788.636-1.18zm-9.945.02c.2.392.41.783.64 1.175.23.39.465.772.705 1.143-.695-.102-1.365-.23-2.006-.386.18-.63.406-1.282.66-1.933zM17.92 16.32c.112.493.2.968.254 1.423.23 1.868-.054 3.32-.714 3.708-.147.09-.338.128-.563.128-1.012 0-2.514-.807-4.11-2.28.686-.72 1.37-1.536 2.02-2.44 1.107-.118 2.154-.3 3.113-.54zm-11.83.01c.96.234 2.006.415 3.107.532.66.905 1.345 1.727 2.035 2.446-1.595 1.483-3.092 2.295-4.11 2.295-.22-.005-.406-.05-.553-.132-.666-.38-.955-1.834-.73-3.703.054-.46.142-.944.25-1.438zm4.56.64c.44.02.89.034 1.345.034.46 0 .915-.01 1.36-.034-.44.572-.895 1.095-1.345 1.565-.455-.47-.91-.993-1.36-1.565z",
+"ros": "M2.807 0C1.353 0 .173 1.22.173 2.722c0 1.504 1.18 2.723 2.634 2.723 1.455 0 2.635-1.22 2.635-2.723S4.262 0 2.807 0zM12 0c-1.455 0-2.634 1.22-2.634 2.722 0 1.504 1.18 2.723 2.634 2.723 1.455 0 2.634-1.22 2.634-2.723S13.454 0 12 0zm9.193 0c-1.455 0-2.635 1.22-2.635 2.722 0 1.504 1.18 2.723 2.635 2.723 1.455 0 2.634-1.22 2.634-2.723S22.647 0 21.193 0zM2.807 9.277C1.353 9.277.173 10.497.173 12s1.18 2.722 2.634 2.722c1.455 0 2.635-1.219 2.635-2.722 0-1.504-1.18-2.723-2.635-2.723zm9.193 0c-1.455 0-2.634 1.22-2.634 2.723s1.18 2.722 2.634 2.722c1.455 0 2.634-1.219 2.634-2.722 0-1.504-1.18-2.723-2.634-2.723zm9.193 0c-1.455 0-2.635 1.22-2.635 2.723s1.18 2.722 2.635 2.722c1.455 0 2.634-1.219 2.634-2.722 0-1.504-1.18-2.723-2.634-2.723zM2.807 18.555c-1.454 0-2.634 1.22-2.634 2.722C.173 22.781 1.353 24 2.807 24c1.455 0 2.635-1.22 2.635-2.723s-1.18-2.722-2.635-2.722zm9.193 0c-1.455 0-2.634 1.22-2.634 2.722C9.366 22.781 10.546 24 12 24c1.455 0 2.634-1.22 2.634-2.723s-1.18-2.722-2.634-2.722zm9.193 0c-1.455 0-2.635 1.22-2.635 2.722 0 1.504 1.18 2.723 2.635 2.723 1.455 0 2.634-1.22 2.634-2.723s-1.18-2.722-2.634-2.722z",
+"sqlite": "M21.678.521c-1.032-.92-2.28-.55-3.513.544a8.71 8.71 0 0 0-.547.535c-2.109 2.237-4.066 6.38-4.674 9.544.237.48.422 1.093.544 1.561a13.044 13.044 0 0 1 .164.703s-.019-.071-.096-.296l-.05-.146a1.689 1.689 0 0 0-.033-.08c-.138-.32-.518-.995-.686-1.289-.143.423-.27.818-.376 1.176.484.884.778 2.4.778 2.4s-.025-.099-.147-.442c-.107-.303-.644-1.244-.772-1.464-.217.804-.304 1.346-.226 1.478.152.256.296.698.422 1.186.286 1.1.485 2.44.485 2.44l.017.224a22.41 22.41 0 0 0 .056 2.748c.095 1.146.273 2.13.5 2.657l.155-.084c-.334-1.038-.47-2.399-.41-3.967.09-2.398.642-5.29 1.661-8.304 1.723-4.55 4.113-8.201 6.3-9.945-1.993 1.8-4.692 7.63-5.5 9.788-.904 2.416-1.545 4.684-1.931 6.857.666-2.037 2.821-2.912 2.821-2.912s1.057-1.304 2.292-3.166c-.74.169-1.955.458-2.362.629-.6.251-.762.337-.762.337s1.945-1.184 3.613-1.72C21.695 7.9 24.195 2.767 21.678.521m-18.573.543A1.842 1.842 0 0 0 1.27 2.9v16.608a1.84 1.84 0 0 0 1.835 1.834h9.418a22.953 22.953 0 0 1-.052-2.707c-.006-.062-.011-.141-.016-.2a27.01 27.01 0 0 0-.473-2.378c-.121-.47-.275-.898-.369-1.057-.116-.197-.098-.31-.097-.432 0-.12.015-.245.037-.386a9.98 9.98 0 0 1 .234-1.045l.217-.028c-.017-.035-.014-.065-.031-.097l-.041-.381a32.8 32.8 0 0 1 .382-1.194l.2-.019c-.008-.016-.01-.038-.018-.053l-.043-.316c.63-3.28 2.587-7.443 4.8-9.791.066-.069.133-.128.198-.194Z",
+"stellar": "M12.003 1.716c-1.37 0-2.7.27-3.948.78A10.18 10.18 0 0 0 2.66 7.901a10.136 10.136 0 0 0-.797 3.954c0 .258.01.516.027.775a1.942 1.942 0 0 1-1.055 1.88L0 14.934v1.902l2.463-1.26.072-.032v.005l.77-.39.758-.385.066-.039 14.807-7.56 1.666-.847 3.392-1.732V2.694L17.792 5.86 3.744 13.025l-.104.055-.017-.115a8.286 8.286 0 0 1-.071-1.105c0-2.255.88-4.377 2.474-5.977a8.462 8.462 0 0 1 2.71-1.82 8.513 8.513 0 0 1 3.2-.654h.067a8.41 8.41 0 0 1 4.09 1.055l1.628-.83.126-.066a10.11 10.11 0 0 0-5.845-1.853zM24 7.143 5.047 16.808l-1.666.847L0 19.382v1.902l3.282-1.671 2.91-1.485 14.058-7.153.105-.055.016.115c.05.369.072.743.072 1.11 0 2.255-.88 4.383-2.475 5.978a8.461 8.461 0 0 1-2.71 1.82 8.305 8.305 0 0 1-3.2.654h-.06c-1.441 0-2.86-.369-4.102-1.061l-.066.033-1.683.857c.594.418 1.232.776 1.903 1.062a10.11 10.11 0 0 0 3.947.797 10.09 10.09 0 0 0 7.17-2.975 10.136 10.136 0 0 0 2.969-7.18c0-.259-.005-.523-.027-.781a1.942 1.942 0 0 1 1.055-1.88L24 9.044z",
+"supabase": "M11.9 1.036c-.015-.986-1.26-1.41-1.874-.637L.764 12.05C-.33 13.427.65 15.455 2.409 15.455h9.579l.113 7.51c.014.985 1.259 1.408 1.873.636l9.262-11.653c1.093-1.375.113-3.403-1.645-3.403h-9.642z",
+"typescript": "M1.125 0C.502 0 0 .502 0 1.125v21.75C0 23.498.502 24 1.125 24h21.75c.623 0 1.125-.502 1.125-1.125V1.125C24 .502 23.498 0 22.875 0zm17.363 9.75c.612 0 1.154.037 1.627.111a6.38 6.38 0 0 1 1.306.34v2.458a3.95 3.95 0 0 0-.643-.361 5.093 5.093 0 0 0-.717-.26 5.453 5.453 0 0 0-1.426-.2c-.3 0-.573.028-.819.086a2.1 2.1 0 0 0-.623.242c-.17.104-.3.229-.393.374a.888.888 0 0 0-.14.49c0 .196.053.373.156.529.104.156.252.304.443.444s.423.276.696.41c.273.135.582.274.926.416.47.197.892.407 1.266.628.374.222.695.473.963.753.268.279.472.598.614.957.142.359.214.776.214 1.253 0 .657-.125 1.21-.373 1.656a3.033 3.033 0 0 1-1.012 1.085 4.38 4.38 0 0 1-1.487.596c-.566.12-1.163.18-1.79.18a9.916 9.916 0 0 1-1.84-.164 5.544 5.544 0 0 1-1.512-.493v-2.63a5.033 5.033 0 0 0 3.237 1.2c.333 0 .624-.03.872-.09.249-.06.456-.144.623-.25.166-.108.29-.234.373-.38a1.023 1.023 0 0 0-.074-1.089 2.12 2.12 0 0 0-.537-.5 5.597 5.597 0 0 0-.807-.444 27.72 27.72 0 0 0-1.007-.436c-.918-.383-1.602-.852-2.053-1.405-.45-.553-.676-1.222-.676-2.005 0-.614.123-1.141.369-1.582.246-.441.58-.804 1.004-1.089a4.494 4.494 0 0 1 1.47-.629 7.536 7.536 0 0 1 1.77-.201zm-15.113.188h9.563v2.166H9.506v9.646H6.789v-9.646H3.375z",
+"sql": "<svg viewBox=\"0 0 24 24\"><g fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><ellipse cx=\"12\" cy=\"5.5\" rx=\"8\" ry=\"3\"/><path d=\"M4 5.5v13c0 1.7 3.6 3 8 3s8-1.3 8-3v-13M4 12c0 1.7 3.6 3 8 3s8-1.3 8-3\"/><\/g><\/svg>",
+"mail": "<svg viewBox=\"0 0 24 24\"><g fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><rect x=\"3\" y=\"5\" width=\"18\" height=\"14\" rx=\"2\"/><path d=\"M3.5 7l8.5 6 8.5-6\"/><\/g><\/svg>",
+"external": "<svg viewBox=\"0 0 24 24\"><g fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M14 4h6v6M20 4l-9 9M18 14v6H4V6h6\"/><\/g><\/svg>",
+"doc": "<svg viewBox=\"0 0 24 24\"><g fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M6 2.5h8.5L19 7v14.5H6z\"/><path d=\"M14 2.5V7h5M9 12h7M9 16h7\"/><\/g><\/svg>",
+"play": "<svg viewBox=\"0 0 24 24\"><path d=\"M7 4.5v15l12.5-7.5z\"/><\/svg>",
+"ollama": "M16.361 10.26a.894.894 0 0 0-.558.47l-.072.148.001.207c0 .193.004.217.059.353.076.193.152.312.291.448.24.238.51.3.872.205a.86.86 0 0 0 .517-.436.752.752 0 0 0 .08-.498c-.064-.453-.33-.782-.724-.897a1.06 1.06 0 0 0-.466 0zm-9.203.005c-.305.096-.533.32-.65.639a1.187 1.187 0 0 0-.06.52c.057.309.31.59.598.667.362.095.632.033.872-.205.14-.136.215-.255.291-.448.055-.136.059-.16.059-.353l.001-.207-.072-.148a.894.894 0 0 0-.565-.472 1.02 1.02 0 0 0-.474.007Zm4.184 2c-.131.071-.223.25-.195.383.031.143.157.288.353.407.105.063.112.072.117.136.004.038-.01.146-.029.243-.02.094-.036.194-.036.222.002.074.07.195.143.253.064.052.076.054.255.059.164.005.198.001.264-.03.169-.082.212-.234.15-.525-.052-.243-.042-.28.087-.355.137-.08.281-.219.324-.314a.365.365 0 0 0-.175-.48.394.394 0 0 0-.181-.033c-.126 0-.207.03-.355.124l-.085.053-.053-.032c-.219-.13-.259-.145-.391-.143a.396.396 0 0 0-.193.032zm.39-2.195c-.373.036-.475.05-.654.086-.291.06-.68.195-.951.328-.94.46-1.589 1.226-1.787 2.114-.04.176-.045.234-.045.53 0 .294.005.357.043.524.264 1.16 1.332 2.017 2.714 2.173.3.033 1.596.033 1.896 0 1.11-.125 2.064-.727 2.493-1.571.114-.226.169-.372.22-.602.039-.167.044-.23.044-.523 0-.297-.005-.355-.045-.531-.288-1.29-1.539-2.304-3.072-2.497a6.873 6.873 0 0 0-.855-.031zm.645.937a3.283 3.283 0 0 1 1.44.514c.223.148.537.458.671.662.166.251.26.508.303.82.02.143.01.251-.043.482-.08.345-.332.705-.672.957a3.115 3.115 0 0 1-.689.348c-.382.122-.632.144-1.525.138-.582-.006-.686-.01-.853-.042-.57-.107-1.022-.334-1.35-.68-.264-.28-.385-.535-.45-.946-.03-.192.025-.509.137-.776.136-.326.488-.73.836-.963.403-.269.934-.46 1.422-.512.187-.02.586-.02.773-.002zm-5.503-11a1.653 1.653 0 0 0-.683.298C5.617.74 5.173 1.666 4.985 2.819c-.07.436-.119 1.04-.119 1.503 0 .544.064 1.24.155 1.721.02.107.031.202.023.208a8.12 8.12 0 0 1-.187.152 5.324 5.324 0 0 0-.949 1.02 5.49 5.49 0 0 0-.94 2.339 6.625 6.625 0 0 0-.023 1.357c.091.78.325 1.438.727 2.04l.13.195-.037.064c-.269.452-.498 1.105-.605 1.732-.084.496-.095.629-.095 1.294 0 .67.009.803.088 1.266.095.555.288 1.143.503 1.534.071.128.243.393.264.407.007.003-.014.067-.046.141a7.405 7.405 0 0 0-.548 1.873c-.062.417-.071.552-.071.991 0 .56.031.832.148 1.279L3.42 24h1.478l-.05-.091c-.297-.552-.325-1.575-.068-2.597.117-.472.25-.819.498-1.296l.148-.29v-.177c0-.165-.003-.184-.057-.293a.915.915 0 0 0-.194-.25 1.74 1.74 0 0 1-.385-.543c-.424-.92-.506-2.286-.208-3.451.124-.486.329-.918.544-1.154a.787.787 0 0 0 .223-.531c0-.195-.07-.355-.224-.522a3.136 3.136 0 0 1-.817-1.729c-.14-.96.114-2.005.69-2.834.563-.814 1.353-1.336 2.237-1.475.199-.033.57-.028.776.01.226.04.367.028.512-.041.179-.085.268-.19.374-.431.093-.215.165-.333.36-.576.234-.29.46-.489.822-.729.413-.27.884-.467 1.352-.561.17-.035.25-.04.569-.04.319 0 .398.005.569.04a4.07 4.07 0 0 1 1.914.997c.117.109.398.457.488.602.034.057.095.177.132.267.105.241.195.346.374.43.14.068.286.082.503.045.343-.058.607-.053.943.016 1.144.23 2.14 1.173 2.581 2.437.385 1.108.276 2.267-.296 3.153-.097.15-.193.27-.333.419-.301.322-.301.722-.001 1.053.493.539.801 1.866.708 3.036-.062.772-.26 1.463-.533 1.854a2.096 2.096 0 0 1-.224.258.916.916 0 0 0-.194.25c-.054.109-.057.128-.057.293v.178l.148.29c.248.476.38.823.498 1.295.253 1.008.231 2.01-.059 2.581a.845.845 0 0 0-.044.098c0 .006.329.009.732.009h.73l.02-.074.036-.134c.019-.076.057-.3.088-.516.029-.217.029-1.016 0-1.258-.11-.875-.295-1.57-.597-2.226-.032-.074-.053-.138-.046-.141.008-.005.057-.074.108-.152.376-.569.607-1.284.724-2.228.031-.26.031-1.378 0-1.628-.083-.645-.182-1.082-.348-1.525a6.083 6.083 0 0 0-.329-.7l-.038-.064.131-.194c.402-.604.636-1.262.727-2.04a6.625 6.625 0 0 0-.024-1.358 5.512 5.512 0 0 0-.939-2.339 5.325 5.325 0 0 0-.95-1.02 8.097 8.097 0 0 1-.186-.152.692.692 0 0 1 .023-.208c.208-1.087.201-2.443-.017-3.503-.19-.924-.535-1.658-.98-2.082-.354-.338-.716-.482-1.15-.455-.996.059-1.8 1.205-2.116 3.01a6.805 6.805 0 0 0-.097.726c0 .036-.007.066-.015.066a.96.96 0 0 1-.149-.078A4.857 4.857 0 0 0 12 3.03c-.832 0-1.687.243-2.456.698a.958.958 0 0 1-.148.078c-.008 0-.015-.03-.015-.066a6.71 6.71 0 0 0-.097-.725C8.997 1.392 8.337.319 7.46.048a2.096 2.096 0 0 0-.585-.041Zm.293 1.402c.248.197.523.759.682 1.388.03.113.06.244.069.292.007.047.026.152.041.233.067.365.098.76.102 1.24l.002.475-.12.175-.118.178h-.278c-.324 0-.646.041-.954.124l-.238.06c-.033.007-.038-.003-.057-.144a8.438 8.438 0 0 1 .016-2.323c.124-.788.413-1.501.696-1.711.067-.05.079-.049.157.013zm9.825-.012c.17.126.358.46.498.888.28.854.36 2.028.212 3.145-.019.14-.024.151-.057.144l-.238-.06a3.693 3.693 0 0 0-.954-.124h-.278l-.119-.178-.119-.175.002-.474c.004-.669.066-1.19.214-1.772.157-.623.434-1.185.68-1.382.078-.062.09-.063.159-.012z",
+"claude": "m4.7144 15.9555 4.7174-2.6471.079-.2307-.079-.1275h-.2307l-.7893-.0486-2.6956-.0729-2.3375-.0971-2.2646-.1214-.5707-.1215-.5343-.7042.0546-.3522.4797-.3218.686.0608 1.5179.1032 2.2767.1578 1.6514.0972 2.4468.255h.3886l.0546-.1579-.1336-.0971-.1032-.0972L6.973 9.8356l-2.55-1.6879-1.3356-.9714-.7225-.4918-.3643-.4614-.1578-1.0078.6557-.7225.8803.0607.2246.0607.8925.686 1.9064 1.4754 2.4893 1.8336.3643.3035.1457-.1032.0182-.0728-.164-.2733-1.3539-2.4467-1.445-2.4893-.6435-1.032-.17-.6194c-.0607-.255-.1032-.4674-.1032-.7285L6.287.1335 6.6997 0l.9957.1336.419.3642.6192 1.4147 1.0018 2.2282 1.5543 3.0296.4553.8985.2429.8318.091.255h.1579v-.1457l.1275-1.706.2368-2.0947.2307-2.6957.0789-.7589.3764-.9107.7468-.4918.5828.2793.4797.686-.0668.4433-.2853 1.8517-.5586 2.9021-.3643 1.9429h.2125l.2429-.2429.9835-1.3053 1.6514-2.0643.7286-.8196.85-.9046.5464-.4311h1.0321l.759 1.1293-.34 1.1657-1.0625 1.3478-.8804 1.1414-1.2628 1.7-.7893 1.36.0729.1093.1882-.0183 2.8535-.607 1.5421-.2794 1.8396-.3157.8318.3886.091.3946-.3278.8075-1.967.4857-2.3072.4614-3.4364.8136-.0425.0304.0486.0607 1.5482.1457.6618.0364h1.621l3.0175.2247.7892.522.4736.6376-.079.4857-1.2142.6193-1.6393-.3886-3.825-.9107-1.3113-.3279h-.1822v.1093l1.0929 1.0686 2.0035 1.8092 2.5075 2.3314.1275.5768-.3218.4554-.34-.0486-2.2039-1.6575-.85-.7468-1.9246-1.621h-.1275v.17l.4432.6496 2.3436 3.5214.1214 1.0807-.17.3521-.6071.2125-.6679-.1214-1.3721-1.9246L14.38 17.959l-1.1414-1.9428-.1397.079-.674 7.2552-.3156.3703-.7286.2793-.6071-.4614-.3218-.7468.3218-1.4753.3886-1.9246.3157-1.53.2853-1.9004.17-.6314-.0121-.0425-.1397.0182-1.4328 1.9672-2.1796 2.9446-1.7243 1.8456-.4128.164-.7164-.3704.0667-.6618.4008-.5889 2.386-3.0357 1.4389-1.882.929-1.0868-.0062-.1579h-.0546l-6.3385 4.1164-1.1293.1457-.4857-.4554.0608-.7467.2307-.2429 1.9064-1.3114Z",
+"googlegemini": "M11.04 19.32Q12 21.51 12 24q0-2.49.93-4.68.96-2.19 2.58-3.81t3.81-2.55Q21.51 12 24 12q-2.49 0-4.68-.93a12.3 12.3 0 0 1-3.81-2.58 12.3 12.3 0 0 1-2.58-3.81Q12 2.49 12 0q0 2.49-.96 4.68-.93 2.19-2.55 3.81a12.3 12.3 0 0 1-3.81 2.58Q2.49 12 0 12q2.49 0 4.68.96 2.19.93 3.81 2.55t2.55 3.81",
+"anthropic": "M17.3041 3.541h-3.6718l6.696 16.918H24Zm-10.6082 0L0 20.459h3.7442l1.3693-3.5527h7.0052l1.3693 3.5528h3.7442L10.5363 3.5409Zm-.3712 10.2232 2.2914-5.9456 2.2914 5.9456Z",
+"huggingface": "M12.025 1.13c-5.77 0-10.449 4.647-10.449 10.378 0 1.112.178 2.181.503 3.185.064-.222.203-.444.416-.577a.96.96 0 0 1 .524-.15c.293 0 .584.124.84.284.278.173.48.408.71.694.226.282.458.611.684.951v-.014c.017-.324.106-.622.264-.874s.403-.487.762-.543c.3-.047.596.06.787.203s.31.313.4.467c.15.257.212.468.233.542.01.026.653 1.552 1.657 2.54.616.605 1.01 1.223 1.082 1.912.055.537-.096 1.059-.38 1.572.637.121 1.294.187 1.967.187.657 0 1.298-.063 1.921-.178-.287-.517-.44-1.041-.384-1.581.07-.69.465-1.307 1.081-1.913 1.004-.987 1.647-2.513 1.657-2.539.021-.074.083-.285.233-.542.09-.154.208-.323.4-.467a1.08 1.08 0 0 1 .787-.203c.359.056.604.29.762.543s.247.55.265.874v.015c.225-.34.457-.67.683-.952.23-.286.432-.52.71-.694.257-.16.547-.284.84-.285a.97.97 0 0 1 .524.151c.228.143.373.388.43.625l.006.04a10.3 10.3 0 0 0 .534-3.273c0-5.731-4.678-10.378-10.449-10.378M8.327 6.583a1.5 1.5 0 0 1 .713.174 1.487 1.487 0 0 1 .617 2.013c-.183.343-.762-.214-1.102-.094-.38.134-.532.914-.917.71a1.487 1.487 0 0 1 .69-2.803m7.486 0a1.487 1.487 0 0 1 .689 2.803c-.385.204-.536-.576-.916-.71-.34-.12-.92.437-1.103.094a1.487 1.487 0 0 1 .617-2.013 1.5 1.5 0 0 1 .713-.174m-10.68 1.55a.96.96 0 1 1 0 1.921.96.96 0 0 1 0-1.92m13.838 0a.96.96 0 1 1 0 1.92.96.96 0 0 1 0-1.92M8.489 11.458c.588.01 1.965 1.157 3.572 1.164 1.607-.007 2.984-1.155 3.572-1.164.196-.003.305.12.305.454 0 .886-.424 2.328-1.563 3.202-.22-.756-1.396-1.366-1.63-1.32q-.011.001-.02.006l-.044.026-.01.008-.03.024q-.018.017-.035.036l-.032.04a1 1 0 0 0-.058.09l-.014.025q-.049.088-.11.19a1 1 0 0 1-.083.116 1.2 1.2 0 0 1-.173.18q-.035.029-.075.058a1.3 1.3 0 0 1-.251-.243 1 1 0 0 1-.076-.107c-.124-.193-.177-.363-.337-.444-.034-.016-.104-.008-.2.022q-.094.03-.216.087-.06.028-.125.063l-.13.074q-.067.04-.136.086a3 3 0 0 0-.135.096 3 3 0 0 0-.26.219 2 2 0 0 0-.12.121 2 2 0 0 0-.106.128l-.002.002a2 2 0 0 0-.09.132l-.001.001a1.2 1.2 0 0 0-.105.212q-.013.036-.024.073c-1.139-.875-1.563-2.317-1.563-3.203 0-.334.109-.457.305-.454m.836 10.354c.824-1.19.766-2.082-.365-3.194-1.13-1.112-1.789-2.738-1.789-2.738s-.246-.945-.806-.858-.97 1.499.202 2.362c1.173.864-.233 1.45-.685.64-.45-.812-1.683-2.896-2.322-3.295s-1.089-.175-.938.647 2.822 2.813 2.562 3.244-1.176-.506-1.176-.506-2.866-2.567-3.49-1.898.473 1.23 2.037 2.16c1.564.932 1.686 1.178 1.464 1.53s-3.675-2.511-4-1.297c-.323 1.214 3.524 1.567 3.287 2.405-.238.839-2.71-1.587-3.216-.642-.506.946 3.49 2.056 3.522 2.064 1.29.33 4.568 1.028 5.713-.624m5.349 0c-.824-1.19-.766-2.082.365-3.194 1.13-1.112 1.789-2.738 1.789-2.738s.246-.945.806-.858.97 1.499-.202 2.362c-1.173.864.233 1.45.685.64.451-.812 1.683-2.896 2.322-3.295s1.089-.175.938.647-2.822 2.813-2.562 3.244 1.176-.506 1.176-.506 2.866-2.567 3.49-1.898-.473 1.23-2.037 2.16c-1.564.932-1.686 1.178-1.464 1.53s3.675-2.511 4-1.297c.323 1.214-3.524 1.567-3.287 2.405.238.839 2.71-1.587 3.216-.642.506.946-3.49 2.056-3.522 2.064-1.29.33-4.568 1.028-5.713-.624",
+"langgraph": "M5 19H10A5 5 0 115 14ZM19 14A5 5 0 1114 19H19ZM10 5A5 5 0 105 10V5ZM19 5V10A5 5 0 1014 5Z",
+"langchain": "M13.796 0a6.93 6.93 0 0 0-4.91 2.019L5.451 5.455l3.273 3.27 3.432-3.432a2.284 2.284 0 0 1 3.277 0 2.28 2.28 0 0 1 0 3.275L12 12.001l3.273 3.273 3.433-3.435c2.692-2.692 2.692-7.127 0-9.82A6.92 6.92 0 0 0 13.796 0m-5.07 8.728-3.433 3.434c-2.692 2.693-2.692 7.126 0 9.819A6.92 6.92 0 0 0 10.203 24a6.93 6.93 0 0 0 4.911-2.02l3.432-3.432-3.271-3.272-3.433 3.433a2.284 2.284 0 0 1-3.277 0 2.28 2.28 0 0 1 0-3.276L12 12z",
+"polkadot": "M12,0c2.39,0,4.328,1.127,4.328,2.517S14.39,5.034,12,5.034,7.672,3.907,7.672,2.517,9.61,0,12,0Zm0,18.966c2.39,0,4.328,1.127,4.328,2.517S14.39,24,12,24s-4.328-1.127-4.328-2.517S9.61,18.966,12,18.966ZM1.606,6C2.8,3.93,4.747,2.816,5.952,3.511s1.212,2.937.017,5.007S2.828,11.7,1.624,11.007.411,8.07,1.606,6Zm16.427,9.483c1.2-2.07,3.139-3.184,4.343-2.489s1.211,2.936.016,5.006-3.14,3.185-4.344,2.49S16.837,17.553,18.033,15.483ZM1.624,12.993c1.205-.7,3.15.419,4.346,2.489s1.187,4.311-.018,5.007S2.8,20.07,1.607,18,.42,13.689,1.624,12.993ZM18.049,3.512c1.2-.695,3.149.419,4.344,2.489s1.188,4.311-.016,5.007-3.148-.42-4.343-2.49S16.846,4.207,18.049,3.512Z",
+"solana": "m23.8764 18.0313-3.962 4.1393a.9201.9201 0 0 1-.306.2106.9407.9407 0 0 1-.367.0742H.4599a.4689.4689 0 0 1-.2522-.0733.4513.4513 0 0 1-.1696-.1962.4375.4375 0 0 1-.0314-.2545.4438.4438 0 0 1 .117-.2298l3.9649-4.1393a.92.92 0 0 1 .3052-.2102.9407.9407 0 0 1 .3658-.0746H23.54a.4692.4692 0 0 1 .2523.0734.4531.4531 0 0 1 .1697.196.438.438 0 0 1 .0313.2547.4442.4442 0 0 1-.1169.2297zm-3.962-8.3355a.9202.9202 0 0 0-.306-.2106.941.941 0 0 0-.367-.0742H.4599a.4687.4687 0 0 0-.2522.0734.4513.4513 0 0 0-.1696.1961.4376.4376 0 0 0-.0314.2546.444.444 0 0 0 .117.2297l3.9649 4.1394a.9204.9204 0 0 0 .3052.2102c.1154.049.24.0744.3658.0746H23.54a.469.469 0 0 0 .2523-.0734.453.453 0 0 0 .1697-.1961.4382.4382 0 0 0 .0313-.2546.4444.4444 0 0 0-.1169-.2297zM.46 6.7225h18.7815a.9411.9411 0 0 0 .367-.0742.9202.9202 0 0 0 .306-.2106l3.962-4.1394a.4442.4442 0 0 0 .117-.2297.4378.4378 0 0 0-.0314-.2546.453.453 0 0 0-.1697-.196.469.469 0 0 0-.2523-.0734H4.7596a.941.941 0 0 0-.3658.0745.9203.9203 0 0 0-.3052.2102L.1246 5.9687a.4438.4438 0 0 0-.1169.2295.4375.4375 0 0 0 .0312.2544.4512.4512 0 0 0 .1692.196.4689.4689 0 0 0 .2518.0739z",
+"bitcoin": "M23.638 14.904c-1.602 6.43-8.113 10.34-14.542 8.736C2.67 22.05-1.244 15.525.362 9.105 1.962 2.67 8.475-1.243 14.9.358c6.43 1.605 10.342 8.115 8.738 14.548v-.002zm-6.35-4.613c.24-1.59-.974-2.45-2.64-3.03l.54-2.153-1.315-.33-.525 2.107c-.345-.087-.705-.167-1.064-.25l.526-2.127-1.32-.33-.54 2.165c-.285-.067-.565-.132-.84-.2l-1.815-.45-.35 1.407s.975.225.955.236c.535.136.63.486.615.766l-1.477 5.92c-.075.166-.24.406-.614.314.015.02-.96-.24-.96-.24l-.66 1.51 1.71.426.93.242-.54 2.19 1.32.327.54-2.17c.36.1.705.19 1.05.273l-.51 2.154 1.32.33.545-2.19c2.24.427 3.93.257 4.64-1.774.57-1.637-.03-2.58-1.217-3.196.854-.193 1.5-.76 1.68-1.93h.01zm-3.01 4.22c-.404 1.64-3.157.75-4.05.53l.72-2.9c.896.23 3.757.67 3.33 2.37zm.41-4.24c-.37 1.49-2.662.735-3.405.55l.654-2.64c.744.18 3.137.524 2.75 2.084v.006z",
+"githubactions": "M10.984 13.836a.5.5 0 0 1-.353-.146l-.745-.743a.5.5 0 1 1 .706-.708l.392.391 1.181-1.18a.5.5 0 0 1 .708.707l-1.535 1.533a.504.504 0 0 1-.354.146zm9.353-.147l1.534-1.532a.5.5 0 0 0-.707-.707l-1.181 1.18-.392-.391a.5.5 0 1 0-.706.708l.746.743a.497.497 0 0 0 .706-.001zM4.527 7.452l2.557-1.585A1 1 0 0 0 7.09 4.17L4.533 2.56A1 1 0 0 0 3 3.406v3.196a1.001 1.001 0 0 0 1.527.85zm2.03-2.436L4 6.602V3.406l2.557 1.61zM24 12.5c0 1.93-1.57 3.5-3.5 3.5a3.503 3.503 0 0 1-3.46-3h-2.08a3.503 3.503 0 0 1-3.46 3 3.502 3.502 0 0 1-3.46-3h-.558c-.972 0-1.85-.399-2.482-1.042V17c0 1.654 1.346 3 3 3h.04c.244-1.693 1.7-3 3.46-3 1.93 0 3.5 1.57 3.5 3.5S13.43 24 11.5 24a3.502 3.502 0 0 1-3.46-3H8c-2.206 0-4-1.794-4-4V9.899A5.008 5.008 0 0 1 0 5c0-2.757 2.243-5 5-5s5 2.243 5 5a5.005 5.005 0 0 1-4.952 4.998A2.482 2.482 0 0 0 7.482 12h.558c.244-1.693 1.7-3 3.46-3a3.502 3.502 0 0 1 3.46 3h2.08a3.503 3.503 0 0 1 3.46-3c1.93 0 3.5 1.57 3.5 3.5zm-15 8c0 1.378 1.122 2.5 2.5 2.5s2.5-1.122 2.5-2.5-1.122-2.5-2.5-2.5S9 19.122 9 20.5zM5 9c2.206 0 4-1.794 4-4S7.206 1 5 1 1 2.794 1 5s1.794 4 4 4zm9 3.5c0-1.378-1.122-2.5-2.5-2.5S9 11.122 9 12.5s1.122 2.5 2.5 2.5 2.5-1.122 2.5-2.5zm9 0c0-1.378-1.122-2.5-2.5-2.5S18 11.122 18 12.5s1.122 2.5 2.5 2.5 2.5-1.122 2.5-2.5zm-13 8a.5.5 0 1 0 1 0 .5.5 0 0 0-1 0zm2 0a.5.5 0 1 0 1 0 .5.5 0 0 0-1 0zm12 0c0 1.93-1.57 3.5-3.5 3.5a3.503 3.503 0 0 1-3.46-3.002c-.007.001-.013.005-.021.005l-.506.017h-.017a.5.5 0 0 1-.016-.999l.506-.017c.018-.002.035.006.052.007A3.503 3.503 0 0 1 20.5 17c1.93 0 3.5 1.57 3.5 3.5zm-1 0c0-1.378-1.122-2.5-2.5-2.5S18 19.122 18 20.5s1.122 2.5 2.5 2.5 2.5-1.122 2.5-2.5z",
+"linux": "M12.504 0c-.155 0-.315.008-.48.021-4.226.333-3.105 4.807-3.17 6.298-.076 1.092-.3 1.953-1.05 3.02-.885 1.051-2.127 2.75-2.716 4.521-.278.832-.41 1.684-.287 2.489a.424.424 0 00-.11.135c-.26.268-.45.6-.663.839-.199.199-.485.267-.797.4-.313.136-.658.269-.864.68-.09.189-.136.394-.132.602 0 .199.027.4.055.536.058.399.116.728.04.97-.249.68-.28 1.145-.106 1.484.174.334.535.47.94.601.81.2 1.91.135 2.774.6.926.466 1.866.67 2.616.47.526-.116.97-.464 1.208-.946.587-.003 1.23-.269 2.26-.334.699-.058 1.574.267 2.577.2.025.134.063.198.114.333l.003.003c.391.778 1.113 1.132 1.884 1.071.771-.06 1.592-.536 2.257-1.306.631-.765 1.683-1.084 2.378-1.503.348-.199.629-.469.649-.853.023-.4-.2-.811-.714-1.376v-.097l-.003-.003c-.17-.2-.25-.535-.338-.926-.085-.401-.182-.786-.492-1.046h-.003c-.059-.054-.123-.067-.188-.135a.357.357 0 00-.19-.064c.431-1.278.264-2.55-.173-3.694-.533-1.41-1.465-2.638-2.175-3.483-.796-1.005-1.576-1.957-1.56-3.368.026-2.152.236-6.133-3.544-6.139zm.529 3.405h.013c.213 0 .396.062.584.198.19.135.33.332.438.533.105.259.158.459.166.724 0-.02.006-.04.006-.06v.105a.086.086 0 01-.004-.021l-.004-.024a1.807 1.807 0 01-.15.706.953.953 0 01-.213.335.71.71 0 00-.088-.042c-.104-.045-.198-.064-.284-.133a1.312 1.312 0 00-.22-.066c.05-.06.146-.133.183-.198.053-.128.082-.264.088-.402v-.02a1.21 1.21 0 00-.061-.4c-.045-.134-.101-.2-.183-.333-.084-.066-.167-.132-.267-.132h-.016c-.093 0-.176.03-.262.132a.8.8 0 00-.205.334 1.18 1.18 0 00-.09.4v.019c.002.089.008.179.02.267-.193-.067-.438-.135-.607-.202a1.635 1.635 0 01-.018-.2v-.02a1.772 1.772 0 01.15-.768c.082-.22.232-.406.43-.533a.985.985 0 01.594-.2zm-2.962.059h.036c.142 0 .27.048.399.135.146.129.264.288.344.465.09.199.14.4.153.667v.004c.007.134.006.2-.002.266v.08c-.03.007-.056.018-.083.024-.152.055-.274.135-.393.2.012-.09.013-.18.003-.267v-.015c-.012-.133-.04-.2-.082-.333a.613.613 0 00-.166-.267.248.248 0 00-.183-.064h-.021c-.071.006-.13.04-.186.132a.552.552 0 00-.12.27.944.944 0 00-.023.33v.015c.012.135.037.2.08.334.046.134.098.2.166.268.01.009.02.018.034.024-.07.057-.117.07-.176.136a.304.304 0 01-.131.068 2.62 2.62 0 01-.275-.402 1.772 1.772 0 01-.155-.667 1.759 1.759 0 01.08-.668 1.43 1.43 0 01.283-.535c.128-.133.26-.2.418-.2zm1.37 1.706c.332 0 .733.065 1.216.399.293.2.523.269 1.052.468h.003c.255.136.405.266.478.399v-.131a.571.571 0 01.016.47c-.123.31-.516.643-1.063.842v.002c-.268.135-.501.333-.775.465-.276.135-.588.292-1.012.267a1.139 1.139 0 01-.448-.067 3.566 3.566 0 01-.322-.198c-.195-.135-.363-.332-.612-.465v-.005h-.005c-.4-.246-.616-.512-.686-.71-.07-.268-.005-.47.193-.6.224-.135.38-.271.483-.336.104-.074.143-.102.176-.131h.002v-.003c.169-.202.436-.47.839-.601.139-.036.294-.065.466-.065zm2.8 2.142c.358 1.417 1.196 3.475 1.735 4.473.286.534.855 1.659 1.102 3.024.156-.005.33.018.513.064.646-1.671-.546-3.467-1.089-3.966-.22-.2-.232-.335-.123-.335.59.534 1.365 1.572 1.646 2.757.13.535.16 1.104.021 1.67.067.028.135.06.205.067 1.032.534 1.413.938 1.23 1.537v-.043c-.06-.003-.12 0-.18 0h-.016c.151-.467-.182-.825-1.065-1.224-.915-.4-1.646-.336-1.77.465-.008.043-.013.066-.018.135-.068.023-.139.053-.209.064-.43.268-.662.669-.793 1.187-.13.533-.17 1.156-.205 1.869v.003c-.02.334-.17.838-.319 1.35-1.5 1.072-3.58 1.538-5.348.334a2.645 2.645 0 00-.402-.533 1.45 1.45 0 00-.275-.333c.182 0 .338-.03.465-.067a.615.615 0 00.314-.334c.108-.267 0-.697-.345-1.163-.345-.467-.931-.995-1.788-1.521-.63-.4-.986-.87-1.15-1.396-.165-.534-.143-1.085-.015-1.645.245-1.07.873-2.11 1.274-2.763.107-.065.037.135-.408.974-.396.751-1.14 2.497-.122 3.854a8.123 8.123 0 01.647-2.876c.564-1.278 1.743-3.504 1.836-5.268.048.036.217.135.289.202.218.133.38.333.59.465.21.201.477.335.876.335.039.003.075.006.11.006.412 0 .73-.134.997-.268.29-.134.52-.334.74-.4h.005c.467-.135.835-.402 1.044-.7zm2.185 8.958c.037.6.343 1.245.882 1.377.588.134 1.434-.333 1.791-.765l.211-.01c.315-.007.577.01.847.268l.003.003c.208.199.305.53.391.876.085.4.154.78.409 1.066.486.527.645.906.636 1.14l.003-.007v.018l-.003-.012c-.015.262-.185.396-.498.595-.63.401-1.746.712-2.457 1.57-.618.737-1.37 1.14-2.036 1.191-.664.053-1.237-.2-1.574-.898l-.005-.003c-.21-.4-.12-1.025.056-1.69.176-.668.428-1.344.463-1.897.037-.714.076-1.335.195-1.814.12-.465.308-.797.641-.984l.045-.022zm-10.814.049h.01c.053 0 .105.005.157.014.376.055.706.333 1.023.752l.91 1.664.003.003c.243.533.754 1.064 1.189 1.637.434.598.77 1.131.729 1.57v.006c-.057.744-.48 1.148-1.125 1.294-.645.135-1.52.002-2.395-.464-.968-.536-2.118-.469-2.857-.602-.369-.066-.61-.2-.723-.4-.11-.2-.113-.602.123-1.23v-.004l.002-.003c.117-.334.03-.752-.027-1.118-.055-.401-.083-.71.043-.94.16-.334.396-.4.69-.533.294-.135.64-.202.915-.47h.002v-.002c.256-.268.445-.601.668-.838.19-.201.38-.336.663-.336zm7.159-9.074c-.435.201-.945.535-1.488.535-.542 0-.97-.267-1.28-.466-.154-.134-.28-.268-.373-.335-.164-.134-.144-.333-.074-.333.109.016.129.134.199.2.096.066.215.2.36.333.292.2.68.467 1.167.467.485 0 1.053-.267 1.398-.466.195-.135.445-.334.648-.467.156-.136.149-.267.279-.267.128.016.034.134-.147.332a8.097 8.097 0 01-.69.468zm-1.082-1.583V5.64c-.006-.02.013-.042.029-.05.074-.043.18-.027.26.004.063 0 .16.067.15.135-.006.049-.085.066-.135.066-.055 0-.092-.043-.141-.068-.052-.018-.146-.008-.163-.065zm-.551 0c-.02.058-.113.049-.166.066-.047.025-.086.068-.14.068-.05 0-.13-.02-.136-.068-.01-.066.088-.133.15-.133.08-.031.184-.047.259-.005.019.009.036.03.03.05v.02h.003z",
+"googlecloud": "M12.19 2.38a9.344 9.344 0 0 0-9.234 6.893c.053-.02-.055.013 0 0-3.875 2.551-3.922 8.11-.247 10.941l.006-.007-.007.03a6.717 6.717 0 0 0 4.077 1.356h5.173l.03.03h5.192c6.687.053 9.376-8.605 3.835-12.35a9.365 9.365 0 0 0-2.821-4.552l-.043.043.006-.05A9.344 9.344 0 0 0 12.19 2.38zm-.358 4.146c1.244-.04 2.518.368 3.486 1.15a5.186 5.186 0 0 1 1.862 4.078v.518c3.53-.07 3.53 5.262 0 5.193h-5.193l-.008.009v-.04H6.785a2.59 2.59 0 0 1-1.067-.23h.001a2.597 2.597 0 1 1 3.437-3.437l3.013-3.012A6.747 6.747 0 0 0 8.11 8.24c.018-.01.04-.026.054-.023a5.186 5.186 0 0 1 3.67-1.69z",
+"angular": "M16.712 17.711H7.288l-1.204 2.916L12 24l5.916-3.373-1.204-2.916ZM14.692 0l7.832 16.855.814-12.856L14.692 0ZM9.308 0 .662 3.999l.814 12.856L9.308 0Zm-.405 13.93h6.198L12 6.396 8.903 13.93Z",
+"streamlit": "M16.673 11.32l6.862-3.618c.233-.136.554.12.442.387L20.463 17.1zm-8.556-.229l3.473-5.187c.203-.328.578-.316.793-.028l7.886 11.75zm-3.375 7.25c-.28 0-.835-.284-.993-.716l-3.72-9.46c-.118-.331.139-.614.48-.464l19.474 10.306c-.149.147-.453.337-.72.334z",
+"flask": "M10.773 2.878c-.013 1.434.322 4.624.445 5.734l-8.558 3.83c-.56-.959-.98-2.304-1.237-3.38l-.06.027c-.205.09-.406.053-.494-.088l-.011-.018-.82-1.506c-.058-.105-.05-.252.024-.392a.78.78 0 0 1 .358-.331l9.824-4.207c.146-.064.299-.063.4.004.106.062.127.128.13.327Zm.68 7c.523 1.97.675 2.412.832 2.818l-7.263 3.7a19.35 19.35 0 0 1-1.81-2.83l8.24-3.689Zm12.432 8.786h.003c.283.402-.047.657-.153.698l-.947.37c.037.125.035.319-.217.414l-.736.287c-.229.09-.398-.059-.42-.2l-.025-.125c-4.427 1.784-7.94 1.685-10.696.647-1.981-.745-3.576-1.983-4.846-3.379l6.948-3.54c.721 1.431 1.586 2.454 2.509 3.178 2.086 1.638 4.415 1.712 5.793 1.563l-.047-.233c-.015-.077.007-.135.086-.165l.734-.288a.302.302 0 0 1 .342.086l.748-.288a.306.306 0 0 1 .341.086l.583.89Z",
+"fastapi": "M12 .0387C5.3729.0384.0003 5.3931 0 11.9988c-.001 6.6066 5.372 11.9628 12 11.9625 6.628.0003 12.001-5.3559 12-11.9625-.0003-6.6057-5.3729-11.9604-12-11.96m-.829 5.4153h7.55l-7.5805 5.3284h5.1828L5.279 18.5436q2.9466-6.5444 5.892-13.0896",
+"solidity": "M4.409 6.608L7.981.255l3.572 6.353H4.409zM8.411 0l3.569 6.348L15.552 0H8.411zm4.036 17.392l3.572 6.354 3.575-6.354h-7.147zm-.608-10.284h-7.43l3.715 6.605 3.715-6.605zm.428-.25h7.428L15.982.255l-3.715 6.603zM15.589 24l-3.569-6.349L8.448 24h7.141zm-3.856-6.858H4.306l3.712 6.603 3.715-6.603zm.428-.25h7.433l-3.718-6.605-3.715 6.605z",
+"aws": "<svg viewBox=\"0 0 24 24\"><g fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M7 18h10.5a4.5 4.5 0 0 0 .7-8.95A6 6 0 0 0 6.6 9.3 4.4 4.4 0 0 0 7 18z\"/><\/g><\/svg>",
+"monad": "<svg viewBox=\"0 0 24 24\"><g fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M12 2.5c3 0 9.5 6.5 9.5 9.5S15 21.5 12 21.5 2.5 15 2.5 12 9 2.5 12 2.5z\"/><path d=\"M12 7.5c1.6 0 4.5 2.9 4.5 4.5S13.6 16.5 12 16.5 7.5 13.6 7.5 12 10.4 7.5 12 7.5z\"/><\/g><\/svg>",
+"llamaindex": "<svg viewBox=\"0 0 24 24\"><g fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M5 4h11l3 3v13H5z\"/><path d=\"M8 9h8M8 13h8M8 17h5\"/><\/g><\/svg>",
+"openaiapi": "<svg viewBox=\"0 0 24 24\"><g fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M8 4c-2.5 0-3 1.5-3 3v2c0 1.5-1 3-2.5 3C4 12 5 13.5 5 15v2c0 1.5.5 3 3 3M16 4c2.5 0 3 1.5 3 3v2c0 1.5 1 3 2.5 3-1.5 0-2.5 1.5-2.5 3v2c0 1.5-.5 3-3 3\"/><circle cx=\"12\" cy=\"12\" r=\"1.4\"/><\/g><\/svg>",
+"codex": "<svg viewBox=\"0 0 24 24\"><g fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><rect x=\"2.5\" y=\"4\" width=\"19\" height=\"16\" rx=\"2.5\"/><path d=\"M7 10l3 2.5L7 15M12.5 15.5H17\"/><\/g><\/svg>",
+"pgvector": "<svg viewBox=\"0 0 24 24\"><g fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M4 20L12 6M4 20l15-6M4 20l6-14\"/><path d=\"M12 6l-2.6.8M12 6l.6 2.6M19 14l-2.5-1.2M19 14l-1.6 2.3\"/><\/g><\/svg>",
+"cicd": "<svg viewBox=\"0 0 24 24\"><g fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M3.5 12a4.5 4.5 0 0 1 8.2-2.6L12 10l.3-.6A4.5 4.5 0 1 1 12.3 14.6L12 14l-.3.6A4.5 4.5 0 0 1 3.5 12z\"/><path d=\"M17 5.5l1.8 1.8L17 9\"/><\/g><\/svg>",
+"verilog": "<svg viewBox=\"0 0 24 24\"><g fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><rect x=\"6\" y=\"6\" width=\"12\" height=\"12\" rx=\"1.5\"/><path d=\"M9 2.5V6M15 2.5V6M9 18v3.5M15 18v3.5M2.5 9H6M2.5 15H6M18 9h3.5M18 15h3.5M9.5 10l2.5 4.5 2.5-4.5\"/><\/g><\/svg>"
+};
+/* ICONES:FIM */
+
+/* conceptual covers (SVG) — never presented as product screenshots */
+/* CAPAS:INICIO */
+const K = { ink:'#191A1B', wine:'#6C1932', pink:'#EFC9D8', pinkD:'#E0A6BE', blue:'#BFDDF6', blueD:'#93C3EA', lime:'#DDFC45', cream:'#FFFBEF', lilac:'#DCD0F5', lilacD:'#BBA8E8' };
+const star4 = (cx, cy, r, fill, stroke = K.ink) =>
+  `<path d="M${cx} ${cy-r}C${cx+r*.12} ${cy-r*.12} ${cx+r*.12} ${cy-r*.12} ${cx+r} ${cy}C${cx+r*.12} ${cy+r*.12} ${cx+r*.12} ${cy+r*.12} ${cx} ${cy+r}C${cx-r*.12} ${cy+r*.12} ${cx-r*.12} ${cy+r*.12} ${cx-r} ${cy}C${cx-r*.12} ${cy-r*.12} ${cx-r*.12} ${cy-r*.12} ${cx} ${cy-r}z" fill="${fill}" stroke="${stroke}" stroke-width="1.5" stroke-linejoin="round"/>`;
+const dots = (color, op = .35) => `<pattern id="d" width="10" height="10" patternUnits="userSpaceOnUse"><circle cx="2" cy="2" r="1" fill="${color}" opacity="${op}"/></pattern>`;
+
+const COVERS = {
+  chip() {
+    let pins = '';
+    for (let i = 0; i < 6; i++) {
+      const p = 70 + i * 12, q = 40 + i * 12;
+      pins += `<path d="M${p} 20v12M${p} 108v12M50 ${q}h12M138 ${q}h12"/>`;
+    }
+    return `<rect width="200" height="140" fill="${K.blue}"/>
+      <g stroke="${K.blueD}" stroke-width="2" fill="none"><path d="M0 70h30M170 40h30M170 100h30M100 0v10M20 140v-20h20"/></g>
+      <g stroke="${K.ink}" stroke-width="3" stroke-linecap="round">${pins}</g>
+      <rect x="62" y="32" width="76" height="76" rx="9" fill="${K.ink}"/>
+      <rect x="78" y="48" width="44" height="44" rx="5" fill="${K.lime}"/>
+      <text x="100" y="75" text-anchor="middle" font-family="DM Mono,monospace" font-size="13" font-weight="500" fill="${K.ink}">CPU</text>
+      <rect x="146" y="108" width="44" height="22" rx="11" fill="${K.cream}" stroke="${K.ink}" stroke-width="2"/>
+      <text x="168" y="123" text-anchor="middle" font-family="DM Mono,monospace" font-size="11" fill="${K.wine}">ALU</text>
+      ${star4(28, 30, 10, K.cream)}`;
+  },
+  neural() {
+    const seven = ['11111','00001','00010','00100','01000','01000','01000'];
+    let px = '';
+    seven.forEach((row, y) => [...row].forEach((v, x) => {
+      px += `<rect x="${12 + x*5}" y="${52 + y*5}" width="4.4" height="4.4" fill="${v === '1' ? K.wine : K.cream}"/>`;
+    }));
+    const layers = [[64, 3], [118, 4], [172, 2]];
+    const pos = layers.map(([x, n]) => Array.from({ length: n }, (_, j) => [x, 70 + (j - (n - 1) / 2) * 30]));
+    let lines = '';
+    pos[0].forEach(([x, y]) => lines += `<path d="M42 70L${x} ${y}"/>`);
+    for (let l = 0; l < pos.length - 1; l++) pos[l].forEach(([x1, y1]) => pos[l + 1].forEach(([x2, y2]) => lines += `<path d="M${x1} ${y1}L${x2} ${y2}"/>`));
+    let nodes = '';
+    pos.forEach((layer, l) => layer.forEach(([x, y], j) => nodes += `<circle cx="${x}" cy="${y}" r="8" fill="${l === 2 && j === 0 ? K.lime : K.cream}" stroke="${K.ink}" stroke-width="2"/>`));
+    return `<rect width="200" height="140" fill="${K.pink}"/>
+      <rect x="8" y="48" width="34" height="44" rx="4" fill="${K.cream}" stroke="${K.ink}" stroke-width="2"/>${px}
+      <g stroke="${K.wine}" stroke-width="1.3" opacity=".6">${lines}</g>${nodes}
+      <text x="172" y="122" text-anchor="middle" font-family="DM Mono,monospace" font-size="11" fill="${K.wine}">→ 7</text>`;
+  },
+  ros() {
+    return `<rect width="200" height="140" fill="${K.lilac}"/><defs>${dots(K.ink, .3)}</defs><rect width="200" height="140" fill="url(#d)"/>
+      <path d="M18 122C60 122 52 46 104 54S160 112 182 30" fill="none" stroke="${K.wine}" stroke-width="3" stroke-dasharray="7 6" stroke-linecap="round"/>
+      <path d="M18 100C50 92 70 20 120 26" fill="none" stroke="${K.lilacD}" stroke-width="3" stroke-dasharray="4 6" stroke-linecap="round"/>
+      <g fill="none" stroke="${K.ink}" stroke-width="2.5" stroke-linecap="round"><path d="M86 38v-8h8M122 38v-8h-8M86 70v8h8M122 70v8h-8"/></g>
+      <circle cx="104" cy="54" r="11" fill="${K.ink}"/><path d="M100 48l10 6-10 6z" fill="${K.lime}"/>
+      <circle cx="182" cy="30" r="12" fill="none" stroke="${K.wine}" stroke-width="2"/><circle cx="182" cy="30" r="5" fill="${K.lime}" stroke="${K.ink}" stroke-width="1.5"/>
+      <circle cx="18" cy="122" r="5" fill="${K.cream}" stroke="${K.ink}" stroke-width="2"/>
+      <rect x="10" y="10" width="40" height="20" rx="10" fill="${K.cream}" stroke="${K.ink}" stroke-width="2"/><text x="30" y="24" text-anchor="middle" font-family="DM Mono,monospace" font-size="10" fill="${K.ink}">ROS</text>`;
+  },
+  train() {
+    return `<rect width="200" height="140" fill="${K.blue}"/>
+      <rect x="0" y="112" width="200" height="28" fill="${K.cream}" stroke="${K.ink}" stroke-width="2"/>
+      <path d="M0 122h200" stroke="${K.ink}" stroke-width="1.5" stroke-dasharray="10 6"/>
+      <rect x="10" y="44" width="180" height="62" rx="16" fill="${K.wine}" stroke="${K.ink}" stroke-width="2.5"/>
+      <g fill="${K.cream}" stroke="${K.ink}" stroke-width="1.5"><rect x="24" y="56" width="26" height="20" rx="4"/><rect x="60" y="56" width="26" height="20" rx="4"/><rect x="114" y="56" width="26" height="20" rx="4"/><rect x="150" y="56" width="26" height="20" rx="4"/></g>
+      <g stroke="${K.ink}" stroke-width="2.5"><path d="M10 34v78M58 34v78M106 34v78M154 34v78M196 34v78"/><path d="M6 34h194"/></g>
+      <g fill="rgba(255,255,255,.35)"><rect x="12" y="36" width="44" height="76"/><rect x="108" y="36" width="44" height="76"/></g>
+      <rect x="62" y="38" width="40" height="72" fill="none" stroke="${K.lime}" stroke-width="3" stroke-dasharray="5 4"/>
+      <circle cx="170" cy="20" r="12" fill="${K.cream}" stroke="${K.ink}" stroke-width="2"/><path d="M170 20l6-6" stroke="${K.wine}" stroke-width="2.5" stroke-linecap="round"/><path d="M162 26a10 10 0 0 1 16 0" fill="none" stroke="${K.ink}" stroke-width="1"/>
+      <path d="M14 22h16l5-8 6 16 5-8h18" fill="none" stroke="${K.wine}" stroke-width="2.2" stroke-linejoin="round" stroke-linecap="round"/>`;
+  },
+  camera() {
+    return `<rect width="200" height="140" fill="${K.pink}"/>
+      <path d="M68 56L104 78V110L68 64z" fill="${K.lime}" opacity=".45"/>
+      <rect x="12" y="32" width="68" height="46" rx="9" fill="${K.ink}"/><rect x="22" y="24" width="20" height="10" rx="3" fill="${K.ink}"/>
+      <circle cx="48" cy="55" r="16" fill="${K.blue}" stroke="${K.cream}" stroke-width="3"/><circle cx="48" cy="55" r="7" fill="${K.ink}"/><circle cx="44" cy="51" r="2.5" fill="#fff"/>
+      <rect x="96" y="74" width="92" height="40" rx="6" fill="${K.cream}" stroke="${K.ink}" stroke-width="2.5"/>
+      <rect x="96" y="74" width="92" height="9" rx="4" fill="${K.blueD}" stroke="${K.ink}" stroke-width="2"/>
+      <text x="142" y="106" text-anchor="middle" font-family="DM Mono,monospace" font-size="16" font-weight="500" letter-spacing="1.5" fill="${K.ink}">ABC1D23</text>
+      <rect x="92" y="92" width="100" height="3" fill="${K.lime}" stroke="${K.ink}" stroke-width=".8"/>
+      <g fill="none" stroke="${K.wine}" stroke-width="2.5" stroke-linecap="round"><path d="M88 74v-8h8M196 74v-8h-8M88 114v8h8M196 114v8h-8"/></g>
+      ${star4(170, 30, 12, K.lime)}`;
+  },
+  house() {
+    return `<rect width="200" height="140" fill="${K.cream}"/>
+      <g transform="rotate(-8 140 66)"><rect x="112" y="26" width="58" height="76" rx="4" fill="#fff" stroke="${K.ink}" stroke-width="2"/><path d="M122 42h38M122 52h38M122 62h26M122 72h34" stroke="${K.blueD}" stroke-width="3" stroke-linecap="round"/></g>
+      <g transform="rotate(7 150 70)"><rect x="128" y="34" width="56" height="74" rx="4" fill="${K.pink}" stroke="${K.ink}" stroke-width="2"/><path d="M138 50h36M138 60h36M138 70h22" stroke="${K.wine}" stroke-width="3" stroke-linecap="round" opacity=".6"/></g>
+      <path d="M24 66L72 26L120 66z" fill="${K.wine}" stroke="${K.ink}" stroke-width="2.5" stroke-linejoin="round"/>
+      <rect x="34" y="64" width="76" height="52" fill="${K.pink}" stroke="${K.ink}" stroke-width="2.5"/>
+      <rect x="62" y="84" width="20" height="32" fill="${K.lime}" stroke="${K.ink}" stroke-width="2"/>
+      <rect x="42" y="74" width="14" height="14" fill="${K.blue}" stroke="${K.ink}" stroke-width="2"/><rect x="88" y="74" width="14" height="14" fill="${K.blue}" stroke="${K.ink}" stroke-width="2"/>
+      <g stroke="${K.ink}" stroke-width="2"><path d="M138 124h12M162 124h12"/></g>
+      <g fill="${K.lime}" stroke="${K.ink}" stroke-width="2"><rect x="126" y="117" width="12" height="12" rx="2"/><rect x="150" y="117" width="12" height="12" rx="2"/><rect x="174" y="117" width="12" height="12" rx="2"/></g>`;
+  },
+  coins() {
+    let stack = '';
+    for (let k = 0; k < 4; k++) {
+      const y = 104 - k * 13;
+      stack += `<path d="M36 ${y}v8a34 11 0 0 0 68 0v-8" fill="${k % 2 ? K.pinkD : K.pink}" stroke="${K.ink}" stroke-width="2"/><ellipse cx="70" cy="${y}" rx="34" ry="11" fill="${k % 2 ? K.pinkD : K.pink}" stroke="${K.ink}" stroke-width="2"/>`;
+    }
+    return `<rect width="200" height="140" fill="${K.cream}"/><defs>${dots(K.wine, .25)}</defs><rect width="200" height="140" fill="url(#d)"/>
+      ${stack}<text x="70" y="69" text-anchor="middle" font-family="Fraunces,Georgia,serif" font-style="italic" font-weight="800" font-size="15" fill="${K.wine}">04</text>
+      <path d="M112 64C136 40 150 36 168 38" fill="none" stroke="${K.ink}" stroke-width="2" stroke-dasharray="4 5"/><path d="M162 32l8 6-8 6" fill="none" stroke="${K.ink}" stroke-width="2"/>
+      <circle cx="140" cy="88" r="10" fill="${K.lime}" stroke="${K.ink}" stroke-width="2"/><circle cx="166" cy="104" r="7" fill="${K.lime}" stroke="${K.ink}" stroke-width="2"/><circle cx="184" cy="84" r="5" fill="${K.lime}" stroke="${K.ink}" stroke-width="2"/>`;
+  },
+  bridge() {
+    let cables = '';
+    for (let x = 34; x <= 166; x += 16) {
+      const t = (x - 20) / 160, y = (1 - t) * (1 - t) * 92 + 2 * (1 - t) * t * 12 + t * t * 92;
+      cables += `<path d="M${x} ${y.toFixed(1)}V92"/>`;
+    }
+    return `<rect width="200" height="140" fill="${K.blue}"/>
+      <rect x="0" y="104" width="200" height="36" fill="${K.blueD}"/><g stroke="${K.cream}" stroke-width="2" stroke-linecap="round" opacity=".8"><path d="M14 116h22M60 124h30M120 114h26M160 128h24"/></g>
+      <g stroke="${K.ink}" stroke-width="1.6">${cables}</g>
+      <path d="M20 92Q100 12 180 92" fill="none" stroke="${K.wine}" stroke-width="6" stroke-linecap="round"/>
+      <rect x="6" y="90" width="188" height="9" rx="3" fill="${K.wine}" stroke="${K.ink}" stroke-width="2"/>
+      <rect x="16" y="99" width="10" height="14" fill="${K.ink}"/><rect x="174" y="99" width="10" height="14" fill="${K.ink}"/>
+      ${star4(162, 26, 15, K.lime)}
+      <path d="M40 46s-14-8-14-17c0-4 3-7 7-7 3 0 5 2 7 4 2-2 4-4 7-4 4 0 7 3 7 7 0 9-14 17-14 17z" fill="${K.pink}" stroke="${K.ink}" stroke-width="2"/>`;
+  },
+  docker() {
+    let boxes = '';
+    [[52, 70], [82, 70], [112, 70], [67, 46], [97, 46]].forEach(([x, y], i) => {
+      boxes += `<rect x="${x}" y="${y}" width="28" height="22" fill="${i === 4 ? K.lime : K.cream}" stroke="${K.ink}" stroke-width="2"/><path d="M${x + 7} ${y + 4}v14M${x + 14} ${y + 4}v14M${x + 21} ${y + 4}v14" stroke="${K.blueD}" stroke-width="1.6"/>`;
+    });
+    return `<rect width="200" height="140" fill="${K.blue}"/>
+      <path d="M30 94h134c0 18-22 30-62 30S30 112 30 94z" fill="${K.blueD}" stroke="${K.ink}" stroke-width="2.5"/>
+      ${boxes}
+      <path d="M0 122c20-8 30 8 50 0s30 8 50 0 30 8 50 0 30 8 50 0V140H0z" fill="${K.cream}" stroke="${K.ink}" stroke-width="2"/>
+      <g stroke="${K.wine}" stroke-width="1.5"><path d="M160 22l20 14M160 22l20-6M160 46l20-10M160 46l20-30"/></g>
+      <g fill="${K.pink}" stroke="${K.ink}" stroke-width="2"><circle cx="160" cy="22" r="6"/><circle cx="160" cy="46" r="6"/><circle cx="180" cy="16" r="6"/><circle cx="180" cy="36" r="6"/></g>`;
+  },
+  weather() {
+    return `<rect width="200" height="140" fill="${K.blue}"/>
+      <g stroke="${K.ink}" stroke-width="2.5" stroke-linecap="round"><path d="M58 14v8M58 78v8M22 50h8M86 50h8M33 25l6 6M77 69l6 6M33 75l6-6M77 31l6-6"/></g>
+      <circle cx="58" cy="50" r="20" fill="${K.lime}" stroke="${K.ink}" stroke-width="2.5"/>
+      <path d="M70 100a16 16 0 0 1 4-31 22 22 0 0 1 42-4 18 18 0 0 1 8 35z" fill="${K.cream}" stroke="${K.ink}" stroke-width="2.5" stroke-linejoin="round"/>
+      <path d="M162 126V44" stroke="${K.ink}" stroke-width="3"/><path d="M144 44h36" stroke="${K.ink}" stroke-width="2.5"/>
+      <g fill="${K.pink}" stroke="${K.ink}" stroke-width="2"><path d="M136 44a8 8 0 0 0 16 0z"/><path d="M172 44a8 8 0 0 0 16 0z"/></g>
+      <rect x="150" y="96" width="24" height="30" rx="3" fill="${K.wine}" stroke="${K.ink}" stroke-width="2"/>
+      <g fill="${K.cream}"><rect x="155" y="102" width="14" height="3"/><rect x="155" y="109" width="14" height="3"/></g>`;
+  },
+  boat() {
+    return `<rect width="200" height="140" fill="${K.blue}"/>
+      <g fill="none" stroke="${K.ink}" stroke-width="2.2" stroke-linecap="round"><path d="M140 22a14 14 0 0 1 20 0M134 14a24 24 0 0 1 32 0"/></g><circle cx="150" cy="30" r="4" fill="${K.lime}" stroke="${K.ink}" stroke-width="2"/>
+      <path d="M150 34v26" stroke="${K.ink}" stroke-width="2.5"/>
+      <g stroke="${K.ink}" stroke-width="2"><rect x="44" y="56" width="30" height="22" fill="${K.pink}"/><rect x="76" y="56" width="30" height="22" fill="${K.cream}"/><rect x="60" y="36" width="30" height="20" fill="${K.lime}"/><rect x="108" y="56" width="30" height="22" fill="${K.pinkD}"/></g>
+      <rect x="138" y="60" width="26" height="18" fill="${K.cream}" stroke="${K.ink}" stroke-width="2"/>
+      <path d="M22 78h164l-16 28H40z" fill="${K.ink}"/>
+      <path d="M0 108c16-6 24 6 40 0s24 6 40 0 24 6 40 0 24 6 40 0 24 6 40 0V140H0z" fill="${K.blueD}" stroke="${K.ink}" stroke-width="2"/>
+      <path d="M10 126c14-5 22 5 36 0s22 5 36 0M110 128c14-5 22 5 36 0s22 5 36 0" fill="none" stroke="${K.wine}" stroke-width="2"/>`;
+  },
+  ticket() {
+    return `<rect width="200" height="140" fill="${K.pink}"/>
+      <g transform="rotate(-6 100 70)">
+        <path d="M24 34h152v22a14 14 0 0 0 0 28v22H24V84a14 14 0 0 0 0-28z" fill="${K.cream}" stroke="${K.ink}" stroke-width="2.5"/>
+        <path d="M136 38v64" stroke="${K.ink}" stroke-width="2" stroke-dasharray="4 4"/>
+        <text x="80" y="66" text-anchor="middle" font-family="DM Mono,monospace" font-size="13" letter-spacing="2" fill="${K.wine}">TICKET</text>
+        <path d="M44 80h72" stroke="${K.ink}" stroke-width="1.5"/>
+        <g fill="${K.ink}"><rect x="48" y="86" width="2" height="10"/><rect x="53" y="86" width="4" height="10"/><rect x="60" y="86" width="2" height="10"/><rect x="65" y="86" width="5" height="10"/><rect x="73" y="86" width="2" height="10"/><rect x="78" y="86" width="3" height="10"/><rect x="84" y="86" width="2" height="10"/><rect x="89" y="86" width="5" height="10"/><rect x="97" y="86" width="2" height="10"/><rect x="102" y="86" width="3" height="10"/><rect x="108" y="86" width="2" height="10"/></g>
+        ${star4(156, 70, 13, K.lime)}
+      </g>`;
+  },
+  map() {
+    return `<rect width="200" height="140" fill="${K.lilac}"/>
+      <path d="M26 30l48-12 52 12 48-12v92l-48 12-52-12-48 12z" fill="${K.cream}" stroke="${K.ink}" stroke-width="2.5" stroke-linejoin="round"/>
+      <path d="M74 18v92l52 12V30z" fill="${K.pink}" stroke="${K.ink}" stroke-width="2.5" stroke-linejoin="round"/>
+      <path d="M40 94C60 70 80 92 100 70s36-8 52-30" fill="none" stroke="${K.wine}" stroke-width="2.5" stroke-dasharray="6 5" stroke-linecap="round"/>
+      <path d="M152 58c-10-12-16-18-16-26a16 16 0 0 1 32 0c0 8-6 14-16 26z" fill="${K.wine}" stroke="${K.ink}" stroke-width="2"/><circle cx="152" cy="32" r="6" fill="${K.lime}" stroke="${K.ink}" stroke-width="1.5"/>
+      <circle cx="40" cy="94" r="5" fill="${K.lime}" stroke="${K.ink}" stroke-width="2"/>`;
+  },
+  cactus() {
+    return `<rect width="200" height="140" fill="${K.blue}"/>
+      <circle cx="156" cy="34" r="16" fill="${K.lime}" stroke="${K.ink}" stroke-width="2"/>
+      <path d="M0 112h200v28H0z" fill="${K.pinkD}" stroke="${K.ink}" stroke-width="2"/>
+      <path d="M90 112V40a12 12 0 0 1 24 0v72z" fill="${K.lime}" stroke="${K.ink}" stroke-width="2.5"/>
+      <path d="M90 82H74a10 10 0 0 1-10-10V54a7 7 0 0 1 14 0v14h12" fill="${K.lime}" stroke="${K.ink}" stroke-width="2.5" stroke-linejoin="round"/>
+      <path d="M114 70h12V50a7 7 0 0 1 14 0v22a10 10 0 0 1-10 10h-16" fill="${K.lime}" stroke="${K.ink}" stroke-width="2.5" stroke-linejoin="round"/>
+      <path d="M102 36v70M71 56v12M133 52v18" stroke="${K.ink}" stroke-width="1.4" opacity=".5"/>
+      <path d="M96 30c2-8 10-8 12 0" fill="${K.pink}" stroke="${K.ink}" stroke-width="2"/>`;
+  },
+  stark() {
+    return `<rect width="200" height="140" fill="${K.wine}"/><defs>${dots(K.cream, .25)}</defs><rect width="200" height="140" fill="url(#d)"/>
+      <circle cx="74" cy="70" r="40" fill="${K.pink}" stroke="${K.ink}" stroke-width="2.5"/>
+      <path d="M80 34L58 74h16l-6 32 26-44H78z" fill="${K.lime}" stroke="${K.ink}" stroke-width="2.5" stroke-linejoin="round"/>
+      <g fill="${K.cream}" stroke="${K.ink}" stroke-width="2"><circle cx="150" cy="44" r="13"/><rect x="146" y="56" width="8" height="38" rx="2"/><path d="M154 78h10M154 88h7"/></g>
+      <circle cx="150" cy="44" r="5" fill="${K.wine}"/>
+      ${star4(170, 112, 10, K.lime)}${star4(30, 22, 7, K.cream)}`;
+  },
+  mono(p) {
+    const bg = { 'ia-dados': K.pink, 'software-sistemas': K.blue, 'robotica-iot': K.blue, 'blockchain-web3': K.wine, 'jogos': K.lilac }[p.category] || K.pink;
+    const fg = p.category === 'blockchain-web3' ? K.cream : K.wine;
+    const initials = p.title.replace(/[^A-Za-zÀ-ú0-9 ]/g, ' ').split(/\s+/).filter(Boolean).slice(0, 2).map(w => w[0].toUpperCase()).join('');
+    return `<rect width="200" height="140" fill="${bg}"/><defs>${dots(p.category === 'blockchain-web3' ? K.cream : K.ink, .3)}</defs><rect width="200" height="140" fill="url(#d)"/>
+      <circle cx="100" cy="70" r="46" fill="none" stroke="${fg}" stroke-width="2" stroke-dasharray="5 6"/>
+      <text x="100" y="92" text-anchor="middle" font-family="Fraunces,Georgia,serif" font-style="italic" font-weight="900" font-size="62" letter-spacing="-4" fill="${fg}" stroke="${K.ink}" stroke-width="1.2">${esc(initials)}</text>
+      ${star4(158, 32, 11, K.lime)}${star4(40, 108, 7, K.cream)}`;
+  }
+};
+/* CAPAS:FIM */
+
+/* =========================================================
+   UTILITIES
+   ========================================================= */
+function esc(s) {
+  return String(s).replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
+}
+const $ = (s, el = document) => el.querySelector(s);
+const $$ = (s, el = document) => [...el.querySelectorAll(s)];
+const reduceMotion = matchMedia('(prefers-reduced-motion: reduce)');
+const EASE = 'cubic-bezier(.2,.8,.2,1)';
+const SPRING = 'cubic-bezier(.34,1.56,.64,1)';
+const CAT = Object.fromEntries(DATA.categories.map(c => [c.id, c]));
+const PROJ = Object.fromEntries(DATA.projects.map(p => [p.id, p]));
+const TIERS = [
+  { id: 'live', title: 'Available to open or play' },
+  { id: 'principal', title: 'Main case studies' },
+  { id: 'complementar', title: 'More case studies' },
+  { id: 'experimento', title: 'Experiments' }
+];
+const tierOf = p => p.live ? 'live' : p.tier === 'case_principal' ? 'principal' : p.tier === 'case_complementar' ? 'complementar' : 'experimento';
+const projectsIn = cat => DATA.projects.filter(p => cat === 'todos' || p.category === cat);
+const plural = n => `${String(n).padStart(2, '0')} ${n === 1 ? 'project' : 'projects'}`;
+const say = msg => { const s = $('#sr-status'); s.textContent = ''; requestAnimationFrame(() => { s.textContent = msg; }); };
+
+function icon(name, cls = '') {
+  const v = ICONS[name]; if (!v) return '';
+  return v.startsWith('<') ? v.replace('<svg', `<svg aria-hidden="true" focusable="false" class="${cls}"`)
+    : `<svg viewBox="0 0 24 24" aria-hidden="true" focusable="false" class="${cls}"><path d="${v}"/></svg>`;
+}
+function coverHTML(p, labelled = false) {
+  if (p.coverImage) return `<img src="${esc(p.coverImage)}" alt="${labelled ? esc('Screenshot of ' + p.title) : ''}" loading="lazy">`;
+  const fn = COVERS[p.cover] || COVERS.mono;
+  const a11y = labelled ? `role="img" aria-label="${esc('Conceptual illustration for ' + p.title)}"` : 'aria-hidden="true" focusable="false"';
+  const uid = 'p' + Math.random().toString(36).slice(2, 8);
+  const inner = fn(p).replace(/id="d"/g, `id="${uid}"`).replace(/url\(#d\)/g, `url(#${uid})`);
+  return `<svg viewBox="0 0 200 140" preserveAspectRatio="xMidYMid slice" ${a11y}>${inner}</svg>`;
+}
+const LINK_STYLE = {
+  game: ['lbtn--play', 'play'], application: ['lbtn--app', 'external'], code: ['lbtn--code', 'github'],
+  video: ['lbtn--video', 'play'], documentation: ['lbtn--docs', 'doc'], post: ['lbtn--post', 'external']
+};
+function linksHTML(p) {
+  return p.links.map(l => {
+    const [cls, ic] = LINK_STYLE[l.type] || ['', 'external'];
+    return `<a class="lbtn ${cls}" href="${esc(l.url)}" target="_blank" rel="noopener noreferrer">${icon(ic)}${esc(l.label)}<span class="ext" aria-hidden="true">↗</span><span class="sr-only"> — ${esc(p.title)} (opens in a new tab)</span></a>`;
+  }).join('');
+}
+$$('svg[data-icon]').forEach(svg => {
+  const v = ICONS[svg.dataset.icon]; if (!v) return;
+  svg.innerHTML = v.startsWith('<') ? v.replace(/^<svg[^>]*>|<\/svg>$/g, '') : `<path d="${v}"/>`;
+});
+
+/* =========================================================
+   STACKS
+   ========================================================= */
+const TILT = [-2.5, 1.5, -1, 2.5, -2, 1, -1.5, 2];
+const TINT = ['var(--cream)', 'var(--pink)', 'var(--blue)', 'var(--lilac)', 'var(--cream)', 'var(--pink)'];
+function renderStacks() {
+  let k = 0;
+  const sticker = t => `<li class="tech" data-sticker tabindex="0" role="button" aria-roledescription="movable sticker"
+      aria-label="${esc(`${t.name}, ${t.kind}`)}" aria-describedby="drag-help" style="--r:${TILT[k % TILT.length]}deg;--bg:${TINT[k++ % TINT.length]}">
+      <span class="tech-ic" aria-hidden="true">${icon(t.icon)}</span>
+      <span class="tech-txt" aria-hidden="true"><span class="tech-name">${esc(t.name)}</span><span class="tech-kind">${esc(t.kind)}</span></span>
+      <span class="grip" aria-hidden="true"></span></li>`;
+  $('#stack-board').innerHTML = DATA.stacks.map(g => {
+    const subs = [...new Set(g.items.map(t => t.subgroup).filter(Boolean))];
+    const body = subs.length
+      ? `<div class="subgroups">${subs.map(s => `<div class="subgroup"><h4>${esc(s)}</h4><ul class="tech-list">${g.items.filter(t => t.subgroup === s).map(sticker).join('')}</ul></div>`).join('')}</div>`
+      : `<ul class="tech-list">${g.items.map(sticker).join('')}</ul>`;
+    return `<li class="stack-group" data-group="${g.id}" data-reveal><h3>${esc(g.label)}</h3>${body}</li>`;
+  }).join('');
+}
+
+/* =========================================================
+   PROJECTS: category folders
+   ========================================================= */
+function previewsHTML(cat, n = 3) {
+  return projectsIn(cat).slice(0, n).map((p, i) => `<span class="f-paper p${i + 1}">${coverHTML(p)}</span>`).join('');
+}
+function renderArchive() {
+  $('#archive-grid').innerHTML = DATA.categories.filter(c => c.main).map(c => {
+    const n = projectsIn(c.id).length;
+    return `<li data-reveal><button type="button" class="cat-folder" data-cat="${c.id}" aria-haspopup="dialog"
+      aria-label="${esc(`Open the ${c.label} folder, ${n} ${n === 1 ? 'project' : 'projects'}`)}">
+      <span class="f-back" aria-hidden="true"></span>
+      <span class="f-papers" aria-hidden="true">${previewsHTML(c.id)}</span>
+      <span class="f-front" aria-hidden="true">
+        <span class="f-meta"><span class="f-count">${plural(n)}</span></span>
+        <span class="f-title">${esc(c.label)}</span>
+        <span class="f-desc">${esc(c.description)}</span>
+        <span class="f-open">open folder</span>
+      </span></button></li>`;
+  }).join('');
+  const extra = DATA.categories.find(c => !c.main);
+  if (extra) {
+    const n = projectsIn(extra.id).length;
+    const box = $('#archive-extra'); box.dataset.reveal = '';
+    box.innerHTML = `<p class="extra-note" aria-hidden="true">plus a smaller archive ↘</p>
+      <button type="button" class="extra-folder" data-cat="${extra.id}" aria-haspopup="dialog" aria-label="${esc(`Open the complementary archive, ${extra.label}, ${n} projects`)}">
+        <span class="extra-minis" aria-hidden="true">${projectsIn(extra.id).slice(0, 3).map(p => `<span>${coverHTML(p)}</span>`).join('')}</span>
+        <span class="extra-txt" aria-hidden="true"><span class="mono">Complementary archive · ${plural(n)}</span><strong>${esc(extra.label)}</strong><span>${esc(extra.description.replace(/^Complementary archive: /, ''))}</span></span>
+      </button>`;
+  }
+}
+document.addEventListener('click', e => {
+  const f = e.target.closest('.cat-folder, .extra-folder'); if (f) openCollection(f.dataset.cat, f);
+});
+
+/* =========================================================
+   ARCHIVE EXPLORER — one window, two states: collection and detail
+   ========================================================= */
+const dlg = $('#explorer'), win = $('#ex-window'), body = $('#ex-body');
+const colView = $('#col-view'), fichaView = $('#ficha-view');
+const ex = { origin: null, cat: 'todos', current: null, fromCard: null, colScroll: 0, closing: false, built: false, openedAt: 0, pending: null };
+
+const animate = (el, frames, opts) => reduceMotion.matches ? null : el.animate(frames, { easing: EASE, ...opts });
+function rectTransform(from, to) {
+  return `translate(${from.left - to.left}px, ${from.top - to.top}px) scale(${from.width / to.width}, ${from.height / to.height})`;
+}
+function visibleRect(el) {
+  const r = el && el.isConnected ? el.getBoundingClientRect() : null;
+  return r && r.width && r.bottom > 0 && r.top < innerHeight ? r : null;
+}
+
+function cardHTML(p) {
+  return `<li class="card" data-id="${p.id}" data-cat="${p.category}">
+    <button type="button" class="card-open"><span class="sr-only">Open details: </span>
+      <span class="card-cover" aria-hidden="true">${coverHTML(p)}</span>
+      <span class="card-body"><span class="card-title">${esc(p.title)}</span><span class="card-desc">${esc(p.summary || '')}</span></span>
+    </button>
+    ${p.links.length ? `<div class="card-links">${linksHTML(p)}</div>` : ''}
+  </li>`;
+}
+function buildCollection() {
+  if (ex.built) return;
+  $('#tiers').innerHTML = TIERS.map(t => {
+    const list = DATA.projects.filter(p => tierOf(p) === t.id);
+    if (!list.length) return '';
+    return `<section class="tier" data-tier="${t.id}" aria-labelledby="tier-${t.id}">
+      <h3 class="sr-only" id="tier-${t.id}">${esc(t.title)}</h3>
+      <ul class="cards">${list.map(cardHTML).join('')}</ul></section>`;
+  }).join('');
+  $('#ex-tabs').innerHTML = [{ id: 'todos', label: 'All' }, ...DATA.categories].map(c =>
+    `<button type="button" class="ex-tab" data-tab="${c.id}" aria-pressed="false">${esc(c.label)} <span class="n">${projectsIn(c.id).length}</span></button>`).join('');
+  ex.built = true;
+}
+
+function setCrumbs() {
+  const items = [`<li><button type="button" data-crumb="todos">Archive</button></li>`];
+  const catLabel = ex.cat === 'todos' ? 'All projects' : CAT[ex.cat].label;
+  if (ex.current) items.push(`<li><button type="button" data-crumb="${ex.cat}">${esc(catLabel)}</button></li>`, `<li aria-current="page">${esc(PROJ[ex.current].title)}</li>`);
+  else items.push(`<li aria-current="page">${esc(catLabel)}</li>`);
+  $('#ex-crumbs').innerHTML = items.join('');
+  $('#ex-path').textContent = ['C:', 'Lorena', 'Archive', ex.cat === 'todos' ? '' : ex.cat, ex.current || ''].filter(Boolean).join('\\');
+  win.dataset.cat = ex.current ? PROJ[ex.current].category : ex.cat;
+}
+
+function setFilter(cat, { animated = true } = {}) {
+  ex.cat = cat;
+  const cards = $$('.card', colView);
+  cards.forEach(c => c.getAnimations().forEach(a => a.finish()));
+  const before = new Map();
+  if (animated) cards.forEach(c => { if (!c.hidden) before.set(c, c.getBoundingClientRect()); });
+  cards.forEach(c => { c.hidden = !(cat === 'todos' || c.dataset.cat === cat); });
+  $$('.tier', colView).forEach(t => { t.hidden = !t.querySelector('.card:not([hidden])'); });
+  $$('.ex-tab').forEach(t => t.setAttribute('aria-pressed', String(t.dataset.tab === cat)));
+  const n = projectsIn(cat).length, c = CAT[cat];
+  $('#ex-heading').textContent = cat === 'todos' ? 'All projects' : c.label;
+  $('#ex-intro').textContent = cat === 'todos' ? 'Every project in the archive, from work you can open right away to smaller experiments.' : c.description;
+  $('#ex-status').textContent = `${n} ${n === 1 ? 'project' : 'projects'} · ${cat === 'todos' ? 'all categories' : c.label}`;
+  setCrumbs();
+  if (!animated || reduceMotion.matches) return;
+  let k = 0;
+  cards.forEach(card => {
+    if (card.hidden) return;
+    const b = before.get(card), a = card.getBoundingClientRect();
+    if (b) { const dx = b.left - a.left, dy = b.top - a.top; if (dx || dy) card.animate([{ transform: `translate(${dx}px,${dy}px)` }, { transform: 'none' }], { duration: 380, easing: EASE }); }
+    else card.animate([{ opacity: 0, transform: 'scale(.94) translateY(10px)' }, { opacity: 1, transform: 'none' }], { duration: 260, delay: Math.min(k++, 8) * 30, easing: EASE, fill: 'backwards' });
+  });
+}
+$('#ex-tabs').addEventListener('click', e => { const t = e.target.closest('[data-tab]'); if (t) setFilter(t.dataset.tab); });
+
+function showView(view) {
+  const ficha = view === 'ficha';
+  colView.hidden = ficha; fichaView.hidden = !ficha;
+  $('#ex-tabs').hidden = ficha; $('#ex-back').hidden = !ficha;
+}
+function openWindowFrom(originEl) {
+  dlg.showModal();
+  ex.openedAt = performance.now();
+  const from = visibleRect(originEl);
+  if (from) animate(win, [{ transform: rectTransform(from, win.getBoundingClientRect()), opacity: .5 }, { transform: 'none', opacity: 1 }], { duration: 400 });
+  else animate(win, [{ transform: 'translateY(16px) scale(.97)', opacity: 0 }, { transform: 'none', opacity: 1 }], { duration: 300 });
+}
+function openCollection(cat, originEl) {
+  if (dlg.open) { if (ex.closing) ex.pending = [cat, originEl]; return; } // reopen right after the closing animation
+  buildCollection();
+  ex.origin = originEl; ex.current = null;
+  showView('col');
+  setFilter(cat, { animated: false });
+  body.scrollTop = 0;
+  openWindowFrom(originEl);
+  $('#ex-heading').focus({ preventScroll: true });
+  $$('.card:not([hidden])', colView).slice(0, 10).forEach((c, i) =>
+    animate(c, [{ opacity: 0, transform: 'translateY(14px) scale(.96)' }, { opacity: 1, transform: 'none' }], { duration: 260, delay: 220 + i * 35, fill: 'backwards' }));
+}
+
+/* ---- detail view ---- */
+const FIELDS = [
+  ['team', 'Format & team'], ['contribution', 'My contribution'], ['problem', 'Problem'], ['solution', 'Solution'],
+  ['decisions', 'Technical decisions'], ['results', 'Documented results'], ['learning', 'Learnings']
+];
+const MEDIA_LABEL = { image: 'Image', gif: 'GIF', video: 'Video', diagram: 'Diagram' };
+function valueHTML(v) { return Array.isArray(v) ? `<ul>${v.map(x => `<li>${esc(x)}</li>`).join('')}</ul>` : `<p>${esc(v)}</p>`; }
+function galleryHTML(p) {
+  if (!p.media || !p.media.length) return '';
+  return `<section class="fsec wide" data-field="media"><h3>Gallery</h3><ul class="gallery">${p.media.map(m => {
+    const el = m.type === 'video'
+      ? `<video controls preload="metadata"${m.poster ? ` poster="${esc(m.poster)}"` : ''} aria-label="${esc(m.alt || m.caption || 'Project video')}"><source src="${esc(m.src)}"${m.mime ? ` type="${esc(m.mime)}"` : ''}>Your browser can't play this video.</video>`
+      : `<img src="${esc(m.src)}" alt="${esc(m.alt || '')}" loading="lazy">`;
+    return `<li><figure>${el}<figcaption><span class="chip">${MEDIA_LABEL[m.type] || 'Media'}</span>${m.caption ? `<span>${esc(m.caption)}</span>` : ''}</figcaption></figure></li>`;
+  }).join('')}</ul></section>`;
+}
+function fichaHTML(p) {
+  const filled = FIELDS.filter(([k]) => p[k] && (!Array.isArray(p[k]) || p[k].length));
+  const chips = [`<span class="chip">${esc(CAT[p.category].label)}</span>`].concat((p.tags || []).map(t => `<span class="chip chip--blue">${esc(t)}</span>`));
+  const coverNote = p.coverImage ? '' : '<span class="note">Conceptual illustration</span>';
+  const wide = (k, i) => String(p[k]).length > 220 || (filled.length % 2 === 1 && i === filled.length - 1);
+  return `<header class="ficha-head" id="ficha-head">
+      <div class="pd-cover">${coverHTML(p, true)}${coverNote}</div>
+      <div>
+        <p class="pd-kicker">${chips.join('')}</p>
+        <h2 class="pd-title" id="pd-title" tabindex="-1">${esc(p.title)}</h2>
+        <p class="pd-summary">${esc(p.summary || '')}</p>
+        ${p.links.length ? `<div class="pd-links">${linksHTML(p)}</div>` : ''}
+      </div>
+    </header>
+    ${filled.length || (p.media && p.media.length) ? `<div class="ficha-text">${filled.map(([k, label], i) =>
+      `<section class="fsec${wide(k, i) ? ' wide' : ''}" data-field="${k}"><h3>${label}</h3>${valueHTML(p[k])}</section>`).join('')}${galleryHTML(p)}</div>` : ''}`;
+}
+
+function openFicha(id, cardEl) {
+  const p = PROJ[id]; if (!p) return;
+  if (cardEl) cardEl.getAnimations().forEach(a => a.finish());
+  const fromRect = cardEl ? visibleRect(cardEl.querySelector('.card-cover')) : null;
+  ex.colScroll = body.scrollTop; ex.current = id; ex.fromCard = cardEl || null;
+  fichaView.innerHTML = fichaHTML(p);
+  showView('ficha'); body.scrollTop = 0; setCrumbs();
+  $('#ex-status').textContent = `Details: ${p.title}`;
+  const cover = $('#ficha-head .pd-cover');
+  // continuity: the card cover grows into the detail cover
+  if (fromRect) animate(cover, [{ transform: rectTransform(fromRect, cover.getBoundingClientRect()) }, { transform: 'none' }], { duration: 420 });
+  $$('#ficha-head > div:last-child, .ficha-text', fichaView).forEach((el, i) =>
+    animate(el, [{ opacity: 0, transform: 'translateY(14px)' }, { opacity: 1, transform: 'none' }], { duration: 300, delay: 140 + i * 60, fill: 'backwards' }));
+  $('#pd-title').focus({ preventScroll: true });
+}
+function backToCollection() {
+  if (!ex.current) return;
+  const head = $('#ficha-head'), id = ex.current, fromRect = visibleRect(head && head.querySelector('.pd-cover'));
+  head && $$('*', head).concat(head).forEach(el => el.getAnimations().forEach(a => a.cancel()));
+  ex.current = null;
+  if (ex.cat !== 'todos' && PROJ[id].category !== ex.cat) ex.cat = PROJ[id].category;
+  showView('col'); setFilter(ex.cat, { animated: false });
+  const card = $(`.card[data-id="${id}"]`, colView);
+  body.scrollTop = ex.fromCard ? ex.colScroll : 0;
+  if (card) {
+    const r = card.getBoundingClientRect(), b = body.getBoundingClientRect();
+    if (r.top < b.top || r.bottom > b.bottom) card.scrollIntoView({ block: 'nearest' });
+    const cc = card.querySelector('.card-cover');
+    cc.getAnimations().forEach(a => a.cancel());
+    if (fromRect) animate(cc, [{ transform: rectTransform(fromRect, cc.getBoundingClientRect()), position: 'relative', zIndex: 5 }, { transform: 'none', position: 'relative', zIndex: 5 }], { duration: 280 });
+    card.querySelector('.card-open').focus({ preventScroll: true });
+  }
+}
+colView.addEventListener('click', e => { const b = e.target.closest('.card-open'); if (b) openFicha(b.closest('.card').dataset.id, b.closest('.card')); });
+$('#ex-back').addEventListener('click', backToCollection);
+$('#ex-crumbs').addEventListener('click', e => {
+  const b = e.target.closest('[data-crumb]'); if (!b) return;
+  if (ex.current) backToCollection();
+  if (b.dataset.crumb !== ex.cat) setFilter(b.dataset.crumb);
+  $('#ex-heading').focus({ preventScroll: true });
+});
+
+/* ---- closing: button, Escape and backdrop ---- */
+function closeExplorer() {
+  if (ex.closing) { ex.pending = null; return; } // the latest request wins
+  if (!dlg.open) return;
+  ex.closing = true;
+  win.getAnimations().forEach(a => a.finish());
+  const to = visibleRect(ex.origin);
+  const anim = to
+    ? animate(win, [{ transform: 'none', opacity: 1 }, { transform: rectTransform(to, win.getBoundingClientRect()), opacity: .3 }], { duration: 260, fill: 'forwards' })
+    : animate(win, [{ opacity: 1 }, { opacity: 0, transform: 'scale(.97)' }], { duration: 200, fill: 'forwards' });
+  const done = () => { if (dlg.open) dlg.close(); anim && anim.cancel(); };
+  anim ? anim.finished.then(done, done) : done();
+}
+$('#ex-close').addEventListener('click', closeExplorer);
+dlg.addEventListener('cancel', e => { e.preventDefault(); closeExplorer(); });
+let downOnBackdrop = false;
+dlg.addEventListener('pointerdown', e => { downOnBackdrop = e.target === dlg; });
+// a double-click on a folder must not close the window it just opened
+dlg.addEventListener('click', e => { if (e.target === dlg && downOnBackdrop && performance.now() - ex.openedAt > 450) closeExplorer(); downOnBackdrop = false; });
+dlg.addEventListener('close', () => {
+  ex.closing = false; ex.current = null;
+  win.getAnimations().forEach(a => a.cancel());
+  if (ex.pending) { const [cat, origin] = ex.pending; ex.pending = null; openCollection(cat, origin); return; }
+  if (ex.origin && ex.origin.isConnected) ex.origin.focus({ preventScroll: true });
+});
+
+/* =========================================================
+   MOTION A — scroll-triggered entry (horizontal slide + fade)
+   Content is only hidden by JS, only while off-screen, and is
+   settled immediately on navbar jumps, focus or failures.
+   ========================================================= */
+const Reveal = (() => {
+  const items = new Map();
+  const api = { settle() {}, settleWithin() {}, settleAll() {} };
+  if (reduceMotion.matches || !('IntersectionObserver' in window) || !Element.prototype.animate) return api;
+  const inView = el => { const r = el.getBoundingClientRect(); return r.bottom > 0 && r.top < innerHeight && r.width > 0; };
+  function show(item, instant) {
+    if (item.state === 'done') return;
+    const { el } = item;
+    el.style.opacity = ''; el.style.transform = '';
+    if (instant) { item.anim && item.anim.finish(); item.state = 'done'; return; }
+    if (item.state === 'running') return;
+    item.state = 'running';
+    item.anim = el.animate([{ opacity: 0, transform: `translateX(${item.dx}px)` }, { opacity: 1, transform: 'none' }],
+      { duration: 520, delay: item.delay, easing: EASE, fill: 'backwards' });
+    const fin = () => { item.state = 'done'; item.anim = null; };
+    item.anim.finished.then(fin, fin);
+  }
+  const io = new IntersectionObserver(entries => entries.forEach(en => {
+    const item = items.get(en.target);
+    if (item && en.isIntersecting) { show(item); io.unobserve(en.target); }
+  }), { threshold: 0, rootMargin: '0px 0px -6% 0px' });
+  function register(el, dx, delay) {
+    const item = { el, dx, delay, state: 'hidden', anim: null };
+    items.set(el, item);
+    if (inView(el)) { show(item); return; }
+    el.style.opacity = '0'; el.style.transform = `translateX(${dx}px)`;
+    io.observe(el);
+  }
+  api.init = () => {
+    const sibIndex = el => [...el.parentElement.children].filter(c => c.hasAttribute('data-reveal')).indexOf(el);
+    $$('[data-reveal]').forEach(el => {
+      const i = Math.max(0, sibIndex(el));
+      const dx = el.matches('.envelope') ? 56 : (i % 2 ? 44 : -44);
+      register(el, dx, Math.min(i, 6) * 70);
+    });
+    // safety net: anything visible but still hidden is revealed (fast scroll, missed observer callbacks)
+    let t; addEventListener('scroll', () => { clearTimeout(t); t = setTimeout(() => items.forEach(it => { if (it.state === 'hidden' && inView(it.el)) show(it); }), 80); }, { passive: true });
+    document.addEventListener('focusin', e => api.settle(e.target));
+  };
+  api.settle = el => { items.forEach(it => { if (it.el.contains(el)) show(it, true); }); };
+  api.settleWithin = root => { items.forEach(it => { if (root.contains(it.el)) { io.unobserve(it.el); show(it, true); } }); };
+  api.settleAll = () => items.forEach(it => { if (it.state === 'running') it.anim.finish(); });
+  return api;
+})();
+
+/* =========================================================
+   NAVBAR — active tab with a sliding indicator
+   ========================================================= */
+const navList = $('#nav-links'), navLinks = $$('a', navList);
+function placeIndicator() {
+  const a = navLinks.find(l => l.getAttribute('aria-current') === 'true');
+  if (!a) { navList.style.setProperty('--io', 0); return; }
+  navList.style.setProperty('--ix', a.parentElement.offsetLeft + 'px');
+  navList.style.setProperty('--iw', a.offsetWidth + 'px');
+  navList.style.setProperty('--io', 1);
+  navList.classList.add('has-indicator');
+}
+function setActive(id) {
+  navLinks.forEach(a => a.setAttribute('aria-current', String(a.getAttribute('href') === '#' + id)));
+  placeIndicator();
+}
+const sectionIO = new IntersectionObserver(entries => entries.forEach(en => { if (en.isIntersecting) setActive(en.target.id); }),
+  { rootMargin: '-45% 0px -50% 0px' });
+['apresentacao', 'stacks', 'projetos', 'contato'].forEach(id => sectionIO.observe(document.getElementById(id)));
+document.addEventListener('click', e => {
+  const a = e.target.closest('a[href^="#"]'); if (!a) return;
+  const target = document.getElementById(a.getAttribute('href').slice(1)); if (!target) return;
+  Reveal.settleAll(); Reveal.settleWithin(target);
+  if (navLinks.includes(a)) setActive(target.id);
+});
+addEventListener('resize', placeIndicator);
+document.fonts && document.fonts.ready.then(placeIndicator);
+
+/* =========================================================
+   STICKERS — every sticker can be moved with mouse, touch or keyboard
+   ========================================================= */
+const Stickers = (() => {
+  const STEP = 8, BIG = 40, LONG_PRESS = 320;
+  let z = 10, drag = null;
+  const host = el => el.closest('.hero') || $('#stack-board');
+  const getD = el => ({ x: parseFloat(el.style.getPropertyValue('--dx')) || 0, y: parseFloat(el.style.getPropertyValue('--dy')) || 0 });
+  function setD(el, x, y) {
+    el.style.setProperty('--dx', x + 'px'); el.style.setProperty('--dy', y + 'px');
+    el.style.translate = (x || y) ? `${x}px ${y}px` : '';
+  }
+  function raise(el) {
+    if (++z > 40) { // renormalise the raised ones and keep their relative order
+      const raised = $$('[data-sticker]').filter(s => s.style.zIndex).sort((a, b) => a.style.zIndex - b.style.zIndex);
+      z = 10; raised.forEach(s => { s.style.zIndex = ++z; }); z++;
+    }
+    el.style.zIndex = z;
+  }
+  // allowed translation range so the sticker stays inside its section (page coordinates)
+  function range(el, d) {
+    const r = el.getBoundingClientRect(), b = host(el).getBoundingClientRect();
+    return { minX: d.x + (b.left - r.left), maxX: d.x + (b.right - r.right), minY: d.y + (b.top - r.top), maxY: d.y + (b.bottom - r.bottom) };
+  }
+  const clamp = (v, lo, hi) => Math.min(Math.max(v, Math.min(lo, hi)), Math.max(lo, hi));
+  // essential controls a sticker must never cover after release
+  function blocksControl(el) {
+    const r = el.getBoundingClientRect();
+    return $$('a[href], button, .photo-btn', host(el)).some(c => {
+      if (c.closest('[data-sticker]') || c.offsetParent === null) return false;
+      const k = c.getBoundingClientRect();
+      return r.left < k.right - 2 && r.right > k.left + 2 && r.top < k.bottom - 2 && r.bottom > k.top + 2;
+    });
+  }
+  function moveTo(el, x, y, d0) {
+    const rg = range(el, getD(el));
+    setD(el, clamp(x, rg.minX, rg.maxX), clamp(y, rg.minY, rg.maxY));
+  }
+  function settleBack(el, prev) {
+    const cur = getD(el);
+    setD(el, prev.x, prev.y);
+    if (!reduceMotion.matches) el.animate([{ translate: `${cur.x}px ${cur.y}px` }, { translate: `${prev.x}px ${prev.y}px` }], { duration: 260, easing: EASE });
+    say('Sticker moved back so it does not cover a button.');
+  }
+
+  function start(e) {
+    const el = e.currentTarget;
+    if (e.button > 0 || drag) return;
+    Reveal.settle(el);
+    const onGrip = !!e.target.closest('.grip');
+    drag = { el, id: e.pointerId, type: e.pointerType, sx: e.pageX, sy: e.pageY, cx: e.clientX, cy: e.clientY,
+             d0: getD(el), prev: getD(el), active: false, timer: 0 };
+    if (e.pointerType === 'touch' && !onGrip) {
+      drag.timer = setTimeout(() => activate(), LONG_PRESS); // long press picks it up; a quick swipe keeps scrolling
+    } else {
+      if (onGrip || e.pointerType !== 'mouse') activate();
+      e.preventDefault();
+    }
+    try { el.setPointerCapture(e.pointerId); } catch {}
+  }
+  function activate() {
+    if (!drag || drag.active) return;
+    drag.active = true;
+    clearTimeout(drag.timer);
+    const r = range(drag.el, drag.d0); drag.rg = r;
+    raise(drag.el);
+    drag.el.classList.add('is-dragging');
+    if (drag.type === 'touch' && navigator.vibrate) navigator.vibrate(8);
+  }
+  function apply() {
+    const nx = drag.d0.x + (drag.cx + scrollX - drag.sx), ny = drag.d0.y + (drag.cy + scrollY - drag.sy);
+    const r = drag.rg; setD(drag.el, clamp(nx, r.minX, r.maxX), clamp(ny, r.minY, r.maxY));
+  }
+  function move(e) {
+    if (!drag || e.pointerId !== drag.id) return;
+    drag.cx = e.clientX; drag.cy = e.clientY;
+    const dist = Math.hypot(e.pageX - drag.sx, e.pageY - drag.sy);
+    if (!drag.active) {
+      if (drag.type === 'touch') { if (dist > 8) cancel(); return; }
+      if (dist > 4) activate(); else return;
+    }
+    apply();
+  }
+  function end(e) {
+    if (!drag || (e && e.pointerId !== undefined && e.pointerId !== drag.id)) return;
+    const d = drag; drag = null;
+    clearTimeout(d.timer);
+    try { d.el.releasePointerCapture(d.id); } catch {}
+    d.el.classList.remove('is-dragging');
+    if (!d.active) return;
+    if (blocksControl(d.el)) settleBack(d.el, d.prev);
+  }
+  function cancel() {
+    if (!drag) return;
+    const d = drag;
+    if (d.active) { setD(d.el, d.prev.x, d.prev.y); }
+    drag = null; clearTimeout(d.timer); d.el.classList.remove('is-dragging');
+    try { d.el.releasePointerCapture(d.id); } catch {}
+  }
+  function key(e) {
+    const el = e.currentTarget;
+    if (e.key === 'r' || e.key === 'R' || e.key === 'Home') { e.preventDefault(); reset(el); say('Sticker put back.'); return; }
+    const dir = { ArrowLeft: [-1, 0], ArrowRight: [1, 0], ArrowUp: [0, -1], ArrowDown: [0, 1] }[e.key];
+    if (!dir) return;
+    e.preventDefault();
+    Reveal.settle(el);
+    const s = e.shiftKey ? BIG : STEP, d = getD(el), prev = { ...d };
+    raise(el);
+    moveTo(el, d.x + dir[0] * s, d.y + dir[1] * s);
+    if (blocksControl(el)) settleBack(el, prev);
+  }
+  function reset(el) { setD(el, 0, 0); el.style.zIndex = ''; }
+  function resetAll() { $$('[data-sticker]').forEach(reset); z = 10; say('All stickers are back in place.'); }
+  // keep moved stickers inside their section after resizing or layout changes
+  function clampAll() {
+    $$('[data-sticker]').forEach(el => {
+      const d = getD(el); if (!d.x && !d.y) return;
+      const rg = range(el, d);
+      setD(el, clamp(d.x, rg.minX, rg.maxX), clamp(d.y, rg.minY, rg.maxY));
+    });
+  }
+  function init() {
+    $$('[data-sticker]').forEach(el => {
+      el.addEventListener('pointerdown', start);
+      el.addEventListener('keydown', key);
+      el.addEventListener('dblclick', () => reset(el));
+      el.addEventListener('dragstart', e => e.preventDefault());
+    });
+    addEventListener('pointermove', move, { passive: true });
+    addEventListener('pointerup', end);
+    addEventListener('pointercancel', e => { if (drag && e.pointerId === drag.id) (drag.active ? end(e) : cancel()); });
+    document.addEventListener('lostpointercapture', e => { if (drag && e.pointerId === drag.id && drag.active) end(e); }, true);
+    // while a touch drag is active, the page must not scroll
+    document.addEventListener('touchmove', e => { if (drag && drag.active && e.cancelable) e.preventDefault(); }, { passive: false });
+    document.addEventListener('contextmenu', e => { if (drag) e.preventDefault(); });
+    addEventListener('scroll', () => { if (drag && drag.active) apply(); }, { passive: true });
+    document.addEventListener('keydown', e => { if (e.key === 'Escape' && drag) cancel(); });
+    let t; addEventListener('resize', () => { clearTimeout(t); t = setTimeout(clampAll, 150); });
+    $('#reset-stickers').addEventListener('click', resetAll);
+  }
+  return { init, resetAll, clampAll };
+})();
+
+/* =========================================================
+   MOTION B — clickable photo stack
+   With no photos, the LG monogram polaroid stays in place.
+   ========================================================= */
+const PhotoStack = (() => {
+  const root = $('#photo-stack'), hint = $('#photo-hint'), caption = $('#photo-caption');
+  const fallback = root.innerHTML;
+  const TILTS = [-3, 6, -8, 9, -5, 4];
+  let photos = [], order = [], expanded = false, swipe = null, swiped = false;
+  const cards = () => $$('.photo-card', root);
+  function pose(rank) {
+    if (!expanded) return { t: `translate(0px, 0px) rotate(${rank ? TILTS[rank % TILTS.length] / 3 : 0}deg)`, o: rank ? 0 : 1 };
+    const sign = rank % 2 ? 1 : -1;
+    return { t: `translate(${rank * 9 * sign}px, ${rank * -5}px) rotate(${rank ? TILTS[rank % TILTS.length] : -1}deg) scale(${1 - rank * .025})`, o: 1 };
+  }
+  function layout(animated, sentBack) {
+    const n = photos.length;
+    cards().forEach(card => {
+      const rank = order.indexOf(+card.dataset.i), p = pose(rank);
+      card.getAnimations().forEach(a => a.finish());
+      const from = card.style.transform || p.t, fromO = card.style.opacity || '1';
+      card.style.transform = p.t; card.style.opacity = p.o; card.style.zIndex = n - rank;
+      card.setAttribute('aria-hidden', String(rank !== 0));
+      if (!animated || reduceMotion.matches) return;
+      if (+card.dataset.i === sentBack) {
+        card.animate([{ transform: from, zIndex: n + 1 }, { transform: `translate(58%, -6%) rotate(14deg)`, zIndex: n + 1, offset: .45 }, { transform: p.t, zIndex: n - rank }],
+          { duration: 520, easing: 'cubic-bezier(.3,.7,.4,1)' });
+      } else {
+        card.animate([{ transform: from, opacity: fromO }, { transform: p.t, opacity: p.o }], { duration: 440, easing: SPRING });
+      }
+    });
+    const front = photos[order[0]], btn = $('.photo-btn', root);
+    if (btn) btn.setAttribute('aria-label', `Photo ${order[0] + 1} of ${n}: ${front.caption}. ${front.alt} ${expanded ? 'Activate to send it to the back.' : 'Activate to spread out the photos.'}`);
+    // the caption of the photo in front, below the stack (wraps freely)
+    if (caption.textContent !== front.caption) {
+      caption.textContent = front.caption || '';
+      if (animated && !reduceMotion.matches) caption.animate([{ opacity: 0, transform: 'translateY(6px)' }, { opacity: 1, transform: 'none' }], { duration: 260, easing: EASE });
+    }
+    caption.hidden = !front.caption;
+  }
+  function advance() {
+    if (photos.length < 2) return;
+    if (!expanded) { expanded = true; layout(true); say(`Showing ${photos.length} photos.`); return; }
+    const front = order.shift(); order.push(front);
+    layout(true, front);
+    say(`Photo ${order[0] + 1} of ${photos.length}: ${photos[order[0]].caption}`);
+  }
+  function init(list) {
+    photos = (list || []).filter(p => p && p.src); order = photos.map((_, i) => i); expanded = false;
+    if (!photos.length) { root.innerHTML = fallback; hint.hidden = true; caption.hidden = true; return; }
+    const pad = i => String(i + 1).padStart(2, '0');
+    const fig = (p, i) => `<figure class="photo-card" data-i="${i}"><img src="${esc(p.src)}" alt="${esc(p.alt || '')}" draggable="false" decoding="async"${i === 0 ? ' fetchpriority="high"' : ''}
+      style="--fit:${p.fit === 'contain' ? 'contain' : 'cover'};--pos:${esc(p.position || '50% 50%')}"><span class="num" aria-hidden="true">${pad(i)} / ${String(photos.length).padStart(2, '0')}</span></figure>`;
+    if (photos.length === 1) { root.innerHTML = `<div class="photo-btn" style="cursor:default">${fig(photos[0], 0)}</div>`; hint.hidden = true; caption.textContent = photos[0].caption || ''; caption.hidden = !photos[0].caption; return; }
+    root.innerHTML = `<button type="button" class="photo-btn" aria-describedby="photo-hint">${photos.map(fig).join('')}</button>`;
+    hint.hidden = false;
+    const btn = $('.photo-btn', root);
+    btn.addEventListener('click', () => { if (swiped) { swiped = false; return; } advance(); });
+    btn.addEventListener('pointerdown', e => { swipe = { x: e.clientX, y: e.clientY }; });
+    btn.addEventListener('pointerup', e => {
+      if (!swipe) return;
+      const dx = e.clientX - swipe.x, dy = e.clientY - swipe.y; swipe = null;
+      if (Math.abs(dx) > 40 && Math.abs(dx) > Math.abs(dy) * 1.5) { swiped = true; advance(); setTimeout(() => { swiped = false; }, 450); }
+    });
+    btn.addEventListener('pointercancel', () => { swipe = null; });
+    layout(false);
+  }
+  return { init, advance, state: () => ({ order: [...order], expanded, count: photos.length }) };
+})();
+
+/* =========================================================
+   EMAIL — the button copies the address (no mail app, no visible address)
+   ========================================================= */
+let toastTimer;
+function toast(msg, isError = false) {
+  const t = $('#toast');
+  t.textContent = msg; t.classList.toggle('is-error', isError); t.classList.add('show');
+  clearTimeout(toastTimer); toastTimer = setTimeout(() => t.classList.remove('show'), 2800);
+}
+async function copyText(text) {
+  try { if (navigator.clipboard && window.isSecureContext) { await navigator.clipboard.writeText(text); return true; } } catch {}
+  try {
+    const ta = Object.assign(document.createElement('textarea'), { value: text });
+    ta.setAttribute('readonly', ''); ta.style.cssText = 'position:fixed;top:0;left:0;opacity:0';
+    document.body.append(ta); ta.select(); ta.setSelectionRange(0, text.length);
+    const ok = document.execCommand('copy'); ta.remove(); return ok;
+  } catch { return false; }
+}
+document.addEventListener('click', async e => {
+  const b = e.target.closest('[data-copy-email]'); if (!b) return;
+  const ok = await copyText(b.dataset.copyEmail);
+  toast(ok ? 'Email copied!' : "Couldn't copy the email. Please try again or check your browser's clipboard permission.", !ok);
+});
+
+/* ---- start ---- */
+renderStacks();
+renderArchive();
+PhotoStack.init(DATA.photos);
+Stickers.init();
+Reveal.init && Reveal.init();
+placeIndicator();
+</script>
+</body>
+</html>

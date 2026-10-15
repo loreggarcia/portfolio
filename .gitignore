@@ -1,0 +1,22 @@
+# Local-only: previous versions, editorial data and the data-sync tool
+versoes/
+correcoes-projetos.json
+portfolio-dados.json
+atualizar-dados.py
+__pycache__/
+*.py[cod]
+
+# Drafts and temporary files
+*.tmp
+*.bak
+*.swp
+*~
+.DS_Store
+Thumbs.db
+
+# Credentials and local tooling
+.env
+.env.*
+*.pem
+*.key
+.claude/
